@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './proposals.css';
+import { ProposalSwitcher } from '@/components/proposal-switcher';
 
 export const metadata: Metadata = {
   title: 'Observatorio EUROACE | Conocimiento sin fronteras',
@@ -13,7 +15,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body>
+        <ProposalSwitcher />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,6 +1,18 @@
 # Observatorio EUROACE · Web institucional
 
-Primera propuesta de la página de inicio del Observatorio de Cooperación Transfronteriza EUROACE. Código preparado para un repositorio de GitHub; no se ha configurado un repositorio remoto ni publicado el sitio.
+Tres propuestas de la página de inicio del Observatorio de Cooperación Transfronteriza EUROACE. Código preparado para un repositorio de GitHub; no se ha configurado un repositorio remoto ni publicado el sitio.
+
+## Comparar las propuestas
+
+El selector superior permite cambiar entre tres homes completas. No son páginas interiores del sitio definitivo.
+
+| Ruta | Propuesta | Dirección visual |
+| --- | --- | --- |
+| `/` | 01 · Conexión territorial | Propuesta original: territorio, conexiones y acentos turquesa. |
+| `/propuesta-2` | 02 · Atlas editorial | Titulares serif, composición editorial, territorios tipográficos y áreas numeradas. |
+| `/propuesta-3` | 03 · Ventana de datos | Cabecera compacta, entrada por áreas, cifras y biblioteca en listado. |
+
+Las tres incluyen ES/PT, menú móvil, los mismos logotipos oficiales y contenido provisional identificado. La propuesta original se conserva; únicamente se añade el selector de comparación compartido. Eliminar ese selector del layout al elegir la propuesta definitiva.
 
 ## Desarrollo
 
@@ -28,6 +40,9 @@ Stack: React, TypeScript, Vinext/Vite, Tailwind y componentes Base UI/Shadcn. El
 - `web/lib/content.ts`: contenidos ES/PT separados del diseño.
 - `web/app/globals.css`: identidad visual, estilos y adaptaciones responsive.
 - `web/app/layout.tsx`: metadatos. Indexación desactivada durante la fase conceptual.
+- `web/components/alternative-home.tsx`: alternativas editorial y de datos, con estructura específica por propuesta y secciones compartidas.
+- `web/app/proposals.css`: estilos de las alternativas, aislados con clases propias, y selector de comparación.
+- `web/components/proposal-switcher.tsx`: navegación entre propuestas con estado de página actual.
 - `web/public/logo-euroace.jpg`: logotipo original sin modificar.
 - `REFERENCIAS.md`: enlaces privados de trabajo a Notion y Google Drive. No se incluyen estos enlaces en la web pública.
 - `.github/workflows/ci.yml`: validación de tipos, lint y build en GitHub Actions.
