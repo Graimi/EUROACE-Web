@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.wrangler/
+.vinext/
+.next/
+*.tsbuildinfo
+.env*
+!.env.example
+audit-report.json
+assets-source/
+*.log
+.DS_Store
+Thumbs.db
