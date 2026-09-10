@@ -1,0 +1,475 @@
+/* Manual v1.0, September 2026, pp. 8, 15, 23, 26–27.
+   Colour tokens are interface colours; the supplied logo paths remain unchanged. */
+:root {
+  --brand-turquoise: #18baa8;
+  --brand-blue: #1e00ff;
+  --brand-black: #000;
+  --brand-grey: #b8b8b8;
+  --ink: #000;
+  --muted: #555;
+  --teal: #18baa8;
+  --line: #e3e3e3;
+  --paper: #fff;
+  --foreground: #000;
+  --border: #e3e3e3;
+  --color-primary: #000;
+  --color-ring: #1e00ff;
+}
+a:focus-visible,
+button:focus-visible {
+  outline-color: var(--brand-blue) !important;
+}
+.site-header {
+  border-top-color: var(--brand-turquoise);
+}
+.hero h1 em {
+  color: var(--brand-blue);
+}
+.header-analytics,
+.primary-link {
+  background: #000;
+  color: white;
+}
+.header-analytics:hover,
+.primary-link:hover {
+  background: var(--brand-blue);
+}
+.text-link {
+  border-color: var(--brand-turquoise);
+}
+.text-link:hover,
+.nav-inner > a:hover {
+  color: var(--brand-blue);
+}
+.visual-label,
+.contact-row .eyebrow,
+.news-grid .eyebrow {
+  color: #000;
+}
+.hero-visual {
+  background: #fafafa;
+  border-color: #e6e6e6;
+}
+.visual-bottom {
+  border-color: #e6e6e6;
+  color: #555;
+}
+.visual-bottom > svg,
+.areas svg,
+.news-icon,
+.contact-row > svg {
+  color: var(--brand-blue);
+}
+.analytics-section {
+  background: #000;
+}
+.analytics-copy > .eyebrow,
+.analytics-copy li svg {
+  color: var(--brand-turquoise);
+}
+.analytics-copy > p:not(.eyebrow),
+.analytics-copy li {
+  color: #ddd;
+}
+.status {
+  color: white;
+  border-color: #666;
+}
+.status .tiny-dot {
+  background: var(--brand-turquoise);
+}
+.analytics-preview {
+  transform: none;
+  border-color: #ddd;
+  box-shadow: none;
+}
+.preview-top,
+.news-section {
+  background: #f7f7f7;
+}
+.preview-top svg {
+  color: var(--brand-blue);
+}
+.sample-tag {
+  background: #efedff;
+  color: var(--brand-blue);
+}
+.chart-grid {
+  stroke: #ddd;
+}
+.chart-axis {
+  fill: #555;
+}
+.chart-legend > span:nth-child(1) {
+  color: #000;
+}
+.chart-legend > span:nth-child(2) {
+  color: var(--brand-blue);
+}
+.chart-legend > span:nth-child(3) {
+  color: #555;
+}
+.mini-bars i {
+  background: #d1eee9;
+}
+.mini-bars i:nth-child(3n) {
+  background: var(--brand-turquoise);
+}
+.publication-cover {
+  background: #edf9f7;
+}
+.publication-1 .publication-cover {
+  background: #efedff;
+}
+.publication-2 .publication-cover {
+  background: #f2f2f2;
+}
+.cover-diagram svg {
+  color: var(--brand-turquoise);
+}
+.publication-1 .cover-diagram svg {
+  color: var(--brand-blue);
+}
+.publication-2 .cover-diagram svg {
+  color: #777;
+}
+.news-icon {
+  border-color: #ddd;
+}
+.area-number {
+  color: #555;
+}
+.alternative {
+  --alt-ink: #000;
+  --alt-muted: #555;
+  --alt-accent: #1e00ff;
+  --alt-line: #ddd;
+}
+.alt-editorial,
+.alt-data {
+  --alt-ink: #000;
+  --alt-muted: #555;
+  --alt-accent: #1e00ff;
+  --alt-line: #ddd;
+}
+.alt-editorial .editorial-hero h1 em {
+  color: var(--brand-blue);
+}
+.territory-rule,
+.editorial-territories > div:nth-child(2) .territory-rule,
+.editorial-territories > div:nth-child(3) .territory-rule {
+  background: var(--brand-turquoise);
+}
+.alt-analytics,
+.alt-data .alt-analytics {
+  background: #f6f6f6;
+  border-color: #ddd;
+}
+.alt-status,
+.alt-data .alt-status {
+  background: #ededed;
+  border-color: #ccc;
+  color: #000;
+}
+.alt-analytics-description li,
+.alt-data .alt-analytics-description li {
+  border-color: #ddd;
+}
+.alt-comparison,
+.alt-data .alt-comparison {
+  border-color: #ddd;
+  box-shadow: none;
+}
+.alt-demo-tag {
+  background: #efedff;
+  color: var(--brand-blue);
+}
+.alt-chart-grid {
+  stroke: #ddd;
+}
+.alt-chart-text {
+  fill: #000;
+}
+.alt-chart-ticks {
+  fill: #555;
+}
+.alt-comparison .alt-chart-note {
+  border-color: #ddd;
+}
+.alt-resource-number {
+  background: #edf9f7;
+  border-color: var(--brand-turquoise);
+  color: #000;
+}
+.alt-resources article:nth-child(2) .alt-resource-number {
+  background: #efedff;
+  border-color: var(--brand-blue);
+  color: var(--brand-blue);
+}
+.alt-resources article:nth-child(3) .alt-resource-number {
+  background: #f2f2f2;
+  border-color: #b8b8b8;
+  color: #000;
+}
+.alt-agenda,
+.alt-data .alt-agenda {
+  background: #f7f7f7;
+  border-color: #ddd;
+}
+.alt-data .alt-navigation {
+  background: #f4f4f4;
+}
+.alt-data .alt-header-cta {
+  background: #000;
+}
+.data-hero {
+  background: #000;
+}
+.data-hero .alt-kicker {
+  color: #fff;
+}
+.data-hero h1 em {
+  color: var(--brand-turquoise);
+}
+.data-hero-description {
+  color: #ddd;
+}
+.alt-action {
+  background: var(--brand-turquoise);
+  color: #000;
+}
+.alt-action:hover {
+  background: #7bd8cc;
+}
+.data-directory {
+  background: #101010;
+  border-color: #444;
+}
+.data-directory > div,
+.data-directory a > svg:first-child {
+  color: var(--brand-turquoise);
+}
+.data-directory a {
+  border-color: #444;
+  color: #fff;
+}
+.data-directory a:hover {
+  color: var(--brand-turquoise);
+}
+.alt-data .alt-audiences span,
+.alt-data .alt-planned {
+  background: #f2f2f2;
+}
+.alt-data .alt-area-index,
+.alt-data .alt-areas article:nth-child(2) .alt-area-index,
+.alt-data .alt-areas article:nth-child(3) .alt-area-index,
+.alt-data .alt-areas article:nth-child(4) .alt-area-index {
+  background: #efedff;
+  color: var(--brand-blue);
+}
+.data-territory-legend span,
+.alt-data .alt-agenda-grid article {
+  border-color: #ccc;
+}
+.alt-data .alt-resource-number {
+  background: #edf9f7;
+  color: #000;
+}
+.alt-data .alt-areas p,
+.alt-data .alt-agenda-grid p,
+.alt-data .alt-resources article > div > p:not(.alt-kicker) {
+  color: #555;
+}
+/* Animation uses the three extracted vector outlines, not approximate circles.
+   Translate only: no distortion, colour interpolation or independently scaled rings. */
+.living-rings {
+  margin: 0;
+}
+.ring-stage {
+  aspect-ratio: 560/385;
+  position: relative;
+  overflow: hidden;
+}
+.ring-canvas {
+  position: absolute;
+  width: 62%;
+  aspect-ratio: 534.8374 / 534;
+  left: 19%;
+  top: 8%;
+}
+.living-ring {
+  position: absolute;
+  display: block;
+  width: 66.5623%;
+  height: auto;
+  animation-duration: 20s;
+  animation-timing-function: cubic-bezier(0.45, 0, 0.2, 1);
+  animation-iteration-count: infinite;
+}
+.ring-centro {
+  left: 0;
+  top: 16.6667%;
+  animation-name: centro-exchange;
+}
+.ring-alentejo {
+  left: 33.4376%;
+  top: 33.3333%;
+  animation-name: alentejo-exchange;
+}
+.ring-extremadura {
+  left: 33.4377%;
+  top: 0;
+  animation-name: extremadura-exchange;
+}
+@keyframes centro-exchange {
+  0%,
+  12%,
+  88%,
+  100% {
+    transform: translate(0, 0);
+  }
+  35% {
+    transform: translate(-18%, 9%);
+  }
+  60% {
+    transform: translate(8%, -8%);
+  }
+}
+@keyframes alentejo-exchange {
+  0%,
+  12%,
+  88%,
+  100% {
+    transform: translate(0, 0);
+  }
+  35% {
+    transform: translate(12%, 17%);
+  }
+  60% {
+    transform: translate(-8%, -7%);
+  }
+}
+@keyframes extremadura-exchange {
+  0%,
+  12%,
+  88%,
+  100% {
+    transform: translate(0, 0);
+  }
+  35% {
+    transform: translate(13%, -17%);
+  }
+  60% {
+    transform: translate(-4%, 10%);
+  }
+}
+.living-rings.is-paused .living-ring {
+  animation-play-state: paused;
+}
+.living-rings figcaption {
+  padding: 0 25px 16px;
+}
+.rings-message {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  white-space: pre-line;
+  text-align: center;
+  color: #000;
+}
+.rings-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px 17px;
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 20px;
+}
+.rings-legend li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.75rem;
+  color: #444;
+}
+.rings-legend li > span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+.legend-centro {
+  background: #10dcc5;
+}
+.legend-extremadura {
+  background: #1e00ff;
+}
+.legend-alentejo {
+  background: #fc0;
+}
+.rings-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px solid #e2e2e2;
+  padding-top: 11px;
+}
+.rings-controls > span {
+  font-size: 0.75rem;
+  color: #555;
+}
+.rings-pause {
+  background: white;
+  border: 1px solid #ddd;
+  color: #000;
+  font-size: 0.75rem;
+  min-height: 44px;
+  padding: 8px 10px;
+  gap: 7px;
+  border-radius: 4px;
+  white-space: normal;
+}
+.rings-pause:hover {
+  background: #efedff;
+}
+.rings-reduced {
+  display: none;
+}
+@media (max-width: 600px) {
+  .living-rings figcaption {
+    padding: 0 18px 14px;
+  }
+  .rings-controls {
+    flex-wrap: wrap;
+  }
+  .ring-stage {
+    aspect-ratio: 560/405;
+  }
+  .ring-canvas {
+    top: 10%;
+  }
+  .rings-message {
+    font-size: 1rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .living-ring {
+    animation: none !important;
+    transform: none !important;
+  }
+  .rings-pause {
+    display: none !important;
+  }
+  .rings-reduced {
+    display: inline;
+  }
+}
+@media print {
+  .living-ring {
+    animation: none;
+    transform: none;
+  }
+  .rings-controls {
+    display: none;
+  }
+}

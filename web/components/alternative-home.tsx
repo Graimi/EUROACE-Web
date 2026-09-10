@@ -139,10 +139,10 @@ function InstitutionalFooter({ t }: { t: Content }) {
           </div>
           <div className="alt-funding">
             <img
-              src="/logo-euroace.jpg"
+              src="/brand/interreg-observatorio.svg"
               alt="Interreg España–Portugal. Cofinanciado por la Unión Europea. Observatorio EUROACE."
-              width="512"
-              height="75"
+              width="1070"
+              height="215"
             />
             <p>{t.funding}</p>
           </div>
@@ -188,22 +188,22 @@ function ComparisonChart({
             Centro
           </text>
         </g>
-        <path d="M160 47H390" stroke="#137c75" strokeWidth="3" />
-        <circle cx="390" cy="47" r="9" fill="#137c75" />
+        <path d="M160 47H390" stroke="#18baa8" strokeWidth="3" />
+        <circle cx="390" cy="47" r="9" fill="#18baa8" />
         <path
           d="M160 104H332"
-          stroke="#315b93"
+          stroke="#1e00ff"
           strokeWidth="3"
           strokeDasharray="7 3"
         />
-        <rect x="324" y="96" width="16" height="16" fill="#315b93" />
+        <rect x="324" y="96" width="16" height="16" fill="#1e00ff" />
         <path
           d="M160 161H420"
-          stroke="#957340"
+          stroke="#666666"
           strokeWidth="3"
           strokeDasharray="2 4"
         />
-        <path d="M420 151L430 169H410Z" fill="#957340" />
+        <path d="M420 151L430 169H410Z" fill="#666666" />
         <g className="alt-chart-ticks">
           <text x="155" y="210">
             0
@@ -256,10 +256,10 @@ export function AlternativeHome({ variant }: { variant: Variant }) {
         <div className="alt-wrap alt-masthead">
           <a href="#inicio" className="alt-brand" aria-label={t.footer}>
             <img
-              src="/logo-euroace.jpg"
+              src="/brand/interreg-observatorio.svg"
               alt="Interreg España–Portugal. Cofinanciado por la Unión Europea. Observatorio EUROACE."
-              width="512"
-              height="75"
+              width="1070"
+              height="215"
             />
           </a>
           <div className="alt-header-tools">

@@ -23,6 +23,7 @@ import {
 import { Button } from '@/components/ui/button';
 
 import { copy } from '@/lib/content';
+import { LivingRings } from '@/components/living-rings';
 
 const anchors = [
   'inicio',
@@ -34,62 +35,6 @@ const anchors = [
   'contacto',
 ];
 const areaIcons = [Lightbulb, TrendingUp, ChartNoAxesCombined, Zap];
-
-function Territory({ note }: { note: string }) {
-  return (
-    <figure className="territory">
-      <div className="territory-grid" aria-hidden="true" />
-      <svg
-        viewBox="0 0 560 425"
-        role="img"
-        aria-label="Centro de Portugal, Alentejo, Extremadura: EUROACE"
-      >
-        <circle className="orbit" cx="280" cy="207" r="160" />
-        <circle className="orbit" cx="280" cy="207" r="118" />
-        <path
-          className="connection"
-          d="M155 112 Q310 85 404 202 Q330 350 181 313 Q90 222 155 112Z"
-        />
-        <path className="spoke" d="M155 112L280 209L404 202M280 209L181 313" />
-        <circle className="node-halo" cx="155" cy="112" r="48" />
-        <circle className="node-halo" cx="404" cy="202" r="48" />
-        <circle className="node-halo" cx="181" cy="313" r="48" />
-        <circle className="node" cx="155" cy="112" r="13" />
-        <circle className="node" cx="404" cy="202" r="13" />
-        <circle className="node" cx="181" cy="313" r="13" />
-        <circle cx="280" cy="209" r="42" fill="#123c51" />
-        <text x="280" y="214" textAnchor="middle" className="center-label">
-          EUROACE
-        </text>
-        <text x="94" y="49" className="region-name">
-          Centro
-        </text>
-        <text x="94" y="70" className="region-country">
-          PORTUGAL
-        </text>
-        <text x="348" y="142" className="region-name">
-          Extremadura
-        </text>
-        <text x="348" y="164" className="region-country">
-          ESPAÑA
-        </text>
-        <text x="211" y="352" className="region-name">
-          Alentejo
-        </text>
-        <text x="211" y="374" className="region-country">
-          PORTUGAL
-        </text>
-        <circle cx="303" cy="115" r="4" fill="#159d95" />
-        <circle cx="333" cy="303" r="4" fill="#159d95" />
-        <circle cx="129" cy="225" r="4" fill="#159d95" />
-      </svg>
-      <figcaption>
-        <span className="tiny-dot" />
-        {note}
-      </figcaption>
-    </figure>
-  );
-}
 
 export default function Home() {
   const [language, setLanguage] = useState<'es' | 'pt'>('es');
@@ -122,10 +67,10 @@ export default function Home() {
             aria-label="Observatorio EUROACE · Inicio"
           >
             <img
-              src="/logo-euroace.jpg"
+              src="/brand/interreg-observatorio.svg"
               alt="Interreg España–Portugal. Cofinanciado por la Unión Europea. Observatorio EUROACE."
-              width="512"
-              height="75"
+              width="1070"
+              height="215"
             />
           </a>
           <div className="header-tools">
@@ -212,11 +157,10 @@ export default function Home() {
           </div>
           <div className="hero-visual">
             <p className="visual-label">{t.region}</p>
-            <Territory note={t.territoryNote} />
+            <LivingRings language={language} />
             <div className="visual-bottom">
               <Network size={23} />
               <span>{t.cooperation}</span>
-              <span className="visual-index">01 / 03</span>
             </div>
           </div>
         </section>
@@ -337,20 +281,20 @@ export default function Home() {
                   <path
                     d="M40 136L115 118L190 127L260 88L335 93L408 46L480 30"
                     fill="none"
-                    stroke="#09877e"
+                    stroke="#18baa8"
                     strokeWidth="3"
                   />
                   <path
                     d="M40 159L115 149L190 112L260 125L335 110L408 83L480 68"
                     fill="none"
-                    stroke="#285d88"
+                    stroke="#1e00ff"
                     strokeWidth="3"
                     strokeDasharray="7 4"
                   />
                   <path
                     d="M40 174L115 164L190 159L260 150L335 128L408 135L480 105"
                     fill="none"
-                    stroke="#967132"
+                    stroke="#666666"
                     strokeWidth="3"
                     strokeDasharray="2 5"
                   />
@@ -509,9 +453,9 @@ export default function Home() {
         </div>
         <div className="funding wrap">
           <img
-            src="/logo-euroace.jpg"
-            width="512"
-            height="75"
+            src="/brand/interreg-observatorio.svg"
+            width="1070"
+            height="215"
             alt="Interreg España–Portugal. Cofinanciado por la Unión Europea. Observatorio EUROACE."
           />
           <p>{t.funding}</p>

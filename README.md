@@ -56,8 +56,8 @@ El lint revisa el código del proyecto; los componentes y el hook incluidos por 
 - Menú móvil con control por teclado, Escape y estados ARIA.
 - Las cifras 2 países, 3 regiones y 4 socios proceden del brief. Los gráficos son ficticios y están identificados como demostración.
 - Publicaciones, noticias, eventos y contacto indican disponibilidad futura; no hay enlaces ficticios a documentos.
-- El recurso territorial es un esquema de conexiones, no cartografía.
-- Se utiliza `Logo Int_Obs_lateral_min.jpg` del directorio oficial de Drive. No se recorta, recolorea ni recrea. Su resolución original es 512 × 75; conviene obtener SVG o mayor resolución antes de la publicación final.
+- La primera home incorpora los anillos originales en movimiento, con pausa y versión estática para movimiento reducido. Es un recurso de identidad, no cartografía.
+- La firma institucional y la paleta se han actualizado conforme al manual de septiembre. Véase `BRAND.md` para fuentes, criterios y discrepancias detectadas en el PDF.
 - Los logotipos de los cuatro socios se han extraído sin modificaciones del documento oficial `Folio con logos_May_JuntaNegra_letra 14.docx` de Drive. La propuesta no afirma cumplimiento normativo definitivo: validar el manual POCTEP y la composición final antes de publicar.
 
 ## GitHub
