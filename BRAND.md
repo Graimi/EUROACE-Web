@@ -36,3 +36,7 @@ Archivo integrado localmente: `web/public/brand/rings-chrome.mp4`, con imagen es
 ## Revisión de la home · 11 septiembre 2026
 Por petición del usuario se retira la opción cromada de la página. La primera animación queda sobre blanco sin borde, solo con la leyenda territorial, sin encabezados, mensajes ni controles visibles. Se mantiene el respeto al movimiento reducido. Las sílabas ti y do pasan a amarillo; com y par conservan turquesa y azul.
 
+
+## Comparación de movimiento fluido
+Se retira el selector superior de propuestas. La animación original mantiene su movimiento y recibe una leyenda en tarjetas; debajo se presenta una alternativa de oscilación sinusoidal continua con leyenda territorial conectada. Ambas respetan el movimiento reducido.
+

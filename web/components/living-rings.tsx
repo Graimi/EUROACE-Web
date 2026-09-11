@@ -3,7 +3,7 @@
 /* oxlint-disable next/no-img-element */
 import { useEffect, useRef, useState } from 'react';
 
-export function LivingRings({ language }: { language: 'es' | 'pt' }) {
+export function LivingRings({ language, variant = 'original' }: { language: 'es' | 'pt'; variant?: 'original' | 'fluid' }) {
   const [ready, setReady] = useState(false);
   const canvas = useRef<HTMLCanvasElement>(null);
   const scene =
@@ -18,7 +18,7 @@ export function LivingRings({ language }: { language: 'es' | 'pt' }) {
     void import('@/lib/rings-scene')
       .then(async ({ createRingsScene }) => {
         if (controller.signal.aborted) return;
-        const instance = await createRingsScene(target, controller.signal);
+        const instance = await createRingsScene(target, controller.signal, variant);
         if (!instance) return;
         if (controller.signal.aborted) {
           instance.dispose();
@@ -36,11 +36,11 @@ export function LivingRings({ language }: { language: 'es' | 'pt' }) {
       cleanup?.();
       scene.current = null;
     };
-  }, []);
+  }, [variant]);
   const pt = language === 'pt';
   return (
     <figure
-      className={`living-rings rings-three ${ready ? 'scene-ready' : ''}`}
+      className={`living-rings rings-three legend-${variant} ${ready ? 'scene-ready' : ''}`}
     >
       <div className="ring-stage" aria-hidden="true">
         <canvas ref={canvas} className="rings-webgl" />
@@ -78,16 +78,16 @@ export function LivingRings({ language }: { language: 'es' | 'pt' }) {
           }
         >
           <li>
-            <span className="legend-centro" />
-            Centro
+            <span className="legend-centro" aria-hidden="true" />
+            <div><strong>Centro</strong><small>Portugal</small></div>
           </li>
           <li>
-            <span className="legend-extremadura" />
-            Extremadura
+            <span className="legend-extremadura" aria-hidden="true" />
+            <div><strong>Extremadura</strong><small>{pt ? 'Espanha' : 'España'}</small></div>
           </li>
           <li>
-            <span className="legend-alentejo" />
-            Alentejo
+            <span className="legend-alentejo" aria-hidden="true" />
+            <div><strong>Alentejo</strong><small>Portugal</small></div>
           </li>
         </ul>
       </figcaption>

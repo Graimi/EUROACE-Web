@@ -5,6 +5,7 @@ import { SVGLoader } from 'three/addons/loaders/SVGLoader.js';
 export async function createRingsScene(
   canvas: HTMLCanvasElement,
   signal: AbortSignal,
+  variant: 'original' | 'fluid' = 'original',
 ) {
   const files = ['centro', 'alentejo', 'extremadura'];
   const sources = await Promise.all(
@@ -100,6 +101,16 @@ export async function createRingsScene(
             ? 1 - ease((cycle - 13) / 6)
             : 0;
     meshes.forEach((mesh, i) => {
+      if (variant === 'fluid' && !reduced) {
+        // Continuous periodic drift with staggered phases: no still holds or resets.
+        const phase = elapsed * Math.PI * 2 / 16 + i * Math.PI * 2 / 3;
+        mesh.position.copy(finalPositions[i]);
+        mesh.position.x += Math.sin(phase) * 0.13;
+        mesh.position.y += Math.cos(phase) * 0.10;
+        mesh.position.z += Math.sin(phase + 0.5) * 0.09;
+        mesh.rotation.set(Math.sin(phase) * 0.13, Math.cos(phase) * 0.19, Math.sin(phase * 2) * 0.035);
+        return;
+      }
       mesh.position.lerpVectors(arrivalPositions[i], finalPositions[i], meet);
       mesh.quaternion.slerpQuaternions(starts[i], identity, meet);
     });
