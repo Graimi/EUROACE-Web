@@ -16,12 +16,19 @@ El PDF tiene discrepancias: menciona verde sin especificar su código y el símb
 
 ## Movimiento
 
-La primera propuesta sustituye el esquema territorial por los tres anillos originales. Ciclo de 20 segundos con posiciones de reposo, separación suave y superposición, inspirado en las páginas 3 y 26–27. Los anillos se trasladan sin deformarse ni cambiar de color y regresan a su disposición original. Centro permanece a la izquierda, Extremadura arriba a la derecha y Alentejo abajo a la derecha.
+La primera propuesta utiliza una escena 3D de Three.js, cargada de forma diferida, con geometría extruida desde los contornos SVG originales, bisel discreto y material mate no metálico. Cámara ortográfica fija e iluminación neutra. No se modifica el bloque de firma institucional.
 
-Control de pausa/reanudación ES/PT y estado estático cuando `prefers-reduced-motion: reduce` está activo. La leyenda territorial permanece fija, sin información esencial que dependa del movimiento.
+Ciclo de 20 segundos: acercamiento desde planos inclinados (0–7 s), composición frontal del símbolo (7–13 s), separación suave (13–19 s) y breve espera (19–20 s). Centro permanece a la izquierda, Extremadura arriba a la derecha y Alentejo abajo a la derecha. El volumen es una interpretación gráfica autorizada para el hero; no sustituye al logotipo oficial.
+
+Control de pausa/reanudación ES/PT y vectores originales estáticos cuando `prefers-reduced-motion: reduce` está activo o WebGL no está disponible. La leyenda territorial permanece fija, sin información esencial que dependa del movimiento. Se detiene el bucle al salir del viewport o esconder la pestaña. Resolución de render limitada a 1,75× y liberación de geometrías, materiales y contexto al abandonar la home.
 
 ## Alcance
 
 Paleta y firma institucional actualizadas en las tres propuestas. Animación solo en la primera. La familia ABC Diatype se menciona en el PDF, pero no se han suministrado archivos web con licencia: no se ha extraído ni simulado esa fuente. Se mantienen las tipografías de las propuestas pendientes de esos activos.
 
 Antes de publicar una identidad definitiva, reemplazar las exportaciones del manual por los archivos maestros del diseñador cuando estén disponibles y resolver las discrepancias de la versión WIP.
+# Segunda exploración cromada
+
+La home incluye una segunda animación generada con Magnific (Seedance 2.0, ocho segundos, sin sonido), debajo de la interpretación 3D original. El acabado toma como referencia la imagen metálica aportada por el usuario: plata cepillada, biseles cromados y detalles turquesa, azul y amarillo. Es una exploración de material, no un reemplazo del logotipo oficial. La proporción y el entrelazado se reinterpretan en esta pieza generativa.
+
+Archivo integrado localmente: `web/public/brand/rings-chrome.mp4`, con imagen estática, controles, reproducción en bucle y respeto al movimiento reducido. «Compartido» usa los colores originales por sílabas: com (turquesa), par (azul), ti (amarillo), do (turquesa), según petición expresa.

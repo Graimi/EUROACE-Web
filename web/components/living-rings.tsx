@@ -1,16 +1,58 @@
 'use client';
 
 /* oxlint-disable next/no-img-element */
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Pause, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function LivingRings({ language }: { language: 'es' | 'pt' }) {
   const [paused, setPaused] = useState(false);
+  const [ready, setReady] = useState(false);
+  const canvas = useRef<HTMLCanvasElement>(null);
+  const scene =
+    useRef<
+      Awaited<ReturnType<typeof import('@/lib/rings-scene').createRingsScene>>
+    >(null);
+  const pausedRef = useRef(paused);
+  useEffect(() => {
+    pausedRef.current = paused;
+    scene.current?.setPaused(paused);
+  }, [paused]);
+  useEffect(() => {
+    const controller = new AbortController();
+    let cleanup: (() => void) | undefined;
+    const target = canvas.current;
+    if (!target) return;
+    void import('@/lib/rings-scene')
+      .then(async ({ createRingsScene }) => {
+        if (controller.signal.aborted) return;
+        const instance = await createRingsScene(target, controller.signal);
+        if (!instance) return;
+        if (controller.signal.aborted) {
+          instance.dispose();
+          return;
+        }
+        scene.current = instance;
+        instance.setPaused(pausedRef.current);
+        cleanup = () => instance.dispose();
+        setReady(true);
+      })
+      .catch(() => {
+        /* Original static vectors remain visible without WebGL. */
+      });
+    return () => {
+      controller.abort();
+      cleanup?.();
+      scene.current = null;
+    };
+  }, []);
   const pt = language === 'pt';
   return (
-    <figure className={`living-rings ${paused ? 'is-paused' : ''}`}>
+    <figure
+      className={`living-rings rings-three ${ready ? 'scene-ready' : ''} ${paused ? 'is-paused' : ''}`}
+    >
       <div className="ring-stage" aria-hidden="true">
+        <canvas ref={canvas} className="rings-webgl" />
         <div className="ring-canvas">
           <img
             className="living-ring ring-centro"

@@ -24,6 +24,7 @@ import { Button } from '@/components/ui/button';
 
 import { copy } from '@/lib/content';
 import { LivingRings } from '@/components/living-rings';
+import { ChromeRings } from '@/components/chrome-rings';
 
 const anchors = [
   'inicio',
@@ -141,7 +142,21 @@ export default function Home() {
               <br />
               {t.title[1]}
               <br />
-              <em>{t.title[2]}</em>
+              <em>
+                {language === 'es' ? (
+                  <span className="shared-word">
+                    <span className="sr-only">compartido.</span>
+                    <span aria-hidden="true">
+                      <span className="syllable-turquoise">com</span>
+                      <span className="syllable-blue">par</span>
+                      <span className="syllable-yellow">ti</span>
+                      <span className="syllable-turquoise">do</span>.
+                    </span>
+                  </span>
+                ) : (
+                  t.title[2]
+                )}
+              </em>
             </h1>
             <p className="hero-description">{t.intro}</p>
             <div className="hero-actions">
@@ -158,6 +173,7 @@ export default function Home() {
           <div className="hero-visual">
             <p className="visual-label">{t.region}</p>
             <LivingRings language={language} />
+            <ChromeRings language={language} />
             <div className="visual-bottom">
               <Network size={23} />
               <span>{t.cooperation}</span>

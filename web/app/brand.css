@@ -282,6 +282,77 @@ button:focus-visible {
 }
 /* Animation uses the three extracted vector outlines, not approximate circles.
    Translate only: no distortion, colour interpolation or independently scaled rings. */
+.rings-webgl {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.rings-three.scene-ready .rings-webgl {
+  opacity: 1;
+}
+.rings-three.scene-ready .ring-canvas {
+  visibility: hidden;
+}
+.rings-three:not(.scene-ready) .rings-pause {
+  display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rings-three .rings-webgl {
+    display: none;
+  }
+  .rings-three.scene-ready .ring-canvas {
+    visibility: visible;
+  }
+}
+.rings-three .living-ring {
+  animation: none !important;
+  transform: none !important;
+}
+@media print {
+  .rings-three .rings-webgl {
+    display: none;
+  }
+  .rings-three.scene-ready .ring-canvas {
+    visibility: visible;
+  }
+}
+.chrome-comparison {
+  margin: 0;
+  border-top: 1px solid #ddd;
+  padding: 24px 20px 16px;
+  background: #fff;
+}
+.chrome-comparison figcaption p {
+  margin: 8px 0 16px;
+  font-size: 1.15rem;
+  color: #151515;
+}
+.chrome-comparison video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: #f6f6f6;
+  border-radius: 8px;
+}
+.chrome-credit {
+  margin-top: 12px;
+  font-size: 0.7rem;
+  color: #666;
+}
+.shared-word {
+  white-space: nowrap;
+}
+.syllable-turquoise {
+  color: #10dcc5;
+}
+.syllable-blue {
+  color: #1e00ff;
+}
+.syllable-yellow {
+  color: #ffcc00;
+}
 .living-rings {
   margin: 0;
 }
