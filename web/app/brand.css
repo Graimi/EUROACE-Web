@@ -30,9 +30,17 @@ button:focus-visible {
   background: #000;
   color: white;
 }
+.site-header .header-analytics {
+  background: #000;
+  color: white;
+}
 .header-analytics:hover,
 .primary-link:hover {
   background: var(--brand-blue);
+}
+.site-header .header-analytics:hover {
+  background: var(--brand-turquoise);
+  color: #000;
 }
 .text-link {
   border-color: var(--brand-turquoise);

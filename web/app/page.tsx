@@ -66,12 +66,33 @@ export default function Home() {
             className="brand"
             aria-label="Observatorio EUROACE · Inicio"
           >
-            <img
-              src="/brand/interreg-observatorio.svg"
-              alt="Interreg España–Portugal. Cofinanciado por la Unión Europea. Observatorio EUROACE."
-              width="1070"
-              height="215"
-            />
+            <span className="brand-symbol" aria-hidden="true">
+              <img
+                className="brand-ring brand-ring-centro"
+                src="/brand/ring-centro.svg"
+                alt=""
+                width="356"
+                height="356"
+              />
+              <img
+                className="brand-ring brand-ring-extremadura"
+                src="/brand/ring-extremadura.svg"
+                alt=""
+                width="356"
+                height="356"
+              />
+              <img
+                className="brand-ring brand-ring-alentejo"
+                src="/brand/ring-alentejo.svg"
+                alt=""
+                width="356"
+                height="356"
+              />
+            </span>
+            <span className="brand-name">
+              <span>Observatorio</span>
+              <span>Euroace</span>
+            </span>
           </a>
           <div className="header-tools">
             <div className="language-switch" aria-label="Idioma">
@@ -115,16 +136,17 @@ export default function Home() {
           }
         >
           <div className="wrap nav-inner">
-            {t.nav.map((label, i) => (
-              <a
-                key={anchors[i]}
-                href={`#${anchors[i]}`}
-                onClick={() => setMenuOpen(false)}
-              >
-                {label}
-                {i === 2 && <ArrowUpRight size={14} />}
-              </a>
-            ))}
+            {t.nav.map((label, i) =>
+              i === 2 ? null : (
+                <a
+                  key={anchors[i]}
+                  href={`#${anchors[i]}`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {label}
+                </a>
+              ),
+            )}
             <span className="nav-caption">EXTREMADURA · ALENTEJO · CENTRO</span>
           </div>
         </nav>
@@ -142,19 +164,14 @@ export default function Home() {
               {t.title[1]}
               <br />
               <em>
-                {language === 'es' ? (
-                  <span className="shared-word">
-                    <span className="sr-only">compartido.</span>
-                    <span aria-hidden="true">
-                      <span className="syllable-turquoise">com</span>
-                      <span className="syllable-blue">par</span>
-                      <span className="syllable-yellow">ti</span>
-                      <span className="syllable-yellow">do</span>.
-                    </span>
+                <span className="shared-word">
+                  <span className="sr-only">{t.title[2]}</span>
+                  <span aria-hidden="true">
+                    <span className="syllable-turquoise">{language === 'es' ? 'com' : 'par'}</span>
+                    <span className="syllable-blue">{language === 'es' ? 'par' : 'tilha'}</span>
+                    <span className="syllable-yellow">{language === 'es' ? 'tido' : 'do'}</span>
                   </span>
-                ) : (
-                  t.title[2]
-                )}
+                </span>
               </em>
             </h1>
             <p className="hero-description">{t.intro}</p>

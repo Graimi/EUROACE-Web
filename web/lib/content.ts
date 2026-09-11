@@ -11,7 +11,7 @@ export const copy = {
       'Contacto',
     ],
     eyebrow: 'OBSERVATORIO DE COOPERACIÓN TRANSFRONTERIZA',
-    title: ['Tres regiones.', 'Un horizonte', 'compartido.'],
+    title: ['Tres regiones.', 'Un horizonte', 'compartido'],
     intro:
       'Conocimiento que conecta Extremadura, Alentejo y Centro de Portugal. Investigamos el territorio para comprender sus retos y abrir nuevas oportunidades.',
     discover: 'Conoce el Observatorio',
@@ -114,7 +114,7 @@ export const copy = {
       'Contacto',
     ],
     eyebrow: 'OBSERVATÓRIO DE COOPERAÇÃO TRANSFRONTEIRIÇA',
-    title: ['Três regiões.', 'Um horizonte', 'partilhado.'],
+    title: ['Três regiões.', 'Um horizonte', 'partilhado'],
     intro:
       'Conhecimento que liga a Extremadura, o Alentejo e o Centro de Portugal. Investigamos o território para compreender os seus desafios e abrir novas oportunidades.',
     discover: 'Conheça o Observatório',
