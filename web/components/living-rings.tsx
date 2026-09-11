@@ -3,7 +3,7 @@
 /* oxlint-disable next/no-img-element */
 import { useEffect, useRef, useState } from 'react';
 
-export function LivingRings({ language, variant = 'original' }: { language: 'es' | 'pt'; variant?: 'original' | 'fluid' }) {
+export function LivingRings({ language, variant = 'original' }: { language: 'es' | 'pt'; variant?: 'original' | 'fluid' | 'combined' }) {
   const [ready, setReady] = useState(false);
   const canvas = useRef<HTMLCanvasElement>(null);
   const scene =

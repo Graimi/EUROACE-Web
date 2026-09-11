@@ -5,7 +5,7 @@ import { SVGLoader } from 'three/addons/loaders/SVGLoader.js';
 export async function createRingsScene(
   canvas: HTMLCanvasElement,
   signal: AbortSignal,
-  variant: 'original' | 'fluid' = 'original',
+  variant: 'original' | 'fluid' | 'combined' = 'original',
 ) {
   const files = ['centro', 'alentejo', 'extremadura'];
   const sources = await Promise.all(
@@ -88,6 +88,8 @@ export async function createRingsScene(
   let reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let disposed = false;
   const ease = (v: number) => v * v * v * (v * (v * 6 - 15) + 10);
+  const driftRotation = new THREE.Euler();
+  const driftQuaternion = new THREE.Quaternion();
   function draw() {
     const cycle = elapsed % 20;
     // Approach 0–7s; rest 7–13s; open 13–19s; hold 19–20s.
@@ -113,6 +115,17 @@ export async function createRingsScene(
       }
       mesh.position.lerpVectors(arrivalPositions[i], finalPositions[i], meet);
       mesh.quaternion.slerpQuaternions(starts[i], identity, meet);
+      if (variant === 'combined' && !reduced) {
+        // Overlay drift on the encounter, including its assembled and open holds.
+        // Two drift cycles per encounter keep the twenty-second loop seamless.
+        const phase = elapsed * Math.PI * 2 / 10 + i * Math.PI * 2 / 3;
+        mesh.position.x += Math.sin(phase) * 0.10;
+        mesh.position.y += Math.cos(phase) * 0.085;
+        mesh.position.z += Math.sin(phase + 0.5) * 0.06;
+        driftRotation.set(Math.sin(phase) * 0.10, Math.cos(phase) * 0.14, Math.sin(phase * 2) * 0.025);
+        driftQuaternion.setFromEuler(driftRotation);
+        mesh.quaternion.multiply(driftQuaternion);
+      }
     });
     renderer.render(scene, camera);
   }

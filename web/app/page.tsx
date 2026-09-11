@@ -175,6 +175,10 @@ export default function Home() {
               <p className="fluid-label">{language === 'es' ? '02 · Movimiento fluido' : '02 · Movimento fluido'}</p>
               <LivingRings language={language} variant="fluid" />
             </div>
+            <div className="fluid-comparison">
+              <p className="fluid-label">{language === 'es' ? '03 · Encuentro en movimiento' : '03 · Encontro em movimento'}</p>
+              <LivingRings language={language} variant="combined" />
+            </div>
           </div>
         </section>
         <section

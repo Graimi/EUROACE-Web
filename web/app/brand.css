@@ -562,3 +562,10 @@ button:focus-visible {
 .legend-fluid .rings-legend::before { content: ''; position: absolute; left: 16.66%; right: 16.66%; top: 13px; height: 1px; background: linear-gradient(90deg, #10dcc5, #1e00ff, #ffcc00); }
 .legend-fluid .rings-legend li { flex-direction: column; gap: 12px; text-align: center; position: relative; }
 .legend-fluid .rings-legend li > span { height: 26px; width: 26px; border: 8px solid white; box-shadow: 0 0 0 1px #eee; }
+
+/* Compact editorial legend: colored side bars and a shared baseline. */
+.legend-combined .rings-legend { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 18px 0 8px; padding: 18px 0; border-top: 1px solid #ededed; border-bottom: 1px solid #ededed; }
+.legend-combined .rings-legend li { align-items: center; gap: 9px; }
+.legend-combined .rings-legend li > span { width: 4px; height: 35px; border-radius: 3px; flex-shrink: 0; }
+.legend-combined .rings-legend small { text-transform: uppercase; font-size: .58rem; letter-spacing: .1em; }
+@media (max-width: 480px) { .legend-combined .rings-legend { gap: 8px; } .legend-combined .rings-legend li { gap: 6px; } }

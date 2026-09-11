@@ -40,3 +40,7 @@ Por petición del usuario se retira la opción cromada de la página. La primera
 ## Comparación de movimiento fluido
 Se retira el selector superior de propuestas. La animación original mantiene su movimiento y recibe una leyenda en tarjetas; debajo se presenta una alternativa de oscilación sinusoidal continua con leyenda territorial conectada. Ambas respetan el movimiento reducido.
 
+
+## Tercera alternativa
+Encuentro en movimiento combina el recorrido original de separación y unión con oscilaciones suaves continuas, también durante la fase de unión. Su leyenda utiliza barras verticales de color y nombres de territorio y país. Las dos primeras alternativas permanecen disponibles para comparar.
+
