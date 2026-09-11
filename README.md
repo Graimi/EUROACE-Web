@@ -32,7 +32,7 @@ npm run typecheck
 npm run build
 ```
 
-Stack: React, TypeScript, Vinext/Vite, Tailwind y componentes Base UI/Shadcn. El scaffold procede de Sites. No requiere claves, base de datos ni conexión a Notion/Drive para ejecutarse. El build del scaffold genera un servidor compatible con Cloudflare Workers; no es una exportación para GitHub Pages.
+Stack: React, TypeScript, Vinext/Vite, Tailwind y componentes Base UI/Shadcn. No requiere claves, base de datos ni conexión a Notion/Drive para ejecutarse. El build genera un servidor Nitro; no es una exportación estática para GitHub Pages.
 
 ## Estructura
 
