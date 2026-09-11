@@ -40,7 +40,7 @@ export function LivingRings({ language, variant = 'original' }: { language: 'es'
   const pt = language === 'pt';
   return (
     <figure
-      className={`living-rings rings-three legend-${variant} ${ready ? 'scene-ready' : ''}`}
+      className={`living-rings rings-three legend-original ${ready ? 'scene-ready' : ''}`}
     >
       <div className="ring-stage" aria-hidden="true">
         <canvas ref={canvas} className="rings-webgl" />

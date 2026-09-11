@@ -44,3 +44,7 @@ Se retira el selector superior de propuestas. La animación original mantiene su
 ## Tercera alternativa
 Encuentro en movimiento combina el recorrido original de separación y unión con oscilaciones suaves continuas, también durante la fase de unión. Su leyenda utiliza barras verticales de color y nombres de territorio y país. Las dos primeras alternativas permanecen disponibles para comparar.
 
+
+## Selección final
+Se conserva una única animación: movimiento combinado de la propuesta 3 y leyenda en tarjetas de la propuesta 1. Se retiran los bloques comparativos de la home.
+
