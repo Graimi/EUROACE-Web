@@ -2,22 +2,14 @@
 
 /* oxlint-disable next/no-img-element */
 import { useEffect, useRef, useState } from 'react';
-import { Pause, Play } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 export function LivingRings({ language }: { language: 'es' | 'pt' }) {
-  const [paused, setPaused] = useState(false);
   const [ready, setReady] = useState(false);
   const canvas = useRef<HTMLCanvasElement>(null);
   const scene =
     useRef<
       Awaited<ReturnType<typeof import('@/lib/rings-scene').createRingsScene>>
     >(null);
-  const pausedRef = useRef(paused);
-  useEffect(() => {
-    pausedRef.current = paused;
-    scene.current?.setPaused(paused);
-  }, [paused]);
   useEffect(() => {
     const controller = new AbortController();
     let cleanup: (() => void) | undefined;
@@ -33,7 +25,6 @@ export function LivingRings({ language }: { language: 'es' | 'pt' }) {
           return;
         }
         scene.current = instance;
-        instance.setPaused(pausedRef.current);
         cleanup = () => instance.dispose();
         setReady(true);
       })
@@ -49,7 +40,7 @@ export function LivingRings({ language }: { language: 'es' | 'pt' }) {
   const pt = language === 'pt';
   return (
     <figure
-      className={`living-rings rings-three ${ready ? 'scene-ready' : ''} ${paused ? 'is-paused' : ''}`}
+      className={`living-rings rings-three ${ready ? 'scene-ready' : ''}`}
     >
       <div className="ring-stage" aria-hidden="true">
         <canvas ref={canvas} className="rings-webgl" />
@@ -78,11 +69,6 @@ export function LivingRings({ language }: { language: 'es' | 'pt' }) {
         </div>
       </div>
       <figcaption>
-        <p className="rings-message">
-          {pt
-            ? 'Cada território, a sua identidade.\nJuntos, novas possibilidades.'
-            : 'Cada territorio, su identidad.\nJuntos, nuevas posibilidades.'}
-        </p>
         <ul
           className="rings-legend"
           aria-label={
@@ -104,31 +90,6 @@ export function LivingRings({ language }: { language: 'es' | 'pt' }) {
             Alentejo
           </li>
         </ul>
-        <div className="rings-controls">
-          <span>
-            {pt
-              ? 'Conectar · partilhar · evoluir'
-              : 'Conectar · compartir · evolucionar'}
-          </span>
-          <Button
-            className="rings-pause"
-            variant="ghost"
-            aria-pressed={paused}
-            onClick={() => setPaused(!paused)}
-          >
-            {paused ? <Play size={14} /> : <Pause size={14} />}
-            {paused
-              ? pt
-                ? 'Retomar animação'
-                : 'Reanudar animación'
-              : pt
-                ? 'Pausar animação'
-                : 'Pausar animación'}
-          </Button>
-          <span className="rings-reduced">
-            {pt ? 'Movimento reduzido' : 'Movimiento reducido'}
-          </span>
-        </div>
       </figcaption>
     </figure>
   );

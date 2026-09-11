@@ -32,3 +32,7 @@ Antes de publicar una identidad definitiva, reemplazar las exportaciones del man
 La home incluye una segunda animación generada con Magnific (Seedance 2.0, ocho segundos, sin sonido), debajo de la interpretación 3D original. El acabado toma como referencia la imagen metálica aportada por el usuario: plata cepillada, biseles cromados y detalles turquesa, azul y amarillo. Es una exploración de material, no un reemplazo del logotipo oficial. La proporción y el entrelazado se reinterpretan en esta pieza generativa.
 
 Archivo integrado localmente: `web/public/brand/rings-chrome.mp4`, con imagen estática, controles, reproducción en bucle y respeto al movimiento reducido. «Compartido» usa los colores originales por sílabas: com (turquesa), par (azul), ti (amarillo), do (turquesa), según petición expresa.
+
+## Revisión de la home · 11 septiembre 2026
+Por petición del usuario se retira la opción cromada de la página. La primera animación queda sobre blanco sin borde, solo con la leyenda territorial, sin encabezados, mensajes ni controles visibles. Se mantiene el respeto al movimiento reducido. Las sílabas ti y do pasan a amarillo; com y par conservan turquesa y azul.
+

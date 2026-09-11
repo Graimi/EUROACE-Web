@@ -47,8 +47,9 @@ button:focus-visible {
   color: #000;
 }
 .hero-visual {
-  background: #fafafa;
-  border-color: #e6e6e6;
+  background: #fff;
+  border: 0;
+  border-radius: 0;
 }
 .visual-bottom {
   border-color: #e6e6e6;

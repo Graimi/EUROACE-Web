@@ -24,7 +24,6 @@ import { Button } from '@/components/ui/button';
 
 import { copy } from '@/lib/content';
 import { LivingRings } from '@/components/living-rings';
-import { ChromeRings } from '@/components/chrome-rings';
 
 const anchors = [
   'inicio',
@@ -150,7 +149,7 @@ export default function Home() {
                       <span className="syllable-turquoise">com</span>
                       <span className="syllable-blue">par</span>
                       <span className="syllable-yellow">ti</span>
-                      <span className="syllable-turquoise">do</span>.
+                      <span className="syllable-yellow">do</span>.
                     </span>
                   </span>
                 ) : (
@@ -171,13 +170,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-visual">
-            <p className="visual-label">{t.region}</p>
             <LivingRings language={language} />
-            <ChromeRings language={language} />
-            <div className="visual-bottom">
-              <Network size={23} />
-              <span>{t.cooperation}</span>
-            </div>
           </div>
         </section>
         <section
