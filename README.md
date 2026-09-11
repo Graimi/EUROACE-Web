@@ -28,7 +28,7 @@ Abre la dirección local que muestre el servidor.
 
 ```sh
 npm run lint
-npx tsc --noEmit
+npm run typecheck
 npm run build
 ```
 
@@ -59,6 +59,25 @@ El lint revisa el código del proyecto; los componentes y el hook incluidos por 
 - La primera home incorpora los anillos originales en movimiento, con pausa y versión estática para movimiento reducido. Es un recurso de identidad, no cartografía.
 - La firma institucional y la paleta se han actualizado conforme al manual de septiembre. Véase `BRAND.md` para fuentes, criterios y discrepancias detectadas en el PDF.
 - Los logotipos de los cuatro socios se han extraído sin modificaciones del documento oficial `Folio con logos_May_JuntaNegra_letra 14.docx` de Drive. La propuesta no afirma cumplimiento normativo definitivo: validar el manual POCTEP y la composición final antes de publicar.
+
+## Despliegue en Vercel
+
+El sitio se publica en Vercel a partir de la rama `main`. Configuración del proyecto en Vercel:
+
+- Root Directory: `web`.
+- Framework Preset: Other. `web/vercel.json` fija `framework: null`, `npm ci` como comando de instalación y `npm run build` como comando de build.
+- Node.js: 22.x, fijado en `engines.node` de `web/package.json`.
+
+Nitro detecta el entorno de Vercel y genera la salida en `web/.vercel/output`. Para reproducir el build de Vercel en local:
+
+```sh
+cd web
+NITRO_PRESET=vercel npm run build
+```
+
+En PowerShell: `$env:NITRO_PRESET="vercel"; npm run build`.
+
+El lockfile debe incluir `@emnapi/runtime` y `@emnapi/core`, dependencias opcionales de los paquetes wasm de sharp y de Tailwind. npm en Windows puede omitirlas al regenerarlo; si `npm ci` falla en Vercel por esas entradas, regenerar el lockfile en Linux o con `npm install --force --os=linux --cpu=x64`.
 
 ## GitHub
 
