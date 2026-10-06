@@ -1,5 +1,17 @@
 # Aplicación del manual · septiembre 2026
 
+## Criterio vigente · 6 octubre 2026
+
+Esta revisión sustituye los criterios históricos de amarillo y firma descritos más abajo. Por indicación del usuario y a partir de las aportaciones de la Junta, el anillo amarillo y los acentos de interfaz pasan a verde lima `#9AFF05`. No se recolorean el emblema europeo ni el archivo oficial Interreg.
+
+La cabecera usa `web/public/brand/interreg-official.png`, descargado sin alterar de [POCTEP](https://www.poctep.eu/wp-content/uploads/2025/04/COLOR_TRANSPARENTE__bilingue_Interreg_Poctep_.png), con el símbolo del proyecto y el nombre completo Observatorio EUROACE a la derecha, separados por una línea azul. En móvil se colocan debajo. Se conservan proporciones y márgenes internos del archivo oficial; la marca del proyecto no supera la anchura ni la altura de Interreg en las resoluciones comprobadas.
+
+El [manual POCTEP V9](https://www.poctep.eu/wp-content/uploads/2024/01/V9-Manual-de-identidad-visual-para-proyectos-POCTEP-2021-2027.pdf), páginas numeradas 11 y 15, sirve de referencia para la composición y la visibilidad de la firma en la primera pantalla. No prescribe duplicarla en el pie. Por petición del usuario se retira esa repetición, manteniendo el texto de cofinanciación y el activo de la Eurorregión obtenido de [su web oficial](https://www.euro-ace.eu/themes/custom/wingsuit/dist/app-drupal/images/logo_new.webp). Esta aplicación no equivale a una validación formal del programa.
+
+La home y las páginas interiores utilizan tarjetas; Publicaciones mantiene filas editoriales con tratamiento de tarjeta. Se conservan tres accesos a Analytics para una decisión posterior. Las traducciones PT/EN y los contenidos definitivos siguen pendientes de revisión de los socios.
+
+## Historial de decisiones
+
 Fuente: `master_presentation_observatorio_euroace_septiembre.pdf`, versión 1.0, 38 páginas. Se usa como referencia visual y de marca, no como instrucciones operativas del proyecto.
 
 ## Activos originales

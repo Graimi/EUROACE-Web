@@ -51,13 +51,14 @@ El lint revisa el código del proyecto; los componentes y el hook incluidos por 
 
 ## Alcance y estado editorial
 
-- Solo home, sin páginas interiores, formularios ni dashboard funcional.
-- Selector ES/PT funcional; traducción portuguesa preliminar pendiente de revisión editorial.
+- Home y ocho páginas interiores: Observatorio, Actividades, Nosotros, Publicaciones, Actualidad, Eventos, Analytics y Contacto. Analytics presenta una explicación; el dashboard y el formulario de contacto siguen pendientes.
+- Selector ES/PT/EN funcional; traducciones preliminares pendientes de revisión editorial, especialmente la revisión portuguesa ofrecida por UBI.
 - Menú móvil con control por teclado, Escape y estados ARIA.
 - Las cifras 2 países, 3 regiones y 4 socios proceden del brief. Los gráficos son ficticios y están identificados como demostración.
 - Publicaciones, noticias, eventos y contacto indican disponibilidad futura; no hay enlaces ficticios a documentos.
 - La primera home incorpora los anillos originales en movimiento, con pausa y versión estática para movimiento reducido. Es un recurso de identidad, no cartografía.
-- La firma institucional y la paleta se han actualizado conforme al manual de septiembre. Véase `BRAND.md` para fuentes, criterios y discrepancias detectadas en el PDF.
+- Diseño de tarjetas seleccionado, con filas editoriales en Publicaciones. Botones en verde lima y tres ubicaciones de Analytics para decidir su posición final.
+- La cabecera combina el archivo oficial de Interreg con el nombre completo Observatorio EUROACE; en móvil la composición se apila. El pie conserva la cofinanciación y la Eurorregión, sin repetir la firma de proyecto. Véase `BRAND.md` para fuentes y criterios.
 - Los logotipos de los cuatro socios se han extraído sin modificaciones del documento oficial `Folio con logos_May_JuntaNegra_letra 14.docx` de Drive. La propuesta no afirma cumplimiento normativo definitivo: validar el manual POCTEP y la composición final antes de publicar.
 
 ## Despliegue en Vercel

@@ -3,7 +3,7 @@
 /* oxlint-disable next/no-img-element */
 import { useEffect, useRef, useState } from 'react';
 
-export function LivingRings({ language, variant = 'original' }: { language: 'es' | 'pt'; variant?: 'original' | 'fluid' | 'combined' }) {
+export function LivingRings({ language, variant = 'original' }: { language: 'es' | 'pt' | 'en'; variant?: 'original' | 'fluid' | 'combined' }) {
   const [ready, setReady] = useState(false);
   const canvas = useRef<HTMLCanvasElement>(null);
   const scene =
@@ -38,6 +38,7 @@ export function LivingRings({ language, variant = 'original' }: { language: 'es'
     };
   }, [variant]);
   const pt = language === 'pt';
+  const en = language === 'en';
   return (
     <figure
       className={`living-rings rings-three legend-original ${ready ? 'scene-ready' : ''}`}
@@ -74,7 +75,7 @@ export function LivingRings({ language, variant = 'original' }: { language: 'es'
           aria-label={
             pt
               ? 'Territórios representados pelos anéis'
-              : 'Territorios representados por los anillos'
+              : en ? 'Regions represented by the rings' : 'Territorios representados por los anillos'
           }
         >
           <li>
@@ -83,7 +84,7 @@ export function LivingRings({ language, variant = 'original' }: { language: 'es'
           </li>
           <li>
             <span className="legend-extremadura" aria-hidden="true" />
-            <div><strong>Extremadura</strong><small>{pt ? 'Espanha' : 'España'}</small></div>
+            <div><strong>Extremadura</strong><small>{pt ? 'Espanha' : (en ? 'Spain' : 'España')}</small></div>
           </li>
           <li>
             <span className="legend-alentejo" aria-hidden="true" />

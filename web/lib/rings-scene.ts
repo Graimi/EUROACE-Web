@@ -36,7 +36,7 @@ export async function createRingsScene(
   fill.position.set(4, -2, 4);
   scene.add(fill);
 
-  const colours = [0x10dcc5, 0xffcc00, 0x1e00ff];
+  const colours = [0x10dcc5, 0x9aff05, 0x1e00ff];
   const finalPositions = [
     new THREE.Vector3(-0.5, 0, -0.16),
     new THREE.Vector3(0.5047, -0.5, 0),

@@ -3,6 +3,8 @@ import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 import './proposals.css';
 import './brand.css';
+import './review.css';
+import './selected-design.css';
 
 export const metadata: Metadata = {
   title: 'Observatorio EUROACE | Conocimiento sin fronteras',

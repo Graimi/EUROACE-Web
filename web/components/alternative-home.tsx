@@ -4,6 +4,7 @@
 /* oxlint-disable next/no-img-element, jsx-a11y/prefer-tag-over-role */
 
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import {
   ArrowDown,
   ArrowUpRight,
@@ -20,18 +21,11 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { copy } from '@/lib/content';
+import { projectCopy, sectionIds } from '@/lib/project';
+import { ProjectSignature } from '@/components/project-signature';
 
 type Variant = 'editorial' | 'data';
 type Content = (typeof copy)['es'];
-const anchors = [
-  'inicio',
-  'observatorio',
-  'analytics',
-  'publicaciones',
-  'actualidad',
-  'eventos',
-  'contacto',
-];
 const icons = [Lightbulb, TrendingUp, ChartNoAxesCombined, Zap];
 const labels = {
   es: {
@@ -138,12 +132,6 @@ function InstitutionalFooter({ t }: { t: Content }) {
             <ArrowUpRight size={40} aria-hidden="true" />
           </div>
           <div className="alt-funding">
-            <img
-              src="/brand/interreg-observatorio.svg"
-              alt="Interreg España–Portugal. Cofinanciado por la Unión Europea. Observatorio EUROACE."
-              width="1070"
-              height="215"
-            />
             <p>{t.funding}</p>
           </div>
           <div className="alt-colophon">
@@ -255,13 +243,9 @@ export function AlternativeHome({ variant }: { variant: Variant }) {
       <header className="alt-header" id="inicio">
         <div className="alt-wrap alt-masthead">
           <a href="#inicio" className="alt-brand" aria-label={t.footer}>
-            <img
-              src="/brand/interreg-observatorio.svg"
-              alt="Interreg España–Portugal. Cofinanciado por la Unión Europea. Observatorio EUROACE."
-              width="1070"
-              height="215"
-            />
+            <ProjectSignature />
           </a>
+          <p className="alt-project-name">{projectCopy[language].fullName}</p>
           <div className="alt-header-tools">
             <div className="alt-languages" aria-label="Idioma">
               <Button
@@ -280,10 +264,9 @@ export function AlternativeHome({ variant }: { variant: Variant }) {
                 PT
               </Button>
             </div>
-            <a href="#analytics" className="alt-header-cta">
-              Analytics
-              <ArrowUpRight size={17} />
-            </a>
+            <Link href="/?lang=en" lang="en">
+              EN
+            </Link>
             <Button
               ref={menuButton}
               variant="ghost"
@@ -305,13 +288,9 @@ export function AlternativeHome({ variant }: { variant: Variant }) {
           }
         >
           <div className="alt-wrap">
-            {t.nav.map((name, i) => (
-              <a
-                key={name}
-                href={`#${anchors[i]}`}
-                onClick={() => setMenuOpen(false)}
-              >
-                {name}
+            {sectionIds.map((id, i) => (
+              <a key={id} href={`/${id}?lang=${language}`}>
+                {projectCopy[language].nav[i]}
               </a>
             ))}
           </div>
