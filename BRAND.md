@@ -1,3 +1,11 @@
+# Actualización de la identidad UEx · 13 de octubre de 2026
+
+Se sustituye el logotipo anterior de la Universidad de Extremadura en todos los bloques de socios por la versión oficial horizontal en color. Archivo local: `web/public/logo-uex-horizontal-2026.svg`. Fuente: https://uex.thegecocompany.com/wp-content/uploads/2026/07/uex-logotipo-horizontal-color.svg, descargado el 13/10/2026 sin modificar su contenido. Normas de uso: https://uex.thegecocompany.com/logotipos-oficiales-universidad-extremadura/.
+
+El SVG tiene un `viewBox` de 1500 × 467,4. Las dimensiones intrínsecas se registran junto a los datos de cada socio; los bloques mantienen `object-fit: contain` para conservar las proporciones. Se elimina la mezcla de los logotipos de socios con el fondo de la propuesta 3 y se añade un soporte blanco con margen interior. El logo UEx conserva el amarillo `#F4B223` y el negro `#222222` del archivo oficial. La identidad del Observatorio y la firma Interreg mantienen sus criterios propios.
+
+El PNG anterior permanece como archivo histórico, sin referencias en el código de la web. La nueva ruta evita reutilizar la URL del activo antiguo en caché. La aplicación debe revisarse visualmente antes de publicar; esta actualización no implica aprobación institucional de la composición conjunta ni certificación del área de protección del manual.
+
 # Aplicación del manual · septiembre 2026
 
 ## Criterio vigente · 6 octubre 2026

@@ -86,8 +86,8 @@ export function Partners({ language }: { language: Language }) {
               <img
                 src={partner.image}
                 alt={partner.name}
-                width="280"
-                height="130"
+                width={partner.width}
+                height={partner.height}
               />
             </a>
             <h3>{partner.name}</h3>

@@ -16,21 +16,29 @@ export const partners = [
   {
     name: 'Junta de Extremadura',
     image: '/logo-junta.png',
+    width: 280,
+    height: 38,
     url: 'https://www.juntaex.es/',
   },
   {
     name: 'Universidad de Extremadura',
-    image: '/logo-uex.png',
+    image: '/logo-uex-horizontal-2026.svg',
+    width: 1500,
+    height: 467.4,
     url: 'https://www.unex.es/',
   },
   {
     name: 'Universidade de Évora',
     image: '/logo-evora.png',
+    width: 401,
+    height: 126,
     url: 'https://www.uevora.pt/',
   },
   {
     name: 'Universidade da Beira Interior',
     image: '/logo-ubi.jpeg',
+    width: 315,
+    height: 160,
     url: 'https://www.ubi.pt/',
   },
 ];

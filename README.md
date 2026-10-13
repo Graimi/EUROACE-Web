@@ -1,5 +1,11 @@
 # Observatorio EUROACE · Web institucional
 
+## Revisión aprobada · 13 de octubre de 2026
+
+La home incorpora un selector visible bajo la cabecera para comparar la versión original y cuatro propuestas: Esencial, Verde, Atlas y Atlas abierto (`/home-propuesta-1` a `/home-propuesta-4`). Los enlaces conservan el idioma seleccionado y el selector se adapta a móvil. Las propuestas mantienen sus controles para volver a la home y comparar diseños.
+
+Todos los bloques de socios utilizan el nuevo SVG horizontal oficial de la Universidad de Extremadura. Se corrigen las dimensiones intrínsecas y se evita la mezcla de sus colores con el fondo de Atlas. Fuente y criterios documentados en `BRAND.md`. El usuario aprobó la publicación de esta revisión el 13/10/2026; el selector sigue siendo una herramienta de revisión del diseño.
+
 Tres propuestas de la página de inicio del Observatorio de Cooperación Transfronteriza EUROACE. Código preparado para un repositorio de GitHub; no se ha configurado un repositorio remoto ni publicado el sitio.
 
 ## Comparar las propuestas

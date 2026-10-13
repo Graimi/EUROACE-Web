@@ -23,6 +23,7 @@ import { Button } from '@/components/ui/button';
 import { copy } from '@/lib/content';
 import { LivingRings } from '@/components/living-rings';
 import { ProjectSignature } from '@/components/project-signature';
+import { ProposalSwitcher } from '@/components/proposal-switcher';
 import {
   Activities,
   ContactDetails,
@@ -160,6 +161,7 @@ export default function Home({ section }: { section?: Section }) {
           </div>
         </nav>
       </header>
+      {!section && <ProposalSwitcher language={language} />}
       <main id="contenido">
         {section && (
           <div className="wrap interior-heading">

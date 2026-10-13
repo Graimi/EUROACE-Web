@@ -1,28 +1,36 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
+import type { Language } from '@/lib/project';
 
 const proposals = [
-  { href: '/', number: '01', name: 'Conexión territorial' },
-  { href: '/propuesta-2', number: '02', name: 'Atlas editorial' },
-  { href: '/propuesta-3', number: '03', name: 'Ventana de datos' },
+  { href: '/', number: '00', name: 'Original' },
+  { href: '/home-propuesta-1', number: '01', name: 'Esencial' },
+  { href: '/home-propuesta-2', number: '02', name: 'Verde' },
+  { href: '/home-propuesta-3', number: '03', name: 'Atlas' },
+  { href: '/home-propuesta-4', number: '04', name: 'Atlas abierto' },
 ];
 
-export function ProposalSwitcher() {
+export function ProposalSwitcher({ language }: { language: Language }) {
   const pathname = usePathname();
+  const label = language === 'pt'
+    ? 'Ver propostas de design'
+    : language === 'en'
+      ? 'View design proposals'
+      : 'Ver propuestas de diseño';
   return (
     <nav
       className="proposal-switcher"
-      aria-label="Comparar propuestas de diseño"
+      aria-label={label}
     >
       <span className="proposal-switcher-label">
-        EUROACE <span>/ Propuestas de diseño</span>
+        {label}
       </span>
       <div>
         {proposals.map(({ href, number, name }) => (
           <a
             key={href}
-            href={href}
+            href={`${href}?lang=${language}`}
             aria-current={
               pathname.replace(/\/$/, '') === href.replace(/\/$/, '')
                 ? 'page'

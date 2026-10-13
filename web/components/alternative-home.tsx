@@ -105,10 +105,10 @@ function InstitutionalFooter({ t }: { t: Content }) {
             <p>{t.junta}</p>
           </div>
           <img
-            src="/logo-uex.png"
+            src="/logo-uex-horizontal-2026.svg"
             alt={t.university}
-            width="400"
-            height="400"
+            width="1500"
+            height="467.4"
           />
           <img
             src="/logo-evora.png"
