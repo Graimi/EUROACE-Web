@@ -1,0 +1,389 @@
+/* Shared proposal palette. Manual, pp. 25–26: primary turquoise, blue for
+   depth/contrast, lime for activation, white/greys for editorial information.
+   Only this wrapper changes. Institutional marks and social brands stay intact. */
+:is(.hp.he.he-atlas-layout, .home)[data-site-palette='manual'] {
+  --hm-dark: var(--observatory-manual-dark);
+  --hm-turquoise: var(--observatory-turquoise);
+  --hm-blue: var(--observatory-blue);
+  --hm-lime: var(--observatory-lime);
+  --hm-paper: #fff;
+  --hm-soft: color-mix(in srgb, var(--hm-turquoise) 6%, #fff);
+  --hm-turquoise-soft: color-mix(in srgb, var(--hm-turquoise) 12%, #fff);
+  --hm-blue-soft: color-mix(in srgb, var(--hm-blue) 7%, #fff);
+  --hm-lime-soft: color-mix(in srgb, var(--hm-lime) 14%, #fff);
+  --hm-dark-soft: color-mix(in srgb, var(--hm-dark) 8%, #fff);
+  --hm-grey-soft: color-mix(
+    in srgb,
+    var(--observatory-category-grey) 15%,
+    #fff
+  );
+  --hm-turquoise-ink: color-mix(
+    in srgb,
+    var(--hm-turquoise) 55%,
+    var(--hm-dark)
+  );
+  --hm-lime-ink: color-mix(in srgb, var(--hm-lime) 35%, var(--hm-dark));
+  --hm-line: color-mix(in srgb, var(--observatory-category-grey) 55%, #fff);
+  --hm-muted: color-mix(in srgb, var(--observatory-category-grey) 45%, #000);
+  --hp-ink: var(--hm-dark);
+  --hp-muted: var(--hm-muted);
+  --hp-line: var(--hm-line);
+  --he-blue: var(--hm-dark);
+  color: var(--hm-dark);
+  background: var(--hm-paper);
+
+  & .hp-header,
+  & .hp-masthead,
+  & .he-sticky-nav,
+  & .hp-essential-hero {
+    background: var(--hm-paper);
+    color: var(--hm-dark);
+  }
+  & .he-brand-topline {
+    border-top: 3px solid var(--hm-turquoise);
+  }
+  &.he-theme-3 .hp-masthead {
+    padding-block: 16px;
+  }
+  & .hp-review-label {
+    background: var(--hm-paper);
+  }
+  & .hp-mobile-menu nav {
+    background: var(--hm-paper);
+    color: var(--hm-dark);
+    border-color: var(--hm-line);
+    box-shadow: 0 8px 28px color-mix(in srgb, var(--hm-dark) 12%, transparent);
+  }
+  & .hp-mobile-menu nav a:hover {
+    background: var(--hm-soft);
+  }
+  & .hp-social-a {
+    border-color: var(--hm-turquoise);
+  }
+  & .hp-social-toggle-row > button {
+    background: var(--hm-dark);
+    color: #fff;
+  }
+  & .hp-social-toggle-row > button:hover {
+    background: var(--hm-turquoise);
+  }
+  & .hp-social-panel {
+    background: var(--hm-paper);
+    color: var(--hm-dark);
+    box-shadow: 0 16px 35px color-mix(in srgb, var(--hm-dark) 12%, transparent);
+  }
+  & .hp-essential-copy > p,
+  & .hp-essential-intro p,
+  & .he-objectives p {
+    color: var(--hm-muted);
+  }
+  & .hp-kicker {
+    color: var(--hm-blue);
+  }
+  & .hp-nav > a[aria-current='page'] {
+    box-shadow: inset 0 -3px var(--hm-turquoise);
+    color: var(--hm-dark);
+  }
+  & .hp-nav > a:hover {
+    color: var(--hm-blue);
+    box-shadow: inset 0 -3px var(--hm-turquoise);
+  }
+  & .he-language a[aria-current] {
+    border-color: var(--hm-turquoise);
+    color: var(--hm-dark);
+  }
+  & .he-language a:hover {
+    background: var(--hm-soft);
+  }
+  & .hp-button {
+    background: var(--hm-dark);
+    color: #fff;
+  }
+  & .hp-button:hover {
+    background: var(--hm-turquoise);
+    color: #fff;
+  }
+  & .he-nav-analytics.hp-header-cta,
+  & .he-footer-contact {
+    background: var(--hm-dark);
+    border-color: var(--hm-dark);
+    color: #fff;
+  }
+  & .he-nav-analytics.hp-header-cta:hover,
+  & .he-footer-contact:hover {
+    background: var(--hm-turquoise);
+    border-color: var(--hm-turquoise);
+    color: #fff;
+  }
+  & .hp-link {
+    color: var(--hm-dark);
+    border-color: var(--hm-turquoise);
+  }
+  & .hp-link:hover {
+    color: var(--hm-blue);
+  }
+  & .rc-section.he-research-colored .he-research-card-0 {
+    --he-area-paper: var(--hm-turquoise-soft);
+    --he-area-line: color-mix(in srgb, var(--hm-turquoise) 30%, #fff);
+    --he-area-accent: var(--hm-dark);
+  }
+  & .rc-section.he-research-colored .he-research-card-1 {
+    --he-area-paper: var(--hm-lime-soft);
+    --he-area-line: color-mix(in srgb, var(--hm-lime) 35%, #fff);
+    --he-area-accent: var(--hm-dark);
+  }
+  & .rc-section.he-research-colored .he-research-card-2 {
+    --he-area-paper: var(--hm-blue-soft);
+    --he-area-line: color-mix(in srgb, var(--hm-blue) 18%, #fff);
+    --he-area-accent: var(--hm-dark);
+  }
+  & .rc-section .rc-copy p,
+  & .rc-section .rc-copy li,
+  & .rc-section .rc-hint {
+    color: var(--hm-muted);
+  }
+  & .rc-section.rc-design-ventanas .rc-open {
+    box-shadow: 0 12px 28px color-mix(in srgb, var(--hm-dark) 6%, transparent);
+  }
+  & .hp-access-0,
+  & .hp-access-1,
+  & .hp-access-2 {
+    background: #fff;
+    border-color: var(--hm-line);
+    color: var(--hm-dark);
+  }
+  & .hp-access-0:hover,
+  & .hp-access-1:hover,
+  & .hp-access-2:hover {
+    background: var(--hm-soft);
+  }
+  & .hp-access .hp-access-top {
+    color: var(--hm-blue);
+  }
+  & .hp-access-3,
+  & .he-project-finance {
+    background: var(--hm-dark);
+    color: #fff;
+  }
+  & .hp-access-3:hover {
+    background: var(--hm-blue);
+  }
+  & .hp-access-3 .hp-access-top {
+    color: var(--hm-lime);
+  }
+  & .hp-news-section {
+    background: var(--hm-soft);
+  }
+  & .he-news-card {
+    background: #fff;
+    border-color: var(--hm-line);
+  }
+  & .hp-news-layout > .hp-agenda {
+    background: color-mix(in srgb, var(--hm-turquoise) 12%, #fff);
+    color: var(--hm-dark);
+  }
+  & .hp-status {
+    color: var(--hm-dark);
+    border-color: var(--hm-turquoise);
+    background: #fff;
+  }
+  & .he-news-controls button,
+  & .he-news-pagination button > span {
+    border-color: var(--hm-line);
+    color: var(--hm-dark);
+  }
+  & .he-news-controls button:hover:not(:disabled) {
+    background: var(--hm-turquoise);
+    border-color: var(--hm-dark);
+  }
+  & .he-news-pagination button[aria-current] > span {
+    background: var(--hm-turquoise);
+  }
+  & .he-news-pagination button > span {
+    background: var(--hm-line);
+  }
+  & .he-funding-statement,
+  & .he-info-card:nth-child(1),
+  & .he-info-card:nth-child(2) {
+    background: #fff;
+    border-color: var(--hm-line);
+  }
+  & .he-funding-statement p {
+    color: var(--hm-muted);
+  }
+  & .he-funding-period {
+    border-color: var(--hm-line);
+  }
+  & .he-info-card > svg {
+    color: var(--hm-blue);
+  }
+  & .he-project-finance .hp-kicker,
+  & .he-project-finance dt,
+  & .he-project-finance p.he-small {
+    color: #fff;
+  }
+  & .he-project-finance .hp-link {
+    color: #fff;
+    border-color: var(--hm-turquoise);
+  }
+  & .he-project-finance .hp-link:hover,
+  & .he-project-finance dl > div:last-child dd {
+    color: var(--hm-lime);
+  }
+  & .he-funding-meter > span {
+    background: var(--hm-lime);
+  }
+  & .he-footer-orbit {
+    --he-footer-ink: var(--hm-dark);
+    --he-footer-muted: var(--hm-muted);
+    --he-footer-line: var(--hm-line);
+    background: #fff;
+    border-color: var(--hm-line);
+  }
+  & .he-footer-main h2 {
+    color: var(--hm-dark);
+  }
+  & .he-footer-signature {
+    background: #fff;
+  }
+  & .hp-comparison {
+    color: var(--hm-dark);
+    border-color: var(--hm-line);
+  }
+  & .hp-comparison nav a[aria-current] {
+    background: var(--hm-dark);
+    color: #fff;
+  }
+  & .hp-comparison nav a:hover {
+    background: var(--hm-soft);
+    color: var(--hm-dark);
+  }
+  & .hp-comparison-dot {
+    background: var(--hm-turquoise);
+  }
+  & .hp-comparison-hint {
+    color: var(--hm-muted);
+  }
+  & .he-atlas .he-atlas-land-dot {
+    fill: var(--observatory-category-grey);
+  }
+  & .he-atlas {
+    color: var(--hm-dark);
+  }
+  & .he-atlas .he-atlas-country-shape {
+    fill: color-mix(in srgb, var(--observatory-category-grey) 20%, #fff);
+  }
+  & .he-atlas-marker path {
+    stroke: var(--hm-dark);
+  }
+  & .he-atlas-marker text,
+  & .he-atlas-country,
+  & .he-atlas-orientation text {
+    fill: var(--hm-dark);
+    color: var(--hm-dark);
+  }
+  & .he-atlas-marker text {
+    stroke: #fff;
+  }
+  & .he-atlas-orientation {
+    stroke: var(--hm-dark);
+  }
+  & .he-atlas-graticule {
+    stroke: var(--hm-line);
+  }
+  & .he-atlas-credit {
+    color: var(--hm-muted);
+  }
+  /* Photographic proposals retain their white type and their image composition. */
+  &:is(.he-theme-1, .he-theme-2) .hp-essential-hero {
+    background: var(--hm-dark);
+    color: #fff;
+  }
+  &:is(.he-theme-1, .he-theme-2) .hp-essential-hero::after {
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--hm-dark) 94%, transparent),
+      color-mix(in srgb, var(--hm-dark) 76%, transparent) 62%,
+      color-mix(in srgb, var(--hm-dark) 56%, transparent)
+    );
+  }
+  &:is(.he-theme-1, .he-theme-2) .hp-essential-copy > p {
+    color: #fff;
+  }
+  &:is(.he-theme-1, .he-theme-2) .hp-essential-hero .hp-button {
+    box-shadow: inset 0 0 0 1px var(--hm-turquoise);
+  }
+  & .he-territory-map,
+  & .he-map-design-2 {
+    background: var(--hm-paper);
+    color: var(--hm-dark);
+    border-color: var(--hm-line);
+    box-shadow: 0 22px 60px color-mix(in srgb, var(--hm-dark) 22%, transparent);
+  }
+  & .he-map-centro {
+    fill: var(--hm-turquoise);
+  }
+  & .he-map-alentejo {
+    fill: var(--hm-lime);
+  }
+  & .he-map-labels,
+  & .he-map-region-label {
+    fill: var(--hm-dark);
+  }
+  & .he-map-label-light,
+  & .he-map-region-label-light {
+    fill: #fff;
+  }
+  & .he-map-countries {
+    fill: var(--hm-muted);
+  }
+  & .he-map-credit,
+  & .hp-credits,
+  & .hp-draft {
+    color: var(--hm-muted);
+  }
+  & .he-map-legend {
+    border-color: var(--hm-line);
+  }
+  & .he-map-legend button:hover,
+  & .he-map-legend button[aria-pressed='true'] {
+    background: var(--hm-soft);
+    border-color: var(--hm-turquoise);
+  }
+  & a:focus-visible,
+  & button:focus-visible,
+  & .rc-section .rc-toggle:focus-visible {
+    outline: 3px solid var(--hm-blue) !important;
+    outline-offset: 4px;
+    box-shadow: 0 0 0 4px #fff;
+  }
+  /* Interior layouts consume these roles directly; shared controls keep their states. */
+  &.ap {
+    & .ap-review-index button:hover {
+      border-color: var(--hm-turquoise);
+      background: var(--hm-soft);
+      color: var(--hm-dark);
+    }
+    & .ap-purpose p:last-child {
+      color: var(--hm-muted);
+    }
+    & .ap-funding .hp-kicker {
+      color: #fff;
+    }
+    & .ap-funding .hp-link {
+      color: #fff;
+      border-color: var(--hm-turquoise);
+    }
+    & .ap-funding dl > div {
+      border-color: color-mix(in srgb, var(--hm-turquoise) 60%, transparent);
+    }
+    & .ap-funding dl > div:nth-child(3) dd {
+      color: var(--hm-lime);
+    }
+  }
+  @media (max-width: 700px) {
+    &.he-theme-3 .hp-masthead {
+      padding-block: 12px;
+    }
+  }
+}

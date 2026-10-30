@@ -1,0 +1,180 @@
+/* Original keeps its layout and diagrams while sharing Atlas's colour roles. */
+.home[data-site-palette='manual'] {
+  --ink: var(--hm-dark);
+  --foreground: var(--hm-dark);
+  --muted: var(--hm-muted);
+  --line: var(--hm-line);
+  --border: var(--hm-line);
+  --paper: var(--hm-paper);
+  --teal: var(--hm-turquoise);
+
+  & main,
+  & .site-header,
+  & .navigation {
+    background: var(--hm-paper);
+  }
+  & .site-header {
+    border-top-color: var(--hm-turquoise);
+  }
+  & .header-analytics,
+  & .nav-analytics-cta,
+  & .primary-link {
+    color: #fff;
+    background: var(--hm-dark);
+    border-color: var(--hm-dark);
+  }
+  & .header-analytics:hover,
+  & .nav-analytics-cta:hover,
+  & .primary-link:hover {
+    color: #fff;
+    background: var(--hm-turquoise);
+    border-color: var(--hm-turquoise);
+  }
+  & .language-switch button[aria-pressed='true'] {
+    color: var(--hm-dark);
+    border-color: var(--hm-turquoise);
+  }
+  & .language-switch button:hover {
+    color: var(--hm-dark);
+    background: var(--hm-soft);
+  }
+  & .nav-inner a[aria-current='page'],
+  & .nav-inner > a:hover {
+    box-shadow: inset 0 -3px var(--hm-turquoise);
+  }
+  & .nav-inner > a:not(.nav-analytics-cta):hover {
+    color: var(--hm-blue);
+  }
+  & .eyebrow,
+  & .hero h1 em,
+  & .areas svg,
+  & .news-icon,
+  & .contact-row > svg,
+  & .preview-top svg {
+    color: var(--hm-blue);
+  }
+  & .hero .syllable-lime {
+    color: var(--hm-dark);
+    text-decoration-color: var(--hm-lime);
+  }
+  & .text-link,
+  & .section-link {
+    color: var(--hm-dark);
+    border-color: var(--hm-turquoise);
+  }
+  & .text-link:hover,
+  & .section-link:hover {
+    color: var(--hm-blue);
+    background: var(--hm-soft);
+  }
+  & .facts,
+  & .areas article,
+  & .activity-grid article,
+  & .publication,
+  & .partner-grid article,
+  & .legend-original .rings-legend li,
+  & .project-activities,
+  & .news-section {
+    border-color: var(--hm-line);
+  }
+  & .areas article:nth-child(1),
+  & .publication-cover {
+    background: var(--hm-turquoise-soft);
+  }
+  & .areas article:nth-child(2),
+  & .publication-1 .publication-cover {
+    background: var(--hm-blue-soft);
+  }
+  & .areas article:nth-child(3),
+  & .publication-2 .publication-cover {
+    background: var(--hm-lime-soft);
+  }
+  & .area-number {
+    color: var(--hm-muted);
+  }
+  & .cover-diagram svg {
+    color: var(--hm-turquoise-ink);
+  }
+  & .publication-1 .cover-diagram svg {
+    color: var(--hm-blue);
+  }
+  & .publication-2 .cover-diagram svg {
+    color: var(--hm-lime-ink);
+  }
+  & .news-section,
+  & .preview-top {
+    background: var(--hm-soft);
+  }
+  & .partner-image img {
+    background: transparent;
+  }
+  & .analytics-section {
+    background: var(--hm-dark);
+    color: #fff;
+  }
+  & .analytics-copy > .eyebrow,
+  & .analytics-copy li svg {
+    color: var(--hm-turquoise);
+  }
+  & .analytics-copy > p:not(.eyebrow),
+  & .analytics-copy li,
+  & .status {
+    color: #fff;
+  }
+  & .status {
+    border-color: var(--hm-turquoise);
+  }
+  & .analytics-preview {
+    border-color: var(--hm-line);
+  }
+  & .sample-tag {
+    color: var(--hm-blue);
+    background: var(--hm-blue-soft);
+  }
+  & .chart-grid {
+    stroke: var(--hm-line);
+  }
+  & .chart-axis {
+    fill: var(--hm-muted);
+  }
+  & .chart-legend > span:nth-child(1) {
+    color: var(--hm-turquoise-ink);
+  }
+  & .chart-legend > span:nth-child(2) {
+    color: var(--hm-blue);
+  }
+  & .chart-legend > span:nth-child(3) {
+    color: var(--hm-muted);
+  }
+  & .mini-bars i {
+    background: var(--hm-turquoise-soft);
+  }
+  & .mini-bars i:nth-child(3n) {
+    background: var(--hm-turquoise);
+  }
+  & .proposal-switcher {
+    background: var(--hm-paper);
+    border-color: var(--hm-line);
+    color: var(--hm-dark);
+  }
+  & .proposal-switcher a {
+    color: var(--hm-dark);
+    border-color: var(--hm-line);
+    background: var(--hm-paper);
+  }
+  & .proposal-switcher a[aria-current] {
+    color: #fff;
+    border-color: var(--hm-dark);
+    background: var(--hm-dark);
+  }
+  & .proposal-switcher a:hover {
+    color: var(--hm-dark);
+    background: var(--hm-soft);
+    border-color: var(--hm-turquoise);
+  }
+  & a:focus-visible,
+  & button:focus-visible {
+    outline: 3px solid var(--hm-blue) !important;
+    box-shadow: 0 0 0 4px #fff;
+  }
+}

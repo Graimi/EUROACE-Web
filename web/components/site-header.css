@@ -1,0 +1,11 @@
+/* Selected Analytics button, shared by desktop and mobile navigation. */
+.hp.he .he-nav-analytics.hp-header-cta {
+  background: #291c81;
+  border-color: #291c81;
+  color: #fff;
+}
+.hp.he .he-nav-analytics.hp-header-cta:hover {
+  background: #3b299a;
+  border-color: #291c81;
+  color: #fff;
+}

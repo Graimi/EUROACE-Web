@@ -3,7 +3,13 @@
 /* oxlint-disable next/no-img-element */
 import { useEffect, useRef, useState } from 'react';
 
-export function LivingRings({ language, variant = 'original' }: { language: 'es' | 'pt'; variant?: 'original' | 'fluid' | 'combined' }) {
+export function LivingRings({
+  language,
+  variant = 'original',
+}: {
+  language: 'es' | 'pt' | 'en';
+  variant?: 'original' | 'fluid' | 'combined';
+}) {
   const [ready, setReady] = useState(false);
   const canvas = useRef<HTMLCanvasElement>(null);
   const scene =
@@ -18,7 +24,11 @@ export function LivingRings({ language, variant = 'original' }: { language: 'es'
     void import('@/lib/rings-scene')
       .then(async ({ createRingsScene }) => {
         if (controller.signal.aborted) return;
-        const instance = await createRingsScene(target, controller.signal, variant);
+        const instance = await createRingsScene(
+          target,
+          controller.signal,
+          variant,
+        );
         if (!instance) return;
         if (controller.signal.aborted) {
           instance.dispose();
@@ -38,6 +48,7 @@ export function LivingRings({ language, variant = 'original' }: { language: 'es'
     };
   }, [variant]);
   const pt = language === 'pt';
+  const en = language === 'en';
   return (
     <figure
       className={`living-rings rings-three legend-original ${ready ? 'scene-ready' : ''}`}
@@ -47,21 +58,21 @@ export function LivingRings({ language, variant = 'original' }: { language: 'es'
         <div className="ring-canvas">
           <img
             className="living-ring ring-centro"
-            src="/brand/ring-centro.svg"
+            src="/brand/official/ring-centro.svg"
             width="356"
             height="356"
             alt=""
           />
           <img
             className="living-ring ring-alentejo"
-            src="/brand/ring-alentejo.svg"
+            src="/brand/official/ring-alentejo.svg"
             width="356"
             height="356"
             alt=""
           />
           <img
             className="living-ring ring-extremadura"
-            src="/brand/ring-extremadura.svg"
+            src="/brand/official/ring-extremadura.svg"
             width="356"
             height="356"
             alt=""
@@ -74,20 +85,31 @@ export function LivingRings({ language, variant = 'original' }: { language: 'es'
           aria-label={
             pt
               ? 'Territórios representados pelos anéis'
-              : 'Territorios representados por los anillos'
+              : en
+                ? 'Regions represented by the rings'
+                : 'Territorios representados por los anillos'
           }
         >
           <li>
             <span className="legend-centro" aria-hidden="true" />
-            <div><strong>Centro</strong><small>Portugal</small></div>
+            <div>
+              <strong>Centro</strong>
+              <small>Portugal</small>
+            </div>
           </li>
           <li>
             <span className="legend-extremadura" aria-hidden="true" />
-            <div><strong>Extremadura</strong><small>{pt ? 'Espanha' : 'España'}</small></div>
+            <div>
+              <strong>Extremadura</strong>
+              <small>{pt ? 'Espanha' : en ? 'Spain' : 'España'}</small>
+            </div>
           </li>
           <li>
             <span className="legend-alentejo" aria-hidden="true" />
-            <div><strong>Alentejo</strong><small>Portugal</small></div>
+            <div>
+              <strong>Alentejo</strong>
+              <small>Portugal</small>
+            </div>
           </li>
         </ul>
       </figcaption>

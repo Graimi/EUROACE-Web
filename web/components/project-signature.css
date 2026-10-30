@@ -1,0 +1,30 @@
+/* Official v2 masters, with X = one quarter of the symbol circle's diameter.
+   Interreg remains visually larger in both dimensions. */
+.project-signature .project-signature-name .observatory-official {
+  display: block;
+  width: 220px;
+  height: auto;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+.hp.he .hp-brand .project-signature .observatory-official {
+  width: 220px;
+}
+.hp.he .he-footer-signature .project-signature .observatory-official {
+  width: 160px;
+}
+@media (max-width: 1100px) {
+  .hp.he.he-atlas-layout .hp-brand .project-signature .observatory-official {
+    width: clamp(100px, 23.52vw, 180px);
+  }
+  .hp.he.he-atlas-layout .hp-brand .project-signature .project-signature-name {
+    padding-block: 4px;
+    width: auto;
+    max-width: none;
+  }
+}
+@media (max-width: 700px) {
+  .hp.he .he-footer-signature .project-signature .observatory-official {
+    width: 100px;
+  }
+}

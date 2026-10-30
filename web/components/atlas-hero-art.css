@@ -1,0 +1,831 @@
+.ap .ap-art {
+  position: relative;
+  justify-self: end;
+  width: 100%;
+  max-width: 390px;
+  aspect-ratio: 1.13;
+  min-width: 0;
+  overflow: hidden;
+}
+.ap .ap-project-rings {
+  width: 100%;
+  min-width: 0;
+  justify-self: center;
+}
+.ap .ap-project-rings .he-rings {
+  opacity: 1;
+  filter: none;
+  background: transparent;
+}
+.ap .ap-project-rings .ring-stage {
+  background: transparent;
+}
+.ap .ap-art-actividades {
+  background: var(--hm-soft);
+  border-radius: 50% 50% 8px 8px;
+}
+.ap .ap-path-line {
+  position: absolute;
+  inset: 15% 20%;
+  border: 1px dashed var(--hm-turquoise);
+  border-radius: 50%;
+  transform: rotate(-30deg);
+}
+.ap .ap-path-node {
+  position: absolute;
+  text-align: center;
+  color: var(--hm-dark);
+  width: 30%;
+  max-width: 110px;
+}
+.ap .ap-path-node span {
+  display: grid;
+  place-items: center;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: var(--hm-turquoise);
+  margin-inline: auto;
+}
+.ap .ap-path-node p {
+  font-size: 11px;
+  line-height: 1.25;
+  margin-top: 8px;
+}
+.ap .ap-path-node-0 {
+  top: 12%;
+  left: 20%;
+}
+.ap .ap-path-node-1 {
+  top: 39%;
+  right: 13%;
+}
+.ap .ap-path-node-1 span {
+  background: var(--hm-blue);
+  color: #fff;
+}
+.ap .ap-path-node-2 {
+  bottom: 8%;
+  left: 17%;
+}
+.ap .ap-path-node-2 span {
+  background: var(--hm-lime);
+  color: var(--hm-dark);
+}
+.ap .ap-art-nosotros {
+  background: var(--hm-blue-soft);
+  border-radius: 8px;
+}
+.ap .ap-partner-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.ap .ap-network-core {
+  position: absolute;
+  top: 45%;
+  left: 43%;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--hm-blue);
+  color: #fff;
+}
+.ap .ap-network-logo {
+  position: absolute;
+  width: 38%;
+  height: 25%;
+  background: var(--hm-soft);
+  display: grid;
+  place-items: center;
+  padding: 14px;
+  border: 1px solid var(--hm-line);
+  border-radius: 6px;
+}
+.ap .ap-network-logo img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 46px;
+  mix-blend-mode: multiply;
+}
+.ap .ap-network-logo-0 {
+  top: 8%;
+  left: 6%;
+}
+.ap .ap-network-logo-1 {
+  top: 8%;
+  right: 6%;
+}
+.ap .ap-network-logo-2 {
+  bottom: 16%;
+  left: 6%;
+}
+.ap .ap-network-logo-3 {
+  bottom: 16%;
+  right: 6%;
+}
+.ap .ap-art-caption {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  text-align: center;
+  color: var(--hm-muted);
+  font-size: 12px;
+}
+.ap .ap-art-publicaciones {
+  overflow: visible;
+}
+.ap .ap-cover {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 62%;
+  height: 84%;
+  padding: 24px;
+}
+.ap .ap-cover-back {
+  background: var(--hm-turquoise);
+  color: var(--hm-dark);
+  left: 26%;
+  top: 1%;
+  transform: rotate(13deg);
+  justify-content: space-between;
+}
+.ap .ap-cover-front {
+  left: 9%;
+  width: 72%;
+  top: 10%;
+  transform: rotate(-9deg);
+  background: var(--hm-dark);
+  color: #fff;
+  box-shadow: 0 14px 24px color-mix(in srgb, var(--hm-dark) 10%, transparent);
+}
+.ap .ap-cover-front strong {
+  font-size: clamp(18px, 2vw, 26px);
+  line-height: 1.15;
+  margin: 20px 0 auto;
+}
+.ap .ap-cover span {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+.ap .ap-cover-front i {
+  height: 2px;
+  background: var(--hm-turquoise);
+  margin-top: 7px;
+  width: 80%;
+}
+.ap .ap-cover-front i:last-child {
+  width: 45%;
+}
+.ap .ap-art-actualidad {
+  display: flex;
+  flex-direction: column;
+  background: var(--hm-dark);
+  border-radius: 3px;
+  transform: rotate(2deg);
+}
+.ap .ap-art-news-photo {
+  width: 100%;
+  height: 67%;
+  object-fit: cover;
+}
+.ap .ap-art-news-label {
+  color: #fff;
+  padding: 20px;
+  position: relative;
+  flex: 1;
+}
+.ap .ap-art-news-label span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: var(--hm-turquoise);
+  margin-bottom: 8px;
+}
+.ap .ap-art-news-label strong {
+  font-size: 19px;
+  font-weight: 500;
+  padding-right: 30px;
+  display: block;
+}
+.ap .ap-art-news-label svg {
+  position: absolute;
+  right: 15px;
+  bottom: 20px;
+  color: var(--hm-turquoise);
+}
+.ap .ap-art-eventos {
+  min-height: 340px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background: var(--hm-dark);
+  color: #fff;
+  border-radius: 0 70px 0 0;
+}
+.ap .ap-art-eventos > svg {
+  width: 46px;
+  height: 46px;
+  margin-bottom: 16px;
+  z-index: 1;
+}
+.ap .ap-art-eventos strong {
+  font-size: 27px;
+  max-width: 170px;
+  line-height: 1.1;
+  z-index: 1;
+}
+.ap .ap-event-dots {
+  margin-block: auto 20px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 9px;
+  width: 100%;
+}
+.ap .ap-event-dots i {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--hm-turquoise);
+  opacity: 0.45;
+}
+.ap .ap-event-dots i:nth-child(11),
+.ap .ap-event-dots i:nth-child(16) {
+  background: var(--hm-blue);
+  opacity: 1;
+  width: 8px;
+  height: 8px;
+}
+.ap .ap-art-eventos > span {
+  font-size: 7px;
+  letter-spacing: 0.06em;
+}
+.ap .ap-event-orbit {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border: 24px solid var(--hm-turquoise);
+  border-radius: 50%;
+  right: -65px;
+  top: 25px;
+}
+.ap .ap-art-contacto {
+  overflow: visible;
+}
+.ap .ap-message {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 84%;
+  padding: 30px;
+}
+.ap .ap-message-one {
+  top: 5%;
+  left: 2%;
+  background: var(--hm-turquoise);
+  color: var(--hm-dark);
+  transform: rotate(-7deg);
+  border-radius: 18px 18px 18px 0;
+  height: 42%;
+}
+.ap .ap-message-one span {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+.ap .ap-message-one p {
+  font-size: 15px;
+  line-height: 1.25;
+  max-width: 180px;
+  margin-left: 16px;
+}
+.ap .ap-message-one > svg {
+  flex-shrink: 0;
+}
+.ap .ap-message-two > svg {
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+.ap .ap-message-two {
+  top: 42%;
+  right: 0;
+  height: 43%;
+  color: #fff;
+  background: var(--hm-dark);
+  border-radius: 18px 18px 0 18px;
+  transform: rotate(4deg);
+}
+.ap .ap-message-two strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: clamp(14px, 1.4vw, 19px);
+  line-height: 1.3;
+  font-weight: 500;
+}
+.ap .ap-network-topic {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px;
+  height: 28%;
+  color: var(--hm-dark);
+  text-align: center;
+}
+.ap .ap-network-topic > span {
+  font-size: 10px;
+  line-height: 1.2;
+}
+.ap .ap-network-topic > svg {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+}
+.ap .ap-cover-front > strong {
+  font-size: clamp(17px, 1.8vw, 23px);
+  margin-top: 12px;
+}
+.ap .ap-cover-front > svg {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+.ap .ap-cover-front > small {
+  margin-top: 10px;
+  font-size: 8px;
+  color: #fff;
+  line-height: 1.2;
+}
+.ap .ap-cover-front > strong,
+.ap .ap-cover-front > span,
+.ap .ap-cover-front > small {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.ap .ap-cover-front > span {
+  line-height: 1.2;
+}
+.ap .ap-art-news-label > small {
+  display: block;
+  margin-top: 4px;
+  font-size: 9px;
+  color: #fff;
+}
+.ap .ap-poster-topics {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-block: auto 20px;
+  padding-top: 14px;
+  width: 100%;
+  position: relative;
+}
+.ap .ap-poster-topics > span {
+  font-size: 12px;
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--hm-turquoise) 55%, transparent);
+  padding-bottom: 5px;
+}
+.ap .ap-poster-note {
+  font-size: 10px;
+  line-height: 1.25;
+  max-width: 230px;
+  margin-bottom: 12px;
+}
+.ap .ap-data-topics {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+.ap .ap-data-topics > span {
+  font-size: 12px;
+  border-bottom: 1px solid var(--hm-turquoise);
+  padding-bottom: 8px;
+}
+.ap .ap-message-two strong span {
+  color: var(--hm-turquoise);
+}
+.ap .ap-art-analytics {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background: var(--hm-turquoise-soft);
+  color: var(--hm-dark);
+}
+.ap .ap-art-analytics strong {
+  font-size: 20px;
+  margin-top: 16px;
+}
+.ap .ap-art-bars {
+  margin-top: 20px;
+  height: 100px;
+  display: flex;
+  gap: 10px;
+  align-items: end;
+}
+.ap .ap-art-bars i {
+  flex: 1;
+  background: var(--hm-turquoise);
+}
+.ap .ap-art-bars i:nth-child(3n) {
+  background: var(--hm-blue);
+}
+@media (max-width: 1000px) and (min-width: 701px) {
+  .ap .ap-art {
+    aspect-ratio: 0.9;
+  }
+  .ap .ap-cover {
+    padding: 18px;
+  }
+  .ap .ap-cover-front strong {
+    font-size: 17px;
+  }
+  .ap .ap-art-eventos {
+    padding: 24px;
+  }
+}
+@media (max-width: 700px) {
+  .ap .ap-art {
+    justify-self: center;
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1.25;
+    margin-top: 8px;
+  }
+  .ap .ap-project-rings {
+    width: 100%;
+    max-width: 380px;
+  }
+  .ap .ap-art-eventos {
+    aspect-ratio: 1.1;
+  }
+  .ap .ap-art-publicaciones,
+  .ap .ap-art-contacto {
+    max-width: 290px;
+  }
+  .ap .ap-art-publicaciones {
+    aspect-ratio: 1.05;
+  }
+  .ap .ap-art-contacto {
+    aspect-ratio: 1.05;
+  }
+  .ap .ap-message {
+    padding: 20px;
+  }
+  .ap .ap-message-one p {
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .ap .ap-message-two strong {
+    font-size: 13px;
+  }
+  .ap .ap-message-two > svg {
+    width: 25px;
+    height: 25px;
+    margin-left: 7px;
+  }
+  .ap .ap-cover {
+    padding: 20px;
+  }
+  .ap .ap-cover-front > strong {
+    font-size: 17px;
+  }
+  .ap .ap-network-topic > span {
+    font-size: 9px;
+  }
+  .ap .ap-art-nosotros {
+    aspect-ratio: 1.05;
+  }
+  .ap .ap-network-topic {
+    gap: 5px;
+  }
+  .ap .ap-network-topic > svg {
+    width: 18px;
+    height: 18px;
+  }
+  .ap .ap-art-news-label {
+    padding: 14px 20px;
+  }
+  .ap .ap-art-news-label span {
+    margin-bottom: 4px;
+  }
+}
+
+.ap .ap-art-eventos > svg {
+  color: var(--hm-turquoise);
+}
+/* Layer changes use a short outward movement before swapping the stacking order. */
+.ap .ap-art-publicaciones .ap-cover-back {
+  left: 9%;
+  top: 10%;
+  width: 72%;
+  transform: translate(19%, -8%) rotate(13deg) scale(0.94);
+  z-index: 1;
+  animation:
+    ap-editorial-back 16s cubic-bezier(0.4, 0, 0.25, 1) infinite both,
+    ap-card-drift-a 6.2s ease-in-out -1.2s infinite;
+}
+.ap .ap-art-publicaciones .ap-cover-front {
+  z-index: 3;
+  animation:
+    ap-editorial-front 16s cubic-bezier(0.4, 0, 0.25, 1) infinite both,
+    ap-card-drift-b 7.2s ease-in-out -2.1s infinite;
+}
+.ap .ap-cover-back > strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: clamp(15px, 1.65vw, 20px);
+  line-height: 1.2;
+  font-weight: 500;
+  margin-block: 12px auto;
+}
+.ap .ap-cover-back > svg {
+  flex-shrink: 0;
+}
+.ap .ap-cover-back > span {
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.ap .ap-cover-back > small {
+  font-size: 8px;
+  line-height: 1.2;
+  margin-top: 8px;
+}
+.ap .ap-cover-back > strong,
+.ap .ap-cover-back > small {
+  animation: ap-editorial-back-copy 16s ease-in-out infinite both;
+}
+.ap .ap-cover-front > strong,
+.ap .ap-cover-front > span,
+.ap .ap-cover-front > i,
+.ap .ap-cover-front > small {
+  animation: ap-editorial-front-copy 16s ease-in-out infinite both;
+}
+@keyframes ap-editorial-front {
+  0%,
+  30%,
+  100% {
+    transform: translate(0, 0) rotate(-9deg);
+    border-radius: 0;
+    z-index: 3;
+  }
+  38% {
+    transform: translate(-10%, 2%) rotate(-13deg);
+    z-index: 3;
+  }
+  43% {
+    transform: translate(-10%, 2%) rotate(-13deg);
+    z-index: 1;
+  }
+  51%,
+  78% {
+    transform: translate(18%, -8%) rotate(12deg) scale(0.94);
+    border-radius: 8px;
+    z-index: 1;
+  }
+  86% {
+    transform: translate(-10%, 2%) rotate(-13deg);
+    z-index: 1;
+  }
+  91% {
+    transform: translate(-10%, 2%) rotate(-13deg);
+    z-index: 3;
+  }
+}
+@keyframes ap-editorial-back {
+  0%,
+  30%,
+  100% {
+    transform: translate(19%, -8%) rotate(13deg) scale(0.94);
+    border-radius: 0;
+    z-index: 1;
+  }
+  38% {
+    transform: translate(28%, -5%) rotate(16deg);
+    z-index: 1;
+  }
+  43% {
+    transform: translate(28%, -5%) rotate(16deg);
+    z-index: 3;
+  }
+  51%,
+  78% {
+    transform: translate(0, 0) rotate(-5deg);
+    border-radius: 30px 6px 30px 6px;
+    z-index: 3;
+  }
+  86% {
+    transform: translate(28%, -5%) rotate(16deg);
+    z-index: 3;
+  }
+  91% {
+    transform: translate(28%, -5%) rotate(16deg);
+    z-index: 1;
+  }
+}
+@keyframes ap-editorial-back-copy {
+  0%,
+  34%,
+  92%,
+  100% {
+    opacity: 0;
+  }
+  49%,
+  80% {
+    opacity: 1;
+  }
+}
+@keyframes ap-editorial-front-copy {
+  0%,
+  31%,
+  96%,
+  100% {
+    opacity: 1;
+  }
+  45%,
+  83% {
+    opacity: 0;
+  }
+}
+.ap .ap-art-eventos .ap-poster-topics > span {
+  position: relative;
+  padding: 6px 8px;
+  border-radius: 4px;
+}
+.ap .ap-art-eventos .ap-event-dots i {
+  background: var(--hm-turquoise);
+}
+.ap .ap-art-eventos .ap-event-dots i:nth-child(11),
+.ap .ap-art-eventos .ap-event-dots i:nth-child(16) {
+  background: var(--hm-turquoise);
+}
+.ap .ap-art-eventos .ap-event-orbit {
+  animation: ap-poster-circle 10s cubic-bezier(0.4, 0, 0.35, 1) -1.5s infinite;
+}
+@keyframes ap-poster-circle {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  32% {
+    transform: translate(-24px, 18px);
+  }
+  67% {
+    transform: translate(5px, 30px);
+  }
+}
+/* Individual transforms add a continuous drift without interrupting the layer exchange. */
+@keyframes ap-card-drift-a {
+  0%,
+  100% {
+    translate: -1px 1.5px;
+    rotate: -0.2deg;
+  }
+  31% {
+    translate: 4px -10px;
+    rotate: -1.3deg;
+  }
+  72% {
+    translate: -4px 4px;
+    rotate: 0.8deg;
+  }
+}
+@keyframes ap-card-drift-b {
+  0%,
+  100% {
+    translate: 2px 1px;
+    rotate: 0.15deg;
+  }
+  38% {
+    translate: -4px -12px;
+    rotate: 1.2deg;
+  }
+  76% {
+    translate: 5px 4px;
+    rotate: -1deg;
+  }
+}
+.ap .ap-art-contacto .ap-message-one {
+  top: 11%;
+  height: 54%;
+  z-index: 1;
+  animation:
+    ap-conversation-question 16s cubic-bezier(0.4, 0, 0.25, 1) infinite both,
+    ap-card-drift-a 6.2s ease-in-out -1.2s infinite;
+}
+.ap .ap-art-contacto .ap-message-two {
+  top: 34%;
+  height: 54%;
+  z-index: 3;
+  animation:
+    ap-conversation-answer 16s cubic-bezier(0.4, 0, 0.25, 1) infinite both,
+    ap-card-drift-b 7.2s ease-in-out -2.1s infinite;
+}
+@keyframes ap-conversation-question {
+  0%,
+  28%,
+  100% {
+    transform: translate(0, 0) rotate(-7deg);
+    z-index: 1;
+  }
+  37% {
+    transform: translate(-5%, -12%) rotate(-10deg);
+    z-index: 1;
+  }
+  43% {
+    transform: translate(-5%, -12%) rotate(-10deg);
+    z-index: 3;
+  }
+  51%,
+  77% {
+    transform: translate(2%, 9%) rotate(-3deg);
+    z-index: 3;
+  }
+  86% {
+    transform: translate(-5%, -12%) rotate(-10deg);
+    z-index: 3;
+  }
+  92% {
+    transform: translate(-5%, -12%) rotate(-10deg);
+    z-index: 1;
+  }
+}
+@keyframes ap-conversation-answer {
+  0%,
+  28%,
+  100% {
+    transform: translate(0, 0) rotate(4deg);
+    z-index: 3;
+  }
+  37% {
+    transform: translate(4%, 12%) rotate(7deg);
+    z-index: 3;
+  }
+  43% {
+    transform: translate(4%, 12%) rotate(7deg);
+    z-index: 1;
+  }
+  51%,
+  77% {
+    transform: translate(0, -8%) rotate(6deg) scale(0.96);
+    z-index: 1;
+  }
+  86% {
+    transform: translate(4%, 12%) rotate(7deg);
+    z-index: 1;
+  }
+  92% {
+    transform: translate(4%, 12%) rotate(7deg);
+    z-index: 3;
+  }
+}
+.ap .ap-art-actualidad {
+  animation: ap-window-float 15s ease-in-out infinite;
+}
+.ap .ap-art-actualidad .ap-art-news-photo {
+  animation: ap-window-image 18s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes ap-window-float {
+  0%,
+  100% {
+    transform: rotate(2deg) translateY(0);
+  }
+  42% {
+    transform: rotate(0.5deg) translateY(-4px);
+  }
+  78% {
+    transform: rotate(2.5deg) translateY(-1px);
+  }
+}
+@keyframes ap-window-image {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  54% {
+    transform: scale(1.035);
+  }
+}
+.ap .ap-header-review[data-animations-paused='true'] .ap-art,
+.ap .ap-header-review[data-animations-paused='true'] .ap-art * {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ap .ap-header-review .ap-header-option .ap-art,
+  .ap .ap-header-review .ap-header-option .ap-art * {
+    animation: none;
+  }
+  .ap .ap-cover-back > strong,
+  .ap .ap-cover-back > small {
+    opacity: 0;
+  }
+}

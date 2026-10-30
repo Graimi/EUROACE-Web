@@ -6,11 +6,14 @@ export async function createRingsScene(
   canvas: HTMLCanvasElement,
   signal: AbortSignal,
   variant: 'original' | 'fluid' | 'combined' = 'original',
+  framing: 'default' | 'compact' = 'default',
 ) {
   const files = ['centro', 'alentejo', 'extremadura'];
   const sources = await Promise.all(
     files.map(async (name) => {
-      const response = await fetch(`/brand/ring-${name}.svg`, { signal });
+      const response = await fetch(`/brand/official/ring-${name}.svg`, {
+        signal,
+      });
       if (!response.ok) throw new Error('Ring asset unavailable');
       return response.text();
     }),
@@ -26,8 +29,9 @@ export async function createRingsScene(
   renderer.setClearColor(0xffffff, 0);
   const scene = new THREE.Scene();
   const camera = new THREE.OrthographicCamera(-3, 3, 1.85, -1.85, 0.1, 30);
-  camera.position.set(0.24, 0, 10);
-  camera.lookAt(0.24, 0, 0);
+  const centre = framing === 'compact' ? 0.00235 : 0.24;
+  camera.position.set(centre, 0, 10);
+  camera.lookAt(centre, 0, 0);
   scene.add(new THREE.HemisphereLight(0xffffff, 0xc9ced7, 2.2));
   const key = new THREE.DirectionalLight(0xffffff, 2.5);
   key.position.set(-3, 5, 8);
@@ -36,7 +40,6 @@ export async function createRingsScene(
   fill.position.set(4, -2, 4);
   scene.add(fill);
 
-  const colours = [0x10dcc5, 0xffcc00, 0x1e00ff];
   const finalPositions = [
     new THREE.Vector3(-0.5, 0, -0.16),
     new THREE.Vector3(0.5047, -0.5, 0),
@@ -57,7 +60,7 @@ export async function createRingsScene(
     new THREE.Quaternion().setFromEuler(e),
   );
   const loader = new SVGLoader();
-  const meshes = sources.map((source, i) => {
+  const meshes = sources.map((source) => {
     const parsed = loader.parse(source);
     const shapes = parsed.paths.flatMap((path) => path.toShapes());
     const geometry = new THREE.ExtrudeGeometry(shapes, {
@@ -71,8 +74,10 @@ export async function createRingsScene(
     });
     geometry.translate(-178, -178, -6.5);
     geometry.scale(1 / 178, 1 / 178, 1 / 178);
+    // Ring paths and colours come from the official v2 master used in the signature.
+    const colour = parsed.paths[0].color;
     const material = new THREE.MeshStandardMaterial({
-      color: colours[i],
+      color: colour,
       roughness: 0.82,
       metalness: 0,
     });
@@ -81,7 +86,8 @@ export async function createRingsScene(
     return mesh;
   });
   let frame = 0;
-  let elapsed = 0;
+  // Compact embeds start assembled, matching the vector shown during loading.
+  let elapsed = framing === 'compact' ? 7 : 0;
   let previous = 0;
   let paused = false;
   let visible = true;
@@ -105,12 +111,16 @@ export async function createRingsScene(
     meshes.forEach((mesh, i) => {
       if (variant === 'fluid' && !reduced) {
         // Continuous periodic drift with staggered phases: no still holds or resets.
-        const phase = elapsed * Math.PI * 2 / 16 + i * Math.PI * 2 / 3;
+        const phase = (elapsed * Math.PI * 2) / 16 + (i * Math.PI * 2) / 3;
         mesh.position.copy(finalPositions[i]);
         mesh.position.x += Math.sin(phase) * 0.13;
-        mesh.position.y += Math.cos(phase) * 0.10;
+        mesh.position.y += Math.cos(phase) * 0.1;
         mesh.position.z += Math.sin(phase + 0.5) * 0.09;
-        mesh.rotation.set(Math.sin(phase) * 0.13, Math.cos(phase) * 0.19, Math.sin(phase * 2) * 0.035);
+        mesh.rotation.set(
+          Math.sin(phase) * 0.13,
+          Math.cos(phase) * 0.19,
+          Math.sin(phase * 2) * 0.035,
+        );
         return;
       }
       mesh.position.lerpVectors(arrivalPositions[i], finalPositions[i], meet);
@@ -118,11 +128,15 @@ export async function createRingsScene(
       if (variant === 'combined' && !reduced) {
         // Overlay drift on the encounter, including its assembled and open holds.
         // Two drift cycles per encounter keep the twenty-second loop seamless.
-        const phase = elapsed * Math.PI * 2 / 10 + i * Math.PI * 2 / 3;
-        mesh.position.x += Math.sin(phase) * 0.10;
+        const phase = (elapsed * Math.PI * 2) / 10 + (i * Math.PI * 2) / 3;
+        mesh.position.x += Math.sin(phase) * 0.1;
         mesh.position.y += Math.cos(phase) * 0.085;
         mesh.position.z += Math.sin(phase + 0.5) * 0.06;
-        driftRotation.set(Math.sin(phase) * 0.10, Math.cos(phase) * 0.14, Math.sin(phase * 2) * 0.025);
+        driftRotation.set(
+          Math.sin(phase) * 0.1,
+          Math.cos(phase) * 0.14,
+          Math.sin(phase * 2) * 0.025,
+        );
         driftQuaternion.setFromEuler(driftRotation);
         mesh.quaternion.multiply(driftQuaternion);
       }
@@ -154,8 +168,17 @@ export async function createRingsScene(
     const { width, height } = canvas.getBoundingClientRect();
     if (!width || !height) return;
     renderer.setSize(width, height, false);
-    camera.left = (-1.85 * width) / height;
-    camera.right = (1.85 * width) / height;
+    if (framing === 'compact') {
+      // The combined symbol spans 3.0047 units, or 60% of the canvas width.
+      // Match the vector fallback rather than sizing the rings by canvas height.
+      camera.left = -3.0047 / 1.2;
+      camera.right = 3.0047 / 1.2;
+      camera.top = (camera.right * height) / width;
+      camera.bottom = -camera.top;
+    } else {
+      camera.left = (-1.85 * width) / height;
+      camera.right = (1.85 * width) / height;
+    }
     camera.updateProjectionMatrix();
     draw();
   }

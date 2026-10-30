@@ -1,0 +1,241 @@
+.hp.he.he-atlas-layout .rc-section .rc-hint {
+  font-size: 11px;
+  color: #627067;
+  margin: 0 0 22px;
+}
+.hp.he.he-atlas-layout .rc-section .rc-grid.he-research-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+.hp.he.he-atlas-layout .rc-section .he-research-card-0 {
+  --he-area-paper: #def8f1;
+  --he-area-line: #b5e5d8;
+  --he-area-accent: #126450;
+}
+.hp.he.he-atlas-layout .rc-section .he-research-card-1 {
+  --he-area-paper: #ebf8d9;
+  --he-area-line: #d1eab4;
+  --he-area-accent: #486216;
+}
+.hp.he.he-atlas-layout .rc-section .he-research-card-2 {
+  --he-area-paper: #e8e9ff;
+  --he-area-line: #d0d2f5;
+  --he-area-accent: #3a339c;
+}
+.hp.he.he-atlas-layout .rc-section .rc-card.he-research-card {
+  padding: 0;
+  overflow: hidden;
+  background: var(--he-area-paper);
+  border: 1px solid var(--he-area-line);
+  border-radius: 20px 20px 6px 20px;
+  transition: box-shadow 0.35s ease;
+}
+.hp.he.he-atlas-layout .rc-section .rc-card .rc-heading {
+  margin: 0;
+  font: inherit;
+}
+.hp.he.he-atlas-layout .rc-section .rc-toggle {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 20px;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 24px;
+  border: 0;
+  background: transparent;
+  color: var(--he-area-accent);
+  text-align: left;
+  cursor: pointer;
+}
+.hp.he.he-atlas-layout .rc-section .rc-mark {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.hp.he.he-atlas-layout .rc-section .rc-mark > span {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+.hp.he.he-atlas-layout .rc-section .rc-title {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 24px;
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+.hp.he.he-atlas-layout .rc-section .rc-chevron {
+  transition: transform 0.35s ease;
+}
+.hp.he.he-atlas-layout .rc-section .rc-open .rc-chevron {
+  transform: rotate(180deg);
+}
+.hp.he.he-atlas-layout .rc-section .rc-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.45s cubic-bezier(0.22, 0.7, 0.2, 1),
+    opacity 0.3s ease;
+}
+.hp.he.he-atlas-layout .rc-section .rc-open .rc-panel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.hp.he.he-atlas-layout .rc-section .rc-panel-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+.hp.he.he-atlas-layout .rc-section .rc-copy {
+  padding: 0 24px 24px;
+}
+.hp.he.he-atlas-layout .rc-section .rc-copy p {
+  color: #394b43;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+.hp.he.he-atlas-layout .rc-section .rc-card .rc-copy ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 18px 0 0;
+  margin: 18px 0 0;
+  border-top: 1px solid var(--he-area-line);
+  list-style: none;
+}
+.hp.he.he-atlas-layout .rc-section .rc-card .rc-copy li {
+  margin: 0;
+  padding: 7px 10px;
+  border: 1px solid var(--he-area-line);
+  border-radius: 6px;
+  background: #ffffff75;
+  color: var(--he-area-accent);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.hp.he.he-atlas-layout .rc-section.rc-design-ventanas .rc-open {
+  box-shadow: 0 12px 28px #283f3410;
+}
+.hp.he.he-atlas-layout .rc-section.rc-design-ventanas .rc-mark > svg {
+  padding: 10px;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #ffffff8c;
+}
+.hp.he.he-atlas-layout .rc-section.rc-design-bandas .rc-grid {
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.hp.he.he-atlas-layout .rc-section.rc-design-bandas .rc-card {
+  border: 0;
+  border-radius: 6px;
+}
+.hp.he.he-atlas-layout .rc-section.rc-design-bandas .rc-toggle {
+  grid-template-columns: 80px minmax(0, 1fr) 20px;
+  padding-block: 22px;
+}
+.hp.he.he-atlas-layout .rc-section.rc-design-bandas .rc-mark {
+  grid-column: auto;
+  justify-content: start;
+}
+.hp.he.he-atlas-layout .rc-section.rc-design-bandas .rc-copy {
+  padding-left: 118px;
+  max-width: 950px;
+}
+.hp.he.he-atlas-layout .rc-section.rc-design-bandas .rc-copy ul {
+  border-top: 0;
+  padding-top: 0;
+}
+.hp.he.he-atlas-layout .rc-section.rc-design-bandas .rc-copy li {
+  border-radius: 20px;
+  background: #ffffff70;
+  padding: 6px 10px;
+}
+.hp.he.he-atlas-layout .rc-section .rc-toggle:focus-visible {
+  outline: 2px solid var(--he-area-accent) !important;
+  outline-offset: -5px !important;
+  box-shadow: none;
+  border-radius: inherit;
+}
+@media (max-width: 1100px) {
+  .hp.he.he-atlas-layout .rc-section .rc-grid.he-research-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 701px) and (max-width: 1100px) {
+  .hp.he.he-atlas-layout .rc-section .rc-toggle {
+    grid-template-columns: 48px minmax(0, 1fr) 20px;
+  }
+  .hp.he.he-atlas-layout .rc-section .rc-mark {
+    grid-column: auto;
+  }
+  .hp.he.he-atlas-layout .rc-section .rc-mark > span {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .hp.he.he-atlas-layout .rc-section .rc-toggle {
+    grid-template-columns: 28px minmax(0, 1fr) 20px;
+    padding: 20px;
+    gap: 12px;
+  }
+  .hp.he.he-atlas-layout .rc-section .rc-mark {
+    grid-column: auto;
+  }
+  .hp.he.he-atlas-layout .rc-section .rc-mark > span {
+    display: none;
+  }
+  .hp.he.he-atlas-layout .rc-section .rc-title {
+    font-size: 21px;
+  }
+  .hp.he.he-atlas-layout .rc-section .rc-copy {
+    padding-inline: 20px;
+  }
+  .hp.he.he-atlas-layout .rc-section.rc-design-ventanas .rc-toggle {
+    grid-template-columns: 42px minmax(0, 1fr) 20px;
+  }
+  .hp.he.he-atlas-layout .rc-section.rc-design-ventanas .rc-mark > svg {
+    width: 38px;
+    height: 38px;
+    padding: 7px;
+  }
+  .hp.he.he-atlas-layout .rc-section.rc-design-bandas .rc-toggle {
+    grid-template-columns: 28px minmax(0, 1fr) 20px;
+  }
+  .hp.he.he-atlas-layout .rc-section.rc-design-bandas .rc-copy {
+    padding-left: 20px;
+  }
+}
+@media (max-width: 360px) {
+  .hp.he.he-atlas-layout .rc-section .rc-toggle,
+  .hp.he.he-atlas-layout .rc-section.rc-design-ventanas .rc-toggle,
+  .hp.he.he-atlas-layout .rc-section.rc-design-bandas .rc-toggle {
+    grid-template-columns: 24px minmax(0, 1fr) 18px;
+    padding-inline: 16px;
+    gap: 10px;
+  }
+  .hp.he.he-atlas-layout .rc-section .rc-title {
+    font-size: 19px;
+  }
+  .hp.he.he-atlas-layout .rc-section .rc-mark > svg,
+  .hp.he.he-atlas-layout .rc-section.rc-design-ventanas .rc-mark > svg {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hp.he.he-atlas-layout .rc-section .rc-panel,
+  .hp.he.he-atlas-layout .rc-section .rc-chevron,
+  .hp.he.he-atlas-layout .rc-section .rc-card.he-research-card {
+    transition: none;
+  }
+}
