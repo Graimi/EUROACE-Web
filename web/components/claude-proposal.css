@@ -95,6 +95,15 @@
   line-height: 1.6;
 }
 
+/* Intro sits white and flush under the hero */
+.cl .cl-hero {
+  min-height: 0;
+}
+.hp.he.he-atlas-layout.cl .cl-intro-block {
+  padding-top: 0;
+  padding-bottom: var(--cl-section);
+}
+
 /* Sections: one vertical rhythm, white and tint alternate */
 .cl .cl-section {
   padding-block: var(--cl-section);
@@ -232,8 +241,11 @@
   color: var(--hm-lime);
 }
 .cl a.cl-access-dark:hover {
-  background: var(--hm-blue);
-  border-color: var(--hm-blue);
+  background: var(--hm-turquoise);
+  border-color: var(--hm-turquoise);
+}
+.cl a.cl-access-dark:hover .cl-access-top {
+  color: #fff;
 }
 
 /* Buttons: primary + text link only */

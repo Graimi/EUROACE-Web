@@ -10,17 +10,15 @@ import {
   BookOpen,
   ChartNoAxesCombined,
   Globe2,
-  Lightbulb,
-  Network,
   Plus,
   Users,
-  Zap,
 } from 'lucide-react';
 import { SiteHeader } from './site-header';
 import { EssentialRings } from './essential-rings';
 import { EssentialNewsCarousel } from './essential-news-carousel';
 import { EssentialFooter } from './essential-footer-proposals';
 import { EssentialAtlas } from './essential-atlas';
+import { ResearchCards } from './research-card-proposals';
 import { useSiteLanguage } from '@/lib/site-language';
 import { essentialCopy } from '@/lib/essential-copy';
 import { atlasPartners } from '@/lib/atlas-partners';
@@ -99,7 +97,6 @@ export function HomeClaude() {
     { title: project.nav[3], href: '/publicaciones', Icon: BookOpen },
     { title: 'Analytics', href: '/analytics', Icon: ChartNoAxesCombined },
   ];
-  const areaIcons = [Lightbulb, Zap, Network];
   const money = new Intl.NumberFormat(
     language === 'en' ? 'en-IE' : language === 'pt' ? 'pt-PT' : 'es-ES',
     { style: 'currency', currency: 'EUR' },
@@ -107,7 +104,7 @@ export function HomeClaude() {
 
   return (
     <div
-      className="hp he he-theme-3 he-atlas-layout cl"
+      className="hp he he-theme-3 he-atlas-layout he-research-layout-integrated cl"
       data-site-palette="manual"
       data-button-effect="arrow-shine"
     >
@@ -143,44 +140,15 @@ export function HomeClaude() {
           </div>
         </section>
 
-        <section className="cl-section cl-section-tint">
-          <div className="hp-container">
-            <div className="cl-intro">
-              <p className="cl-kicker">{t.introLabel}</p>
-              <div>
-                <h2 className="cl-h2">{t.introTitle}</h2>
-                <p className="cl-body">{t.introText}</p>
-              </div>
-            </div>
+        <section className="hp-container hp-essential-intro cl-intro-block">
+          <span className="hp-kicker">{t.introLabel}</span>
+          <div>
+            <h2>{t.introTitle}</h2>
+            <p>{t.introText}</p>
           </div>
-        </section>
-
-        <section className="cl-section">
-          <div className="hp-container">
-            <SectionHead kicker={t.researchLabel} title={t.researchTitle} />
-            <div className="cl-grid cl-grid-3">
-              {t.researchAreas.map((area, index) => {
-                const Icon = areaIcons[index];
-                return (
-                  <article
-                    className={`cl-card cl-area cl-area-${index}`}
-                    key={area.title}
-                  >
-                    <span className="cl-area-mark" aria-hidden="true">
-                      <b>0{index + 1}</b>
-                      <Icon size={26} strokeWidth={1.4} />
-                    </span>
-                    <h3 className="cl-h3">{area.title}</h3>
-                    <p className="cl-body">{area.description}</p>
-                    <ul className="cl-chips">
-                      {area.topics.map((topic) => (
-                        <li key={topic}>{topic}</li>
-                      ))}
-                    </ul>
-                  </article>
-                );
-              })}
-            </div>
+          <div className="he-research-integrated he-research-colored">
+            <p className="hp-kicker">{t.researchLabel}</p>
+            <ResearchCards language={language} design="bandas" />
           </div>
         </section>
 
@@ -291,7 +259,12 @@ export function HomeClaude() {
             <SectionHead kicker={t.partnersLabel} title={t.partnersTitle} />
             <div className="cl-logos">
               {atlasPartners.map((partner) => (
-                <a href={partner.url} key={partner.name}>
+                <a
+                  href={partner.url}
+                  key={partner.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img
                     src={partner.image}
                     alt={partner.name}
