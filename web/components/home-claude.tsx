@@ -8,6 +8,7 @@ import {
   ArrowRight,
   ArrowUpRight,
   BookOpen,
+  CalendarDays,
   ChartNoAxesCombined,
   Globe2,
   Plus,
@@ -21,7 +22,7 @@ import { EssentialAtlas } from './essential-atlas';
 import { ResearchCards } from './research-card-proposals';
 import { useSiteLanguage } from '@/lib/site-language';
 import { essentialCopy } from '@/lib/essential-copy';
-import { atlasPartners } from '@/lib/atlas-partners';
+import { atlasPartners, partnerRegions } from '@/lib/atlas-partners';
 import { projectCopy, projectSource } from '@/lib/project';
 import './home-review.css';
 import './home-essential.css';
@@ -88,7 +89,8 @@ function SectionHead({
   );
 }
 
-export function HomeClaude() {
+export function HomeClaude({ version = 1 }: { version?: 1 | 2 }) {
+  const v2 = version === 2;
   const language = useSiteLanguage();
   const t = essentialCopy[language];
   const project = projectCopy[language];
@@ -98,7 +100,9 @@ export function HomeClaude() {
     { title: project.nav[0], href: '/observatorio', Icon: Globe2 },
     { title: project.nav[1], href: '/actividades', Icon: Users },
     { title: project.nav[3], href: '/publicaciones', Icon: BookOpen },
-    { title: 'Analytics', href: '/analytics', Icon: ChartNoAxesCombined },
+    v2
+      ? { title: project.nav[5], href: '/eventos', Icon: CalendarDays }
+      : { title: 'Analytics', href: '/analytics', Icon: ChartNoAxesCombined },
   ];
   const money = new Intl.NumberFormat(
     language === 'en' ? 'en-IE' : language === 'pt' ? 'pt-PT' : 'es-ES',
@@ -107,13 +111,13 @@ export function HomeClaude() {
 
   return (
     <div
-      className="hp he he-theme-3 he-atlas-layout he-research-layout-integrated cl"
+      className={`hp he he-theme-3 he-atlas-layout he-research-layout-integrated cl${v2 ? ' cl-v2' : ''}`}
       data-site-palette="manual"
       data-button-effect="arrow-shine"
     >
       <div className="cl-badge-bar" role="note">
         <div className="hp-container cl-badge-inner">
-          <span className="cl-badge">{ui.badge}</span>
+          <span className="cl-badge">{ui.badge}{v2 ? ' 2' : ''}</span>
           <span className="cl-badge-note">{ui.note}</span>
           <a href={page('/')}>
             <ArrowLeft size={16} aria-hidden="true" />
@@ -197,7 +201,7 @@ export function HomeClaude() {
                 </span>
                 <h3 className="cl-h3">{t.agendaTitle}</h3>
                 <p className="cl-body">{t.agendaText}</p>
-                <span className="cl-status">{t.agendaStatus}</span>
+                {!v2 && <span className="cl-status">{t.agendaStatus}</span>}
                 <TextLink href={page('/eventos')}>{t.agendaLink}</TextLink>
               </aside>
             </div>
@@ -266,7 +270,7 @@ export function HomeClaude() {
           <div className="hp-container">
             <SectionHead kicker={t.partnersLabel} title={t.partnersTitle} />
             <div className="cl-logos">
-              {atlasPartners.map((partner) => (
+              {atlasPartners.map((partner, index) => (
                 <a
                   href={partner.url}
                   key={partner.name}
@@ -280,6 +284,7 @@ export function HomeClaude() {
                     height={partner.height}
                     loading="lazy"
                   />
+                  {v2 && <span>{partnerRegions[index]}</span>}
                 </a>
               ))}
             </div>

@@ -550,3 +550,42 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Version 2: stronger rings, larger small type, labelled partners */
+.hp.he.he-atlas-layout.cl-v2 .he-hero-rings {
+  opacity: 0.3;
+  filter: blur(2px);
+}
+.cl-v2 .cl-kicker,
+.cl-v2 .hp-kicker {
+  font-size: 13px;
+}
+.cl-v2 .cl-chips li,
+.cl-v2 .cl-status {
+  font-size: 14px;
+}
+.cl-v2 .cl-body {
+  color: color-mix(in srgb, var(--observatory-category-grey) 30%, #000);
+}
+.cl-v2 .cl-logos a {
+  flex-direction: column;
+  gap: var(--cl-space-1);
+  height: 150px;
+}
+.cl-v2 .cl-logos a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cl-v2 .cl-logos img {
+  height: 64px;
+  width: auto;
+  max-width: 100%;
+}
+.cl-v2 .cl-logos span {
+  color: var(--hm-blue);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
