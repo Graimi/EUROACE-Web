@@ -35,16 +35,19 @@ const labels = {
     badge: 'Propuesta Claude',
     note: 'Misma paleta del manual, con tokens y componentes unificados.',
     back: 'Volver a Atlas',
+    eu: 'Unión Europea',
   },
   pt: {
     badge: 'Proposta Claude',
     note: 'Mesma paleta do manual, com tokens e componentes unificados.',
     back: 'Voltar ao Atlas',
+    eu: 'União Europeia',
   },
   en: {
     badge: 'Claude proposal',
     note: 'Same manual palette, with unified tokens and components.',
     back: 'Back to Atlas',
+    eu: 'European Union',
   },
 } as const;
 
@@ -140,19 +143,24 @@ export function HomeClaude() {
           </div>
         </section>
 
-        <section className="hp-container hp-essential-intro cl-intro-block">
-          <span className="hp-kicker">{t.introLabel}</span>
-          <div>
-            <h2>{t.introTitle}</h2>
-            <p>{t.introText}</p>
-          </div>
-          <div className="he-research-integrated he-research-colored">
-            <p className="hp-kicker">{t.researchLabel}</p>
-            <ResearchCards language={language} design="bandas" />
+        <section className="cl-band">
+          <div className="hp-container cl-band-grid">
+            <p className="cl-kicker">{t.introLabel}</p>
+            <h2 className="cl-band-title">{t.introTitle}</h2>
+            <p className="cl-band-text">{t.introText}</p>
           </div>
         </section>
 
-        <section className="cl-section cl-section-tint" aria-label={t.discover}>
+        <section className="cl-section cl-research">
+          <div className="hp-container">
+            <div className="he-research-integrated he-research-colored">
+              <p className="hp-kicker">{t.researchLabel}</p>
+              <ResearchCards language={language} design="bandas" />
+            </div>
+          </div>
+        </section>
+
+        <section className="cl-section cl-access-section" aria-label={t.discover}>
           <div className="hp-container cl-grid cl-grid-4">
             {accesses.map(({ title, href, Icon }, index) => (
               <a
@@ -171,7 +179,7 @@ export function HomeClaude() {
           </div>
         </section>
 
-        <section className="cl-section hp-news-section" id="cooperacion">
+        <section className="cl-section cl-news hp-news-section" id="cooperacion">
           <div className="hp-container">
             <SectionHead
               kicker={t.newsLabel}
@@ -211,7 +219,7 @@ export function HomeClaude() {
               </div>
             </header>
             <p className="cl-funding">
-              <span aria-hidden="true">EU</span>
+              <span className="cl-eu">{ui.eu}</span>
               <span>{t.funding}</span>
               <small>{t.period}</small>
             </p>
