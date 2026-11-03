@@ -332,14 +332,11 @@
   line-height: 1.5;
 }
 .cl .cl-funding > .cl-eu {
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--hm-blue);
-  color: #fff;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  box-shadow: 0 0 0 3px #fff, 0 0 0 4px var(--cl-line);
+  border-radius: 50%;
 }
 .cl .cl-funding > span:nth-child(2) {
   flex: 1 1 320px;
@@ -570,7 +567,8 @@
 .cl-v2 .cl-logos a {
   flex-direction: column;
   gap: var(--cl-space-1);
-  height: 150px;
+  height: 176px;
+  gap: var(--cl-space-2);
 }
 .cl-v2 .cl-logos a {
   display: flex;
@@ -582,10 +580,66 @@
   width: auto;
   max-width: 100%;
 }
-.cl-v2 .cl-logos span {
-  color: var(--hm-blue);
-  font-size: 12px;
+.cl-v2 .cl-logos .cl-region {
+  --region: var(--hm-turquoise);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px 5px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--region) 14%, #fff);
+  color: var(--cl-dark);
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.cl-v2 .cl-logos .cl-region::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--region);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--region) 28%, transparent);
+}
+.cl-v2 .cl-logos .cl-region[data-region='Alentejo'] {
+  --region: var(--hm-lime);
+}
+.cl-v2 .cl-logos .cl-region[data-region='Extremadura'] {
+  --region: var(--hm-blue);
+}
+.cl-v2 .cl-logos a {
+  border-bottom: 4px solid transparent;
+}
+.cl-v2 .cl-logos a:hover {
+  border-bottom-color: var(--hm-turquoise);
+}
+
+/* Band rings (v2): interlocked outline rings, colours adapted to turquoise */
+.cl-v2 .cl-band::before,
+.cl-v2 .cl-band::after {
+  display: none;
+}
+.cl .cl-band-rings {
+  position: absolute;
+  z-index: -1;
+  right: -170px;
+  top: 50%;
+  width: min(520px, 46%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: 0.85;
+}
+.cl .cl-band-rings circle {
+  stroke-width: 22;
+  stroke-opacity: 0.4;
+}
+.cl .cl-band-rings circle:nth-child(2) {
+  stroke-opacity: 0.28;
+}
+@media (max-width: 1000px) {
+  .cl .cl-band-rings {
+    width: 360px;
+    right: -150px;
+    opacity: 0.45;
+  }
 }

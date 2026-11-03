@@ -52,6 +52,50 @@ const labels = {
   },
 } as const;
 
+
+const starPoints = Array.from({ length: 10 }, (_, i) => {
+  const r = i % 2 ? 1.6 : 4;
+  const a = (Math.PI / 5) * i - Math.PI / 2;
+  return `${(r * Math.cos(a)).toFixed(2)},${(r * Math.sin(a)).toFixed(2)}`;
+}).join(' ');
+
+function EuFlag({ label }: { label: string }) {
+  return (
+    <svg
+      className="cl-eu"
+      viewBox="0 0 100 100"
+      role="img"
+      aria-label={label}
+    >
+      <title>{label}</title>
+      <circle cx="50" cy="50" r="50" fill="#039" />
+      {Array.from({ length: 12 }, (_, i) => (
+        <polygon
+          key={i}
+          points={starPoints}
+          fill="#fc0"
+          transform={`translate(${(50 + 30 * Math.sin((Math.PI / 6) * i)).toFixed(2)} ${(50 - 30 * Math.cos((Math.PI / 6) * i)).toFixed(2)})`}
+        />
+      ))}
+    </svg>
+  );
+}
+
+function BandRings() {
+  return (
+    <svg
+      className="cl-band-rings"
+      viewBox="0 0 520 400"
+      fill="none"
+      aria-hidden="true"
+    >
+      <circle cx="190" cy="150" r="120" stroke="#fff" />
+      <circle cx="330" cy="150" r="120" stroke="var(--hm-blue)" />
+      <circle cx="260" cy="270" r="120" stroke="var(--hm-lime)" />
+    </svg>
+  );
+}
+
 function TextLink({
   href,
   children,
@@ -148,6 +192,7 @@ export function HomeClaude({ version = 1 }: { version?: 1 | 2 }) {
         </section>
 
         <section className="cl-band">
+          {v2 && <BandRings />}
           <div className="hp-container cl-band-grid">
             <p className="cl-kicker">{t.introLabel}</p>
             <h2 className="cl-band-title">{t.introTitle}</h2>
@@ -223,7 +268,7 @@ export function HomeClaude({ version = 1 }: { version?: 1 | 2 }) {
               </div>
             </header>
             <p className="cl-funding">
-              <span className="cl-eu">{ui.eu}</span>
+              <EuFlag label={ui.eu} />
               <span>{t.funding}</span>
               <small>{t.period}</small>
             </p>
@@ -284,7 +329,14 @@ export function HomeClaude({ version = 1 }: { version?: 1 | 2 }) {
                     height={partner.height}
                     loading="lazy"
                   />
-                  {v2 && <span>{partnerRegions[index]}</span>}
+                  {v2 && (
+                    <span
+                      className="cl-region"
+                      data-region={partnerRegions[index]}
+                    >
+                      {partnerRegions[index]}
+                    </span>
+                  )}
                 </a>
               ))}
             </div>
