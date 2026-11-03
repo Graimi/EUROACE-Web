@@ -48,3 +48,5 @@ Para extender el teal a toda la web basta cambiar la regla `.hp-kicker` de `manu
 - Sistema compartido en `web/components/site-system.css`, importado por la home (`.cl`) y las ocho interiores (`.ap`): escala de espaciado, dos radios (12 y 6 px), tarjeta única, etiqueta de región, teal en kickers y texto oscuro en hover turquesa.
 - Interiores: franja turquesa con aros en «Sobre el proyecto», actividades en rejilla de tarjetas, tarjetas y controles con los mismos radios y bordes, etiquetas de región en los socios.
 - Sin tocar: cabeceras interiores (selector Editorial/Cartel/Conversación), pendientes de decisión.
+- Franja de introducción («Un proyecto, muchas conexiones» y «Conocer para cooperar»): variante «Suave» elegida entre cinco. Fondo turquesa al 14 % sobre blanco, texto azul oscuro, línea turquesa junto al párrafo. Variables `--band-*` en `site-system.css`.
+- «Sigue explorando»: tarjeta azul oscura con aros, etiqueta lima y botón turquesa.

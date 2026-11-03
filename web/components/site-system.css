@@ -2,48 +2,16 @@
    Colours stay the manual roles from manual-palette.css; this file fixes the
    structure: spacing scale, two radii, one card, one pill, one accent for type.
    Roles are documented in docs/claude-color-system.md. */
-/* Intro band variants (review control, band-switcher.tsx). Default = solid turquoise. */
+/* Intro band: soft turquoise, navy type, turquoise rule (chosen from five review variants) */
 :root {
-  --band-bg: var(--observatory-turquoise);
-  --band-fg: var(--observatory-manual-dark);
-  --band-kicker: var(--observatory-manual-dark);
-  --band-rule: var(--observatory-manual-dark);
-  --band-line: transparent;
-}
-html[data-band='azul'] {
-  --band-bg: var(--observatory-manual-dark);
-  --band-fg: #fff;
-  --band-kicker: var(--observatory-lime);
-  --band-rule: var(--observatory-turquoise);
-}
-html[data-band='blanco'] {
-  --band-bg: #fff;
-  --band-kicker: color-mix(
-    in srgb,
-    var(--observatory-turquoise) 55%,
-    var(--observatory-manual-dark)
-  );
-  --band-rule: var(--observatory-turquoise);
-  --band-line: color-mix(in srgb, var(--observatory-category-grey) 55%, #fff);
-}
-html[data-band='suave'] {
   --band-bg: color-mix(in srgb, var(--observatory-turquoise) 14%, #fff);
+  --band-fg: var(--observatory-manual-dark);
   --band-kicker: color-mix(
     in srgb,
     var(--observatory-turquoise) 55%,
     var(--observatory-manual-dark)
   );
   --band-rule: var(--observatory-turquoise);
-}
-html[data-band='degradado'] {
-  --band-bg: linear-gradient(
-    115deg,
-    var(--observatory-manual-dark) 0%,
-    var(--observatory-blue) 100%
-  );
-  --band-fg: #fff;
-  --band-kicker: var(--observatory-lime);
-  --band-rule: var(--observatory-lime);
 }
 
 .hp.he:is(.cl, .ap) {
@@ -148,19 +116,11 @@ html[data-band='degradado'] {
   line-height: 1.6;
 }
 
-/* Purpose band mirrors the home intro and follows the same --band-* variables */
+/* Purpose band mirrors the home intro and uses the same --band-* variables */
 .ap .ap-band:has(.ap-purpose) {
   position: relative;
   background: var(--band-bg);
   color: var(--band-fg);
-  border-block: 1px solid var(--band-line);
-}
-html[data-band='azul'] .ap .ap-band:has(.ap-purpose)::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto;
-  height: 6px;
-  background: var(--cl-stripe);
 }
 .hp.he.he-atlas-layout.ap[data-site-palette] .ap-purpose :is(h2, p:last-child) {
   color: var(--band-fg);
@@ -354,47 +314,4 @@ html[data-band='azul'] .ap .ap-band:has(.ap-purpose)::before {
   .ap .ap-next {
     padding: var(--cl-space-4);
   }
-}
-
-/* Band switcher (review control) */
-.band-switcher {
-  position: fixed;
-  z-index: 60;
-  right: 16px;
-  bottom: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px;
-  max-width: calc(100% - 32px);
-  padding: 8px 10px;
-  border: 1px solid var(--observatory-category-grey);
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 12px 32px
-    color-mix(in srgb, var(--observatory-manual-dark) 18%, transparent);
-  color: var(--observatory-manual-dark);
-  font-size: 13px;
-  margin: 0;
-}
-.band-switcher legend {
-  padding-inline: 6px;
-  font-weight: 700;
-}
-.band-switcher button {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  border: 1px solid var(--observatory-category-grey);
-  border-radius: 6px;
-  background: #fff;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-}
-.band-switcher button[aria-pressed='true'] {
-  border-color: var(--observatory-manual-dark);
-  background: var(--observatory-manual-dark);
-  color: #fff;
 }

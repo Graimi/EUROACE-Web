@@ -471,13 +471,12 @@
   }
 }
 
-/* Intro band: colours come from the --band-* variables set by the band switcher (site-system.css) */
+/* Intro band: colours come from the --band-* variables in site-system.css */
 .cl .cl-band {
   position: relative;
   padding-block: var(--cl-section);
   background: var(--band-bg);
   color: var(--band-fg);
-  border-block: 1px solid var(--band-line);
 }
 .cl .cl-band-grid {
   display: grid;
@@ -497,7 +496,7 @@
   grid-row: 2;
   align-self: start;
   margin: 0;
-  font-size: clamp(30px, 3.6vw, 48px);
+  font-size: clamp(32px, 3.9vw, 50px);
   line-height: 1.1;
   font-weight: 400;
   white-space: pre-line;
@@ -514,34 +513,6 @@
   line-height: 1.6;
   color: var(--band-fg);
 }
-/* Variant tweaks: centred layouts and larger display title */
-html:is([data-band='blanco'], [data-band='degradado']) .cl .cl-band-grid {
-  grid-template-columns: minmax(0, 720px);
-  justify-content: center;
-  justify-items: center;
-  text-align: center;
-}
-html:is([data-band='blanco'], [data-band='degradado'])
-  :is(.cl .cl-band .cl-kicker, .cl .cl-band-title, .cl .cl-band-text) {
-  grid-column: 1;
-  grid-row: auto;
-}
-html:is([data-band='blanco'], [data-band='degradado']) .cl .cl-band-text {
-  padding: var(--cl-space-3) 0 0;
-  border-left: 0;
-  border-top: 4px solid var(--band-rule);
-  margin-top: var(--cl-space-2);
-}
-html[data-band='suave'] .cl .cl-band-title {
-  font-size: clamp(32px, 3.9vw, 50px);
-}
-html[data-band='azul'] .cl .cl-band::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto;
-  height: 6px;
-  background: var(--cl-stripe);
-}
 .cl .cl-research {
   padding-bottom: 0;
 }
@@ -549,8 +520,7 @@ html[data-band='azul'] .cl .cl-band::before {
   background: #fff;
 }
 @media (max-width: 1000px) {
-  .cl .cl-band-grid,
-  html:is([data-band='blanco'], [data-band='degradado']) .cl .cl-band-grid {
+  .cl .cl-band-grid {
     grid-template-columns: 1fr;
   }
   .cl .cl-band .cl-kicker,

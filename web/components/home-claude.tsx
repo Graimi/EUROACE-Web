@@ -15,7 +15,6 @@ import {
   Users,
 } from 'lucide-react';
 import { SiteHeader } from './site-header';
-import { BandSwitcher } from './band-switcher';
 import { EssentialRings } from './essential-rings';
 import { EssentialNewsCarousel } from './essential-news-carousel';
 import { EssentialFooter } from './essential-footer-proposals';
@@ -338,7 +337,6 @@ export function HomeClaude({
         </section>
       </main>
       <EssentialFooter language={language} showCredits={false} />
-      <BandSwitcher language={language} />
     </div>
   );
 }
