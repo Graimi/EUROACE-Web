@@ -28,6 +28,7 @@ import { EventsCalendar } from './events-calendar';
 import { EssentialFooter } from './essential-footer-proposals';
 import { EssentialAtlas } from './essential-atlas';
 import { ResearchCards } from './research-card-proposals';
+import { ProjectFunding } from './project-funding';
 import { atlasPageCopy } from '@/lib/atlas-page-copy';
 import { atlasPartners, partnerRegions } from '@/lib/atlas-partners';
 import { essentialCopy } from '@/lib/essential-copy';
@@ -35,7 +36,6 @@ import { essentialNews } from '@/lib/essential-news';
 import { copy } from '@/lib/content';
 import {
   projectCopy,
-  projectSource,
   coordinationContact,
   sectionIds,
   type Language,
@@ -112,10 +112,6 @@ function ProjectPage({ language }: { language: Language }) {
   const t = atlasPageCopy[language];
   const essential = essentialCopy[language];
   const base = copy[language];
-  const money = new Intl.NumberFormat(
-    language === 'en' ? 'en-IE' : language === 'pt' ? 'pt-PT' : 'es-ES',
-    { style: 'currency', currency: 'EUR' },
-  );
   return (
     <>
       <section className="ap-band">
@@ -157,32 +153,8 @@ function ProjectPage({ language }: { language: Language }) {
           ))}
         </div>
       </section>
-      <section className="ap-band ap-funding-band">
-        <div className="hp-container ap-funding">
-          <div>
-            <SectionTitle
-              title={t.projectDetails}
-              label="INTERREG · POCTEP 2021–2027"
-            />
-            <p>{essential.funding}</p>
-            <TextLink href={projectSource} external>
-              {essential.source}
-            </TextLink>
-          </div>
-          <dl>
-            {[
-              [essential.budget, money.format(874567.7)],
-              [essential.erdf, money.format(655925.78)],
-              [essential.rate, '75 %'],
-              [t.duration, '01/01/2026 · 31/12/2028'],
-            ].map(([label, value]) => (
-              <div key={label}>
-                <dt>{label}</dt>
-                <dd>{value}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
+      <section className="ap-section hp-container">
+        <ProjectFunding language={language} titleId="ap-project-title" />
       </section>
     </>
   );

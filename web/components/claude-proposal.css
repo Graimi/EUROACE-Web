@@ -4,13 +4,13 @@
    Roles: dark = text + primary action, turquoise = accent + hover,
    teal accent = kickers, blue = icons + focus, lime = activation only (meter, figures). */
 .hp.he.he-atlas-layout.cl[data-site-palette] .hp-kicker,
-.hp.he.he-atlas-layout.cl[data-site-palette] .cl-kicker {
+.hp.he.he-atlas-layout:is(.cl, .ap)[data-site-palette] .cl-kicker {
   color: var(--cl-ink-accent);
 }
 .hp.he.he-atlas-layout.cl[data-site-palette] .cl-band .cl-kicker {
   color: var(--band-kicker);
 }
-.hp.he.he-atlas-layout.cl[data-site-palette] .cl-finance .cl-kicker {
+.hp.he.he-atlas-layout:is(.cl, .ap)[data-site-palette] .cl-finance .cl-kicker {
   color: #fff;
 }
 
@@ -58,7 +58,7 @@
 }
 
 /* Type scale */
-.cl .cl-kicker {
+:is(.cl, .ap) .cl-kicker {
   margin: 0 0 var(--cl-space-1);
   color: var(--hm-blue);
   font-size: 12px;
@@ -66,7 +66,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-.cl .cl-h2 {
+:is(.cl, .ap) .cl-h2 {
   margin: 0;
   color: var(--cl-text);
   font-size: clamp(28px, 3.4vw, 44px);
@@ -74,7 +74,7 @@
   font-weight: 400;
   white-space: pre-line;
 }
-.cl .cl-h3 {
+:is(.cl, .ap) .cl-h3 {
   margin: 0;
   color: var(--cl-text);
   font-size: 21px;
@@ -82,7 +82,7 @@
   font-weight: 700;
   white-space: pre-line;
 }
-.cl .cl-body {
+:is(.cl, .ap) .cl-body {
   margin: 0;
   color: var(--cl-muted);
   font-size: 16px;
@@ -110,7 +110,7 @@
   background: var(--cl-tint);
   padding-block: var(--cl-section);
 }
-.cl .cl-head {
+:is(.cl, .ap) .cl-head {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -123,14 +123,14 @@
   gap: var(--cl-space-5);
   align-items: start;
 }
-.cl .cl-intro .cl-body {
+:is(.cl, .ap) .cl-intro .cl-body {
   margin-top: var(--cl-space-3);
   max-width: 62ch;
   font-size: 18px;
 }
 
 /* One card */
-.cl .cl-card {
+:is(.cl, .ap) .cl-card {
   display: flex;
   flex-direction: column;
   gap: var(--cl-space-2);
@@ -145,7 +145,7 @@
     border-color 0.22s,
     transform 0.22s;
 }
-.cl a.cl-card:hover {
+:is(.cl, .ap) a.cl-card:hover {
   border-color: var(--hm-turquoise);
   box-shadow: var(--cl-shadow);
 }
@@ -227,8 +227,8 @@
   background: var(--cl-dark);
   border-color: var(--cl-dark);
 }
-.cl .cl-access-dark .cl-h3,
-.cl .cl-access-dark .cl-body {
+:is(.cl, .ap) .cl-access-dark .cl-h3,
+:is(.cl, .ap) .cl-access-dark .cl-body {
   color: #fff;
 }
 .cl .cl-access-dark .cl-access-top {
@@ -238,7 +238,7 @@
   background: var(--hm-turquoise);
   border-color: var(--hm-turquoise);
 }
-.cl a.cl-access-dark:hover :is(.cl-h3, .cl-body, .cl-access-top) {
+:is(.cl, .ap) a.cl-access-dark:hover :is(.cl-h3, .cl-body, .cl-access-top) {
   color: var(--cl-dark);
 }
 
@@ -263,7 +263,7 @@
   background: var(--hm-turquoise);
   color: var(--cl-dark);
 }
-.cl .cl-link {
+:is(.cl, .ap) .cl-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -274,13 +274,13 @@
   text-decoration: none;
   white-space: nowrap;
 }
-.cl .cl-link:hover {
+:is(.cl, .ap) .cl-link:hover {
   color: var(--hm-blue);
 }
-.cl .cl-link-inverse {
+:is(.cl, .ap) .cl-link-inverse {
   color: #fff;
 }
-.cl .cl-link-inverse:hover {
+:is(.cl, .ap) .cl-link-inverse:hover {
   color: var(--hm-lime);
 }
 
@@ -307,13 +307,13 @@
   font-size: 13px;
   font-weight: 600;
 }
-.cl .cl-agenda .cl-link {
+:is(.cl, .ap) .cl-agenda .cl-link {
   align-self: flex-start;
   margin-top: auto;
 }
 
 /* Project */
-.cl .cl-funding {
+:is(.cl, .ap) .cl-funding {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -325,17 +325,17 @@
   color: var(--cl-muted);
   line-height: 1.5;
 }
-.cl .cl-funding > .cl-eu {
+:is(.cl, .ap) .cl-funding > .cl-eu {
   flex: none;
   width: 48px;
   height: 48px;
   box-shadow: 0 0 0 3px #fff, 0 0 0 4px var(--cl-line);
   border-radius: 50%;
 }
-.cl .cl-funding > span:nth-child(2) {
+:is(.cl, .ap) .cl-funding > span:nth-child(2) {
   flex: 1 1 320px;
 }
-.cl .cl-funding small {
+:is(.cl, .ap) .cl-funding small {
   padding: 4px 12px;
   border-radius: 999px;
   background: var(--hm-turquoise-soft);
@@ -343,31 +343,31 @@
   font-size: 13px;
   font-weight: 600;
 }
-.cl .cl-project-grid {
+:is(.cl, .ap) .cl-project-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
   gap: var(--cl-space-3);
 }
-.cl .cl-stack {
+:is(.cl, .ap) .cl-stack {
   display: grid;
   gap: var(--cl-space-3);
 }
-.cl .cl-finance {
+:is(.cl, .ap) .cl-finance {
   background: var(--cl-dark);
   border-color: var(--cl-dark);
   color: #fff;
 }
-.cl .cl-finance .cl-kicker,
-.cl .cl-finance dt,
-.cl .cl-finance small {
+:is(.cl, .ap) .cl-finance .cl-kicker,
+:is(.cl, .ap) .cl-finance dt,
+:is(.cl, .ap) .cl-finance small {
   color: #fff;
 }
-.cl .cl-finance dl {
+:is(.cl, .ap) .cl-finance dl {
   display: grid;
   gap: var(--cl-space-2);
   margin: 0;
 }
-.cl .cl-finance dl > div {
+:is(.cl, .ap) .cl-finance dl > div {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -375,30 +375,30 @@
   padding-bottom: var(--cl-space-2);
   border-bottom: 1px solid color-mix(in srgb, var(--hm-turquoise) 55%, transparent);
 }
-.cl .cl-finance dt {
+:is(.cl, .ap) .cl-finance dt {
   font-size: 14px;
 }
-.cl .cl-finance dd {
+:is(.cl, .ap) .cl-finance dd {
   margin: 0;
   font-size: 22px;
   font-weight: 700;
 }
-.cl .cl-finance dl > div:last-child dd {
+:is(.cl, .ap) .cl-finance dl > div:last-child dd {
   color: var(--hm-lime);
 }
-.cl .cl-meter {
+:is(.cl, .ap) .cl-meter {
   height: 8px;
   border-radius: 999px;
   background: color-mix(in srgb, #fff 18%, transparent);
   overflow: hidden;
 }
-.cl .cl-meter span {
+:is(.cl, .ap) .cl-meter span {
   display: block;
   width: 75%;
   height: 100%;
   background: var(--hm-lime);
 }
-.cl .cl-finance .cl-link {
+:is(.cl, .ap) .cl-finance .cl-link {
   align-self: flex-start;
 }
 

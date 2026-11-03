@@ -50,3 +50,4 @@ Para extender el teal a toda la web basta cambiar la regla `.hp-kicker` de `manu
 - Sin tocar: cabeceras interiores (selector Editorial/Cartel/Conversación), pendientes de decisión.
 - Franja de introducción («Un proyecto, muchas conexiones» y «Conocer para cooperar»): variante «Suave» elegida entre cinco. Fondo turquesa al 14 % sobre blanco, texto azul oscuro, línea turquesa junto al párrafo. Variables `--band-*` en `site-system.css`.
 - «Sigue explorando»: tarjeta azul oscura con aros, etiqueta lima y botón turquesa.
+- Bloque «Sobre el proyecto» (financiación, bandera UE, objetivos, resultados y tarjeta de importes): un único componente, `web/components/project-funding.tsx`, usado en la home y en la página Sobre el proyecto. Sustituye a la franja de importes anterior de esa página.
