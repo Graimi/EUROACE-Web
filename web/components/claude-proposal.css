@@ -471,36 +471,11 @@
   }
 }
 
-/* Intro band: solid turquoise, navy type, ring outlines echo the logo */
+/* Intro band: solid turquoise, navy type, paragraph on a white card with the three-region stripe */
 .cl .cl-band {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
   padding-block: var(--cl-section);
   background: var(--hm-turquoise);
   color: var(--cl-dark);
-}
-.cl .cl-band::before,
-.cl .cl-band::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  border-radius: 50%;
-  border: 2px solid color-mix(in srgb, #fff 55%, transparent);
-  pointer-events: none;
-}
-.cl .cl-band::before {
-  width: 420px;
-  height: 420px;
-  right: 6%;
-  top: -160px;
-}
-.cl .cl-band::after {
-  width: 300px;
-  height: 300px;
-  right: -60px;
-  bottom: -140px;
-  border-color: color-mix(in srgb, var(--hm-lime) 70%, transparent);
 }
 .cl .cl-band-grid {
   display: grid;
@@ -510,11 +485,16 @@
   align-items: end;
 }
 .cl .cl-band .cl-kicker {
-  grid-column: 1 / -1;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
   color: var(--cl-dark);
   margin: 0;
 }
 .cl .cl-band-title {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: start;
   margin: 0;
   font-size: clamp(30px, 3.6vw, 48px);
   line-height: 1.1;
@@ -523,13 +503,26 @@
   color: var(--cl-dark);
 }
 .cl .cl-band-text {
-  max-width: 390px;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  position: relative;
+  overflow: hidden;
   margin: 0;
-  padding-left: var(--cl-space-3);
-  border-left: 3px solid var(--cl-dark);
+  padding: var(--cl-space-5) var(--cl-space-4) var(--cl-space-4);
+  border-radius: var(--cl-radius);
+  background: #fff;
+  box-shadow: var(--cl-shadow);
   font-size: 18px;
   line-height: 1.6;
   color: var(--cl-dark);
+}
+.cl .cl-band-text::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 8px;
+  background: var(--cl-stripe);
 }
 .cl .cl-research {
   padding-bottom: 0;
@@ -540,6 +533,12 @@
 @media (max-width: 1000px) {
   .cl .cl-band-grid {
     grid-template-columns: 1fr;
+  }
+  .cl .cl-band .cl-kicker,
+  .cl .cl-band-title,
+  .cl .cl-band-text {
+    grid-column: 1;
+    grid-row: auto;
   }
 }
 
@@ -582,34 +581,4 @@
   border-bottom-color: var(--hm-turquoise);
 }
 
-/* Band rings (v2): interlocked outline rings, colours adapted to turquoise */
-.cl-v2 .cl-band::before,
-.cl-v2 .cl-band::after {
-  display: none;
-}
-.cl .cl-band-rings {
-  position: absolute;
-  z-index: -1;
-  right: -120px;
-  top: 50%;
-  width: min(300px, 28%);
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-.cl .cl-band-rings circle {
-  stroke-width: 24;
-  stroke-opacity: 0.8;
-}
-.cl .cl-band-rings circle:nth-child(2) {
-  stroke-opacity: 0.55;
-}
-.cl .cl-band-rings circle:nth-child(3) {
-  stroke-opacity: 0.95;
-}
-@media (max-width: 1000px) {
-  .cl .cl-band-rings {
-    width: 360px;
-    right: -150px;
-    opacity: 0.6;
-  }
-}
+

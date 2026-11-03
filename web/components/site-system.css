@@ -19,6 +19,12 @@
   --cl-line: var(--hm-line);
   --cl-tint: var(--hm-soft);
   /* Text accent: deep teal (turquoise + dark blue); electric blue stays for icons and marks */
+  --cl-stripe: linear-gradient(
+    90deg,
+    var(--hm-turquoise) 0 33.34%,
+    var(--hm-lime) 33.34% 66.67%,
+    var(--hm-blue) 66.67%
+  );
   --cl-ink-accent: color-mix(in srgb, var(--hm-turquoise) 55%, var(--hm-dark));
 }
 
@@ -98,41 +104,31 @@
   line-height: 1.6;
 }
 
-/* Purpose band mirrors the home intro: solid turquoise, navy type, outline rings */
+/* Purpose band mirrors the home intro: solid turquoise, figures on a white card with the region stripe */
 .ap .ap-band:has(.ap-purpose) {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
   background: var(--hm-turquoise);
   color: var(--cl-dark);
 }
-.ap .ap-band:has(.ap-purpose)::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  pointer-events: none;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 400' fill='none' stroke-width='24'%3E%3Ccircle cx='190' cy='150' r='120' stroke='%23fff' stroke-opacity='.8'/%3E%3Ccircle cx='330' cy='150' r='120' stroke='%231E00FF' stroke-opacity='.5'/%3E%3Ccircle cx='260' cy='270' r='120' stroke='%239BFF05' stroke-opacity='.95'/%3E%3C/svg%3E")
-    no-repeat right -150px center / min(340px, 34%) auto;
-}
-.ap .ap-purpose {
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
-}
-.ap .ap-purpose .ap-stats {
-  max-width: 300px;
-  gap: var(--cl-space-2);
-}
-.ap .ap-purpose .ap-stats dd {
-  font-size: 52px;
-}
-.ap .ap-purpose :is(h2, p, dt, dd) {
+.hp.he.he-atlas-layout.ap[data-site-palette] .ap-purpose :is(h2, p:last-child) {
   color: var(--cl-dark);
 }
-.ap .ap-purpose > div:first-child {
+.ap .ap-purpose .ap-stats {
   position: relative;
+  overflow: hidden;
+  padding: var(--cl-space-5) var(--cl-space-4) var(--cl-space-4);
+  border-radius: var(--cl-radius);
+  background: #fff;
+  box-shadow: var(--cl-shadow);
 }
-.ap .ap-purpose .ap-stats > div {
-  border-left-color: var(--cl-dark);
+.ap .ap-purpose .ap-stats::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 8px;
+  background: var(--cl-stripe);
+}
+.ap .ap-purpose .ap-stats :is(dt, dd) {
+  color: var(--cl-dark);
 }
 
 /* One card */
@@ -284,34 +280,26 @@
   color: var(--hm-blue);
 }
 
-/* "Sigue explorando": dark card with rings and a turquoise action */
+/* "Sigue explorando": soft card with the region stripe and the standard button */
 .ap .ap-next {
   position: relative;
   overflow: hidden;
-  isolation: isolate;
   margin-block: var(--cl-section-inner);
-  padding: var(--cl-space-5);
-  border: 0;
+  padding: var(--cl-space-5) var(--cl-space-5) var(--cl-space-4);
+  border: 1px solid color-mix(in srgb, var(--hm-turquoise) 30%, #fff);
   border-radius: var(--cl-radius);
-  background: var(--cl-dark)
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 400' fill='none' stroke-width='24'%3E%3Ccircle cx='190' cy='150' r='120' stroke='%23fff' stroke-opacity='.22'/%3E%3Ccircle cx='330' cy='150' r='120' stroke='%231E00FF' stroke-opacity='.7'/%3E%3Ccircle cx='260' cy='270' r='120' stroke='%239BFF05' stroke-opacity='.5'/%3E%3C/svg%3E")
-    no-repeat right -120px center / 380px auto;
+  background: var(--hm-turquoise-soft);
 }
-.hp.he.ap[data-site-palette] .ap-next.ap-next .hp-kicker:not(.cl-region) {
-  color: var(--hm-lime);
+.ap .ap-next::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 8px;
+  background: var(--cl-stripe);
 }
 .ap .ap-next h2 {
-  color: #fff;
   font-size: clamp(28px, 3.4vw, 44px);
   font-weight: 400;
-}
-.hp.he.ap[data-site-palette] .ap-next .hp-button {
-  background: var(--hm-turquoise);
-  color: var(--cl-dark);
-}
-.hp.he.ap[data-site-palette] .ap-next .hp-button:hover {
-  background: #fff;
-  color: var(--cl-dark);
 }
 @media (max-width: 1000px) {
   .ap .ap-next {

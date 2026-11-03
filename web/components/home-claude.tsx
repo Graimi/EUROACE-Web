@@ -80,21 +80,6 @@ function EuFlag({ label }: { label: string }) {
   );
 }
 
-function BandRings() {
-  return (
-    <svg
-      className="cl-band-rings"
-      viewBox="0 0 520 400"
-      fill="none"
-      aria-hidden="true"
-    >
-      <circle cx="190" cy="150" r="120" stroke="#fff" />
-      <circle cx="330" cy="150" r="120" stroke="var(--hm-blue)" />
-      <circle cx="260" cy="270" r="120" stroke="var(--hm-lime)" />
-    </svg>
-  );
-}
-
 function TextLink({
   href,
   children,
@@ -201,7 +186,6 @@ export function HomeClaude({
         </section>
 
         <section className="cl-band">
-          {v2 && <BandRings />}
           <div className="hp-container cl-band-grid">
             <p className="cl-kicker">{t.introLabel}</p>
             <h2 className="cl-band-title">{t.introTitle}</h2>
