@@ -22,6 +22,7 @@ import {
   Zap,
 } from 'lucide-react';
 import { SiteHeader } from './site-header';
+import { BandSwitcher } from './band-switcher';
 import { SocialLinks } from './social-links';
 import { PageHeaderReview } from './page-header-review';
 import { EventsCalendar } from './events-calendar';
@@ -853,6 +854,7 @@ export function AtlasPage({ section }: { section: Section }) {
         </section>
       </main>
       <EssentialFooter language={language} showCredits={false} />
+      {section === 'observatorio' && <BandSwitcher language={language} />}
     </div>
   );
 }

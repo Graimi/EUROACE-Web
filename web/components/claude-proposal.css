@@ -8,7 +8,7 @@
   color: var(--cl-ink-accent);
 }
 .hp.he.he-atlas-layout.cl[data-site-palette] .cl-band .cl-kicker {
-  color: var(--cl-dark);
+  color: var(--band-kicker);
 }
 .hp.he.he-atlas-layout.cl[data-site-palette] .cl-finance .cl-kicker {
   color: #fff;
@@ -471,11 +471,13 @@
   }
 }
 
-/* Intro band: solid turquoise, navy type, paragraph on a white card with the three-region stripe */
+/* Intro band: colours come from the --band-* variables set by the band switcher (site-system.css) */
 .cl .cl-band {
+  position: relative;
   padding-block: var(--cl-section);
-  background: var(--hm-turquoise);
-  color: var(--cl-dark);
+  background: var(--band-bg);
+  color: var(--band-fg);
+  border-block: 1px solid var(--band-line);
 }
 .cl .cl-band-grid {
   display: grid;
@@ -488,7 +490,6 @@
   grid-column: 1;
   grid-row: 1;
   align-self: end;
-  color: var(--cl-dark);
   margin: 0;
 }
 .cl .cl-band-title {
@@ -500,28 +501,45 @@
   line-height: 1.1;
   font-weight: 400;
   white-space: pre-line;
-  color: var(--cl-dark);
+  color: var(--band-fg);
 }
 .cl .cl-band-text {
   grid-column: 2;
   grid-row: 1 / span 2;
   align-self: center;
-  position: relative;
-  overflow: hidden;
   margin: 0;
-  padding: var(--cl-space-5) var(--cl-space-4) var(--cl-space-4);
-  border-radius: var(--cl-radius);
-  background: #fff;
-  box-shadow: var(--cl-shadow);
+  padding-left: var(--cl-space-3);
+  border-left: 3px solid var(--band-rule);
   font-size: 18px;
   line-height: 1.6;
-  color: var(--cl-dark);
+  color: var(--band-fg);
 }
-.cl .cl-band-text::before {
+/* Variant tweaks: centred layouts and larger display title */
+html:is([data-band='blanco'], [data-band='degradado']) .cl .cl-band-grid {
+  grid-template-columns: minmax(0, 720px);
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+}
+html:is([data-band='blanco'], [data-band='degradado'])
+  :is(.cl .cl-band .cl-kicker, .cl .cl-band-title, .cl .cl-band-text) {
+  grid-column: 1;
+  grid-row: auto;
+}
+html:is([data-band='blanco'], [data-band='degradado']) .cl .cl-band-text {
+  padding: var(--cl-space-3) 0 0;
+  border-left: 0;
+  border-top: 4px solid var(--band-rule);
+  margin-top: var(--cl-space-2);
+}
+html[data-band='suave'] .cl .cl-band-title {
+  font-size: clamp(32px, 3.9vw, 50px);
+}
+html[data-band='azul'] .cl .cl-band::before {
   content: '';
   position: absolute;
   inset: 0 0 auto;
-  height: 8px;
+  height: 6px;
   background: var(--cl-stripe);
 }
 .cl .cl-research {
@@ -531,7 +549,8 @@
   background: #fff;
 }
 @media (max-width: 1000px) {
-  .cl .cl-band-grid {
+  .cl .cl-band-grid,
+  html:is([data-band='blanco'], [data-band='degradado']) .cl .cl-band-grid {
     grid-template-columns: 1fr;
   }
   .cl .cl-band .cl-kicker,
