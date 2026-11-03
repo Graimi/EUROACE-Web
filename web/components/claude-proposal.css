@@ -18,6 +18,18 @@
   --cl-muted: var(--hm-muted);
   --cl-line: var(--hm-line);
   --cl-tint: var(--hm-soft);
+  /* Text accent: deep teal from the manual turquoise + dark blue, replaces the electric blue on type */
+  --cl-ink-accent: color-mix(in srgb, var(--hm-turquoise) 55%, var(--hm-dark));
+}
+.hp.he.he-atlas-layout.cl[data-site-palette] .hp-kicker,
+.hp.he.he-atlas-layout.cl[data-site-palette] .cl-kicker {
+  color: var(--cl-ink-accent);
+}
+.hp.he.he-atlas-layout.cl[data-site-palette] .cl-band .cl-kicker {
+  color: var(--cl-dark);
+}
+.hp.he.he-atlas-layout.cl[data-site-palette] .cl-finance .cl-kicker {
+  color: #fff;
 }
 
 /* Top label */
@@ -244,8 +256,8 @@
   background: var(--hm-turquoise);
   border-color: var(--hm-turquoise);
 }
-.cl a.cl-access-dark:hover .cl-access-top {
-  color: #fff;
+.cl a.cl-access-dark:hover :is(.cl-h3, .cl-body, .cl-access-top) {
+  color: var(--cl-dark);
 }
 
 /* Buttons: primary + text link only */
@@ -267,7 +279,7 @@
 }
 .cl .cl-button-primary:hover {
   background: var(--hm-turquoise);
-  color: #fff;
+  color: var(--cl-dark);
 }
 .cl .cl-link {
   display: inline-flex;
@@ -642,4 +654,10 @@
     right: -150px;
     opacity: 0.45;
   }
+}
+
+/* Turquoise hover keeps dark type: white on #18BAA8 is only 2.4:1, dark blue is 6.9:1 */
+.hp.he.he-atlas-layout.cl[data-site-palette]
+  :is(.he-nav-analytics.hp-header-cta, .he-footer-contact):hover {
+  color: var(--cl-dark);
 }

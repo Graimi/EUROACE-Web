@@ -174,9 +174,11 @@ export function HomeClaude({ version = 1 }: { version?: 1 | 2 }) {
         <section className="hp-essential-hero cl-hero">
           <div className="hp-container he-hero-grid">
             <div className="hp-essential-copy">
-              <div className="he-hero-rings" aria-hidden="true">
-                <EssentialRings language={language} decorative compact />
-              </div>
+              {!v2 && (
+                <div className="he-hero-rings" aria-hidden="true">
+                  <EssentialRings language={language} decorative compact />
+                </div>
+              )}
               <h1>{t.title}</h1>
               <p>{t.intro}</p>
               <a
