@@ -43,6 +43,7 @@ import { useSiteLanguage } from '@/lib/site-language';
 import './atlas-page.css';
 import './manual-palette.css';
 import './button-effects.css';
+import './site-system.css';
 
 const areaIcons = [Lightbulb, Zap, Network];
 const studies = [
@@ -261,7 +262,12 @@ function PartnerCards({
       {atlasPartners.map((partner, index) => (
         <article key={partner.name}>
           <div className="ap-partner-top">
-            <span className="hp-kicker">{partnerRegions[index]}</span>
+            <span
+              className="hp-kicker cl-region"
+              data-region={partnerRegions[index]}
+            >
+              {partnerRegions[index]}
+            </span>
             <span className="ap-partner-index">0{index + 1}</span>
           </div>
           <div className="ap-partner-logo">

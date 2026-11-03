@@ -5,11 +5,11 @@ export function homeProposals(language: Language) {
   const t = essentialCopy[language];
   const primary = { es: 'Principal', pt: 'Principal', en: 'Primary' }[language];
   return [
-    { href: '/', number: '01', name: `${t.names[2]} · ${primary}`, variant: 3 },
-    { href: '/home-propuesta-2', number: '02', name: t.names[1], variant: 2 },
-    { href: '/home-propuesta-3', number: '03', name: t.names[0], variant: 1 },
+    { href: '/', number: '01', name: `Claude · ${primary}`, variant: 3 },
+    { href: '/home-propuesta-1', number: '02', name: t.names[2], variant: 3 },
+    { href: '/home-propuesta-2', number: '03', name: t.names[1], variant: 2 },
+    { href: '/home-propuesta-3', number: '04', name: t.names[0], variant: 1 },
     { href: '/propuesta-claude', number: 'C1', name: 'Claude 1', variant: 4 },
-    { href: '/propuesta-claude-2', number: 'C2', name: 'Claude 2', variant: 4 },
     {
       href: '/home-propuesta-original',
       number: '00',

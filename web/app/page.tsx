@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import { HomeEssential } from '@/components/home-essential';
+import { HomeClaude } from '@/components/home-claude';
 
-export const metadata: Metadata = { title: 'EUROACE | Inicio · Atlas' };
+export const metadata: Metadata = { title: 'EUROACE | Inicio' };
 
 export default function Page() {
-  return <HomeEssential variant={3} />;
+  return <HomeClaude />;
 }

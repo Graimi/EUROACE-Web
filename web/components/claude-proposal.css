@@ -2,25 +2,7 @@
    (manual-palette.css); only structure is standardised here:
    one spacing scale, two radii, one type scale, one card, one button pair.
    Roles: dark = text + primary action, turquoise = accent + hover,
-   blue = icons + kickers + focus, lime = activation only (meter, figures). */
-.hp.he.cl {
-  --cl-space-1: 8px;
-  --cl-space-2: 16px;
-  --cl-space-3: 24px;
-  --cl-space-4: 32px;
-  --cl-space-5: 48px;
-  --cl-section: clamp(56px, 8vw, 96px);
-  --cl-radius: 12px;
-  --cl-radius-sm: 6px;
-  --cl-shadow: 0 12px 32px color-mix(in srgb, var(--hm-dark) 8%, transparent);
-  --cl-dark: var(--hm-dark);
-  --cl-text: var(--hm-dark);
-  --cl-muted: var(--hm-muted);
-  --cl-line: var(--hm-line);
-  --cl-tint: var(--hm-soft);
-  /* Text accent: deep teal from the manual turquoise + dark blue, replaces the electric blue on type */
-  --cl-ink-accent: color-mix(in srgb, var(--hm-turquoise) 55%, var(--hm-dark));
-}
+   teal accent = kickers, blue = icons + focus, lime = activation only (meter, figures). */
 .hp.he.he-atlas-layout.cl[data-site-palette] .hp-kicker,
 .hp.he.he-atlas-layout.cl[data-site-palette] .cl-kicker {
   color: var(--cl-ink-accent);
@@ -592,33 +574,6 @@
   width: auto;
   max-width: 100%;
 }
-.cl-v2 .cl-logos .cl-region {
-  --region: var(--hm-turquoise);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 5px 14px 5px 10px;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--region) 14%, #fff);
-  color: var(--cl-dark);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-.cl-v2 .cl-logos .cl-region::before {
-  content: '';
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--region);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--region) 28%, transparent);
-}
-.cl-v2 .cl-logos .cl-region[data-region='Alentejo'] {
-  --region: var(--hm-lime);
-}
-.cl-v2 .cl-logos .cl-region[data-region='Extremadura'] {
-  --region: var(--hm-blue);
-}
 .cl-v2 .cl-logos a {
   border-bottom: 4px solid transparent;
 }
@@ -654,10 +609,4 @@
     right: -150px;
     opacity: 0.45;
   }
-}
-
-/* Turquoise hover keeps dark type: white on #18BAA8 is only 2.4:1, dark blue is 6.9:1 */
-.hp.he.he-atlas-layout.cl[data-site-palette]
-  :is(.he-nav-analytics.hp-header-cta, .he-footer-contact):hover {
-  color: var(--cl-dark);
 }

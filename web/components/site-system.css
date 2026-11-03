@@ -1,0 +1,227 @@
+/* Site system. Shared by the home (.cl) and every interior page (.ap).
+   Colours stay the manual roles from manual-palette.css; this file fixes the
+   structure: spacing scale, two radii, one card, one pill, one accent for type.
+   Roles are documented in docs/claude-color-system.md. */
+.hp.he:is(.cl, .ap) {
+  --cl-space-1: 8px;
+  --cl-space-2: 16px;
+  --cl-space-3: 24px;
+  --cl-space-4: 32px;
+  --cl-space-5: 48px;
+  --cl-section: clamp(56px, 8vw, 96px);
+  --cl-section-inner: clamp(40px, 5vw, 64px);
+  --cl-radius: 12px;
+  --cl-radius-sm: 6px;
+  --cl-shadow: 0 12px 32px color-mix(in srgb, var(--hm-dark) 8%, transparent);
+  --cl-dark: var(--hm-dark);
+  --cl-text: var(--hm-dark);
+  --cl-muted: var(--hm-muted);
+  --cl-line: var(--hm-line);
+  --cl-tint: var(--hm-soft);
+  /* Text accent: deep teal (turquoise + dark blue); electric blue stays for icons and marks */
+  --cl-ink-accent: color-mix(in srgb, var(--hm-turquoise) 55%, var(--hm-dark));
+}
+
+/* Region pill: dot colour repeats the map (Centro, Alentejo, Extremadura) */
+.hp.he .cl-region.cl-region {
+  --region: var(--hm-turquoise);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px 5px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--region) 14%, #fff);
+  color: var(--hm-dark);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+.hp.he .cl-region::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--region);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--region) 28%, transparent);
+}
+.hp.he .cl-region[data-region='Alentejo'] {
+  --region: var(--hm-lime);
+}
+.hp.he .cl-region[data-region='Extremadura'] {
+  --region: var(--hm-blue);
+}
+
+/* Interior pages ---------------------------------------------------- */
+
+/* Kickers: teal accent on light surfaces, size matches the home */
+.hp.he.ap[data-site-palette]
+  :is(
+    .ap-section,
+    .ap-next,
+    .ap-contact-direct,
+    .ap-band:not(.ap-funding-band),
+    .ap-header-review
+  )
+  .hp-kicker:not(.cl-region) {
+  color: var(--cl-ink-accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.hp.he.ap[data-site-palette] .ap-band:has(.ap-purpose) .hp-kicker {
+  color: var(--cl-dark);
+}
+.ap .ap-event-formats span {
+  color: var(--cl-ink-accent);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Section rhythm and titles */
+.ap .ap-section {
+  padding-block: var(--cl-section-inner);
+}
+.ap .ap-activities,
+.ap .ap-audience {
+  padding-top: 0;
+}
+.ap .ap-section-title {
+  margin-bottom: var(--cl-space-4);
+}
+.ap .ap-section-title h2 {
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.12;
+}
+.ap .ap-section-intro {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* Purpose band mirrors the home intro: solid turquoise, navy type, outline rings */
+.ap .ap-band:has(.ap-purpose) {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--hm-turquoise);
+  color: var(--cl-dark);
+}
+.ap .ap-band:has(.ap-purpose)::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 400' fill='none' stroke-width='22'%3E%3Ccircle cx='190' cy='150' r='120' stroke='%23fff' stroke-opacity='.25'/%3E%3Ccircle cx='330' cy='150' r='120' stroke='%231E00FF' stroke-opacity='.16'/%3E%3Ccircle cx='260' cy='270' r='120' stroke='%239BFF05' stroke-opacity='.28'/%3E%3C/svg%3E")
+    no-repeat right -170px center / min(520px, 46%) auto;
+}
+.ap .ap-purpose :is(h2, p, dt, dd) {
+  color: var(--cl-dark);
+}
+.ap .ap-purpose > div:first-child {
+  position: relative;
+}
+.ap .ap-purpose .ap-stats > div {
+  border-left-color: var(--cl-dark);
+}
+
+/* One card */
+.ap
+  :is(
+    .ap-two-cards article,
+    .ap-partner-grid article,
+    .ap-resource-grid article,
+    .ap-news-grid article,
+    .ap-event-grid article,
+    .ap-filters,
+    .ap-territory,
+    .ap-event-pending,
+    .ap-empty,
+    .ap-inline-callout,
+    .ap-data-notice,
+    .ap-analysis,
+    .ap-calendar,
+    .ap-contact-direct,
+    .ap-contact-partners article
+  ) {
+  border-radius: var(--cl-radius);
+  overflow: hidden;
+}
+.ap .ap-two-cards article,
+.ap .ap-partner-grid article,
+.ap .ap-territory {
+  padding: var(--cl-space-4);
+}
+.ap .ap-resource-grid article,
+.ap .ap-news-grid article,
+.ap .ap-event-grid article {
+  transition:
+    box-shadow 0.22s,
+    border-color 0.22s;
+}
+.ap .ap-resource-grid article:hover,
+.ap .ap-news-grid article:hover,
+.ap .ap-event-grid article:hover,
+.ap .ap-partner-grid article:hover {
+  border-color: var(--hm-turquoise);
+  box-shadow: var(--cl-shadow);
+}
+.ap .ap-data-notice {
+  border-left-width: 4px;
+}
+.ap .ap-analysis {
+  border-left-width: 4px;
+}
+
+/* Controls: one corner radius, pills for status */
+.ap :is(select, input, .ap-search > div) {
+  border-radius: var(--cl-radius-sm);
+}
+.ap :is(.ap-tabs button, .ap-area-buttons button) {
+  border-radius: var(--cl-radius-sm);
+}
+.ap .ap-status {
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Partner pill replaces the grey region label */
+.ap .ap-partner-top {
+  align-items: center;
+}
+
+/* Turquoise hover keeps dark type: white on #18BAA8 is only 2.4:1, dark blue 6.9:1 */
+.hp.he.he-atlas-layout:is(.cl, .ap)[data-site-palette]
+  :is(.hp-button, .he-nav-analytics.hp-header-cta, .he-footer-contact):hover {
+  color: var(--cl-dark);
+}
+
+/* Activities become the same card grid as the home */
+.ap .ap-activities {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--cl-space-3);
+}
+.ap .ap-activities article {
+  grid-template-columns: 1fr;
+  gap: var(--cl-space-3);
+  align-content: start;
+  padding: var(--cl-space-4);
+  border: 1px solid var(--cl-line);
+  border-radius: var(--cl-radius);
+  background: #fff;
+}
+.ap .ap-activity-mark {
+  max-width: none;
+  align-items: center;
+}
+.ap .ap-activity-mark > span {
+  font-size: 40px;
+}
+@media (max-width: 800px) {
+  .ap .ap-activities {
+    grid-template-columns: 1fr;
+  }
+}

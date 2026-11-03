@@ -41,3 +41,10 @@ Se midieron en local `/`, `/propuesta-claude-2` y las ocho páginas interiores (
 - Etiquetas: azul eléctrico `#1E00FF` en todas las páginas actuales. La propuesta lo cambia a teal solo en las portadas Claude.
 
 Para extender el teal a toda la web basta cambiar la regla `.hp-kicker` de `manual-palette.css` (hoy `var(--hm-blue)`) por el token de acento de texto. Es una línea y afecta a las nueve páginas por igual.
+
+## Estado de implementación
+
+- Home real (`/`): Claude 2, sin barra de revisión. Atlas anterior en `/home-propuesta-1`; Claude 1 en `/propuesta-claude` y Claude 2 con barra en `/propuesta-claude-2`.
+- Sistema compartido en `web/components/site-system.css`, importado por la home (`.cl`) y las ocho interiores (`.ap`): escala de espaciado, dos radios (12 y 6 px), tarjeta única, etiqueta de región, teal en kickers y texto oscuro en hover turquesa.
+- Interiores: franja turquesa con aros en «Sobre el proyecto», actividades en rejilla de tarjetas, tarjetas y controles con los mismos radios y bordes, etiquetas de región en los socios.
+- Sin tocar: cabeceras interiores (selector Editorial/Cartel/Conversación), pendientes de decisión.

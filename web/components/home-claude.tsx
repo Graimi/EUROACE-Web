@@ -29,6 +29,7 @@ import './home-essential.css';
 import './essential-variants.css';
 import './manual-palette.css';
 import './button-effects.css';
+import './site-system.css';
 import './claude-proposal.css';
 
 const labels = {
@@ -64,8 +65,6 @@ function EuFlag({ label }: { label: string }) {
     <svg
       className="cl-eu"
       viewBox="0 0 100 100"
-      role="img"
-      aria-label={label}
     >
       <title>{label}</title>
       <circle cx="50" cy="50" r="50" fill="#039" />
@@ -133,7 +132,13 @@ function SectionHead({
   );
 }
 
-export function HomeClaude({ version = 1 }: { version?: 1 | 2 }) {
+export function HomeClaude({
+  version = 2,
+  review = false,
+}: {
+  version?: 1 | 2;
+  review?: boolean;
+}) {
   const v2 = version === 2;
   const language = useSiteLanguage();
   const t = essentialCopy[language];
@@ -159,16 +164,18 @@ export function HomeClaude({ version = 1 }: { version?: 1 | 2 }) {
       data-site-palette="manual"
       data-button-effect="arrow-shine"
     >
-      <div className="cl-badge-bar" role="note">
-        <div className="hp-container cl-badge-inner">
-          <span className="cl-badge">{ui.badge}{v2 ? ' 2' : ''}</span>
-          <span className="cl-badge-note">{ui.note}</span>
-          <a href={page('/')}>
-            <ArrowLeft size={16} aria-hidden="true" />
-            {ui.back}
-          </a>
+      {review && (
+        <div className="cl-badge-bar" role="note">
+          <div className="hp-container cl-badge-inner">
+            <span className="cl-badge">{ui.badge}{v2 ? ' 2' : ''}</span>
+            <span className="cl-badge-note">{ui.note}</span>
+            <a href={page('/')}>
+              <ArrowLeft size={16} aria-hidden="true" />
+              {ui.back}
+            </a>
+          </div>
         </div>
-      </div>
+      )}
       <SiteHeader language={language} theme={3} />
       <main id="hp-contenido">
         <section className="hp-essential-hero cl-hero">
