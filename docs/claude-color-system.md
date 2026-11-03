@@ -15,7 +15,7 @@ Base: la paleta del manual ya usada en Atlas (`web/app/brand-tokens.css`, `web/c
 
 Regiones del mapa (se repiten en socios): Centro = turquesa, Alentejo = lima, Extremadura = azul eléctrico.
 
-Ritmo de fondos en portada: blanco → franja turquesa (intro) → blanco (ámbitos, accesos) → turquesa suave (noticias) → blanco (proyecto) → turquesa suave (socios) → blanco (footer).
+Ritmo de fondos en portada: blanco → franja turquesa suave (intro) → blanco (ámbitos, accesos) → turquesa suave (noticias) → blanco (socios, footer).
 
 ## Contraste (WCAG 2.1)
 
@@ -50,4 +50,4 @@ Para extender el teal a toda la web basta cambiar la regla `.hp-kicker` de `manu
 - Sin tocar: cabeceras interiores (selector Editorial/Cartel/Conversación), pendientes de decisión.
 - Franja de introducción («Un proyecto, muchas conexiones» y «Conocer para cooperar»): variante «Suave» elegida entre cinco. Fondo turquesa al 14 % sobre blanco, texto azul oscuro, línea turquesa junto al párrafo. Variables `--band-*` en `site-system.css`.
 - «Sigue explorando»: tarjeta azul oscura con aros, etiqueta lima y botón turquesa.
-- Bloque «Sobre el proyecto» (financiación, bandera UE, objetivos, resultados y tarjeta de importes): un único componente, `web/components/project-funding.tsx`, usado en la home y en la página Sobre el proyecto. Sustituye a la franja de importes anterior de esa página.
+- Bloque «Sobre el proyecto» (financiación, bandera UE, objetivos, resultados y tarjeta de importes): un único componente, `web/components/project-funding.tsx`, usado solo en la página Sobre el proyecto (se retiró de la home). Sustituye a la franja de importes anterior de esa página.

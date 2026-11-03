@@ -5,7 +5,6 @@
 import { ArrowUpRight } from 'lucide-react';
 import { essentialCopy } from '@/lib/essential-copy';
 import { projectSource, type Language } from '@/lib/project';
-import './site-system.css';
 import './claude-proposal.css';
 
 const euLabel = {

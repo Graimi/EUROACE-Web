@@ -19,7 +19,6 @@ import { EssentialRings } from './essential-rings';
 import { EssentialNewsCarousel } from './essential-news-carousel';
 import { EssentialFooter } from './essential-footer-proposals';
 import { EssentialAtlas } from './essential-atlas';
-import { ProjectFunding } from './project-funding';
 import { ResearchCards } from './research-card-proposals';
 import { useSiteLanguage } from '@/lib/site-language';
 import { essentialCopy } from '@/lib/essential-copy';
@@ -214,17 +213,7 @@ export function HomeClaude({
           </div>
         </section>
 
-        <section
-          className="cl-section"
-          id="sobre-el-proyecto"
-          aria-labelledby="cl-project-title"
-        >
-          <div className="hp-container">
-            <ProjectFunding language={language} titleId="cl-project-title" />
-          </div>
-        </section>
-
-        <section className="cl-section cl-section-tint cl-partners">
+        <section className="cl-section cl-partners">
           <div className="hp-container">
             <SectionHead kicker={t.partnersLabel} title={t.partnersTitle} />
             <div className="cl-logos">
