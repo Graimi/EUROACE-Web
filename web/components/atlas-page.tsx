@@ -6,11 +6,13 @@ import {
   ArrowRight,
   ArrowUpRight,
   BookOpen,
+  Briefcase,
   CalendarDays,
   ChartNoAxesCombined,
   Check,
   FileText,
   Gauge,
+  Landmark,
   PanelsTopLeft,
   GraduationCap,
   Lightbulb,
@@ -46,6 +48,7 @@ import './button-effects.css';
 import './site-system.css';
 
 const areaIcons = [Lightbulb, Zap, Network];
+const audienceIcons = [Search, Briefcase, Landmark, Users];
 const studies = [
   { area: 0, topic: 0 },
   { area: 0, topic: 1 },
@@ -100,6 +103,11 @@ function SectionTitle({ title, label }: { title: string; label?: string }) {
   );
 }
 
+function AudienceIcon({ index }: { index: number }) {
+  const Icon = audienceIcons[index];
+  return <Icon size={26} strokeWidth={1.4} />;
+}
+
 function ProjectPage({ language }: { language: Language }) {
   const t = atlasPageCopy[language];
   const essential = essentialCopy[language];
@@ -140,7 +148,10 @@ function ProjectPage({ language }: { language: Language }) {
         <div>
           {base.audience.map((name, index) => (
             <span key={name}>
-              <span aria-hidden="true">0{index + 1}</span>
+              <span aria-hidden="true">
+                0{index + 1}
+                <AudienceIcon index={index} />
+              </span>
               {name}
             </span>
           ))}

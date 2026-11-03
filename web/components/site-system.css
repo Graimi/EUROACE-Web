@@ -69,7 +69,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
 }
-.hp.he.ap[data-site-palette] .ap-band:has(.ap-purpose) .hp-kicker {
+.hp.he.ap[data-site-palette] .ap-band:has(.ap-purpose) .hp-kicker:not(.cl-region) {
   color: var(--cl-dark);
 }
 .ap .ap-event-formats span {
@@ -112,8 +112,18 @@
   z-index: -1;
   inset: 0;
   pointer-events: none;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 400' fill='none' stroke-width='22'%3E%3Ccircle cx='190' cy='150' r='120' stroke='%23fff' stroke-opacity='.25'/%3E%3Ccircle cx='330' cy='150' r='120' stroke='%231E00FF' stroke-opacity='.16'/%3E%3Ccircle cx='260' cy='270' r='120' stroke='%239BFF05' stroke-opacity='.28'/%3E%3C/svg%3E")
-    no-repeat right -170px center / min(520px, 46%) auto;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 400' fill='none' stroke-width='24'%3E%3Ccircle cx='190' cy='150' r='120' stroke='%23fff' stroke-opacity='.8'/%3E%3Ccircle cx='330' cy='150' r='120' stroke='%231E00FF' stroke-opacity='.5'/%3E%3Ccircle cx='260' cy='270' r='120' stroke='%239BFF05' stroke-opacity='.95'/%3E%3C/svg%3E")
+    no-repeat right -150px center / min(340px, 34%) auto;
+}
+.ap .ap-purpose {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+}
+.ap .ap-purpose .ap-stats {
+  max-width: 300px;
+  gap: var(--cl-space-2);
+}
+.ap .ap-purpose .ap-stats dd {
+  font-size: 52px;
 }
 .ap .ap-purpose :is(h2, p, dt, dd) {
   color: var(--cl-dark);
@@ -223,5 +233,88 @@
 @media (max-width: 800px) {
   .ap .ap-activities {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Study numbers: solid area colours, same as the home research stripes */
+.ap .ap-study-number {
+  background: var(--hm-turquoise);
+  color: var(--cl-dark);
+  font-weight: 700;
+}
+.ap .ap-study-number.ap-area-1 {
+  background: var(--hm-lime);
+}
+.ap .ap-study-number.ap-area-2 {
+  background: var(--hm-blue);
+  color: #fff;
+}
+
+/* Audience: four cards with an icon instead of bare text */
+.ap .ap-audience > div:last-child {
+  gap: var(--cl-space-3);
+}
+.ap .ap-audience > div:last-child > span {
+  position: relative;
+  gap: var(--cl-space-3);
+  padding: var(--cl-space-4);
+  border: 1px solid var(--cl-line);
+  border-radius: var(--cl-radius);
+  background: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  transition:
+    box-shadow 0.22s,
+    border-color 0.22s;
+}
+.ap .ap-audience > div:last-child > span:hover {
+  border-color: var(--hm-turquoise);
+  box-shadow: var(--cl-shadow);
+}
+.ap .ap-audience > div:last-child > span > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: var(--cl-muted);
+}
+.ap .ap-audience > div:last-child > span > span svg {
+  color: var(--hm-blue);
+}
+
+/* "Sigue explorando": dark card with rings and a turquoise action */
+.ap .ap-next {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  margin-block: var(--cl-section-inner);
+  padding: var(--cl-space-5);
+  border: 0;
+  border-radius: var(--cl-radius);
+  background: var(--cl-dark)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 400' fill='none' stroke-width='24'%3E%3Ccircle cx='190' cy='150' r='120' stroke='%23fff' stroke-opacity='.22'/%3E%3Ccircle cx='330' cy='150' r='120' stroke='%231E00FF' stroke-opacity='.7'/%3E%3Ccircle cx='260' cy='270' r='120' stroke='%239BFF05' stroke-opacity='.5'/%3E%3C/svg%3E")
+    no-repeat right -120px center / 380px auto;
+}
+.hp.he.ap[data-site-palette] .ap-next.ap-next .hp-kicker:not(.cl-region) {
+  color: var(--hm-lime);
+}
+.ap .ap-next h2 {
+  color: #fff;
+  font-size: clamp(28px, 3.4vw, 44px);
+  font-weight: 400;
+}
+.hp.he.ap[data-site-palette] .ap-next .hp-button {
+  background: var(--hm-turquoise);
+  color: var(--cl-dark);
+}
+.hp.he.ap[data-site-palette] .ap-next .hp-button:hover {
+  background: #fff;
+  color: var(--cl-dark);
+}
+@media (max-width: 1000px) {
+  .ap .ap-next {
+    padding: var(--cl-space-4);
   }
 }

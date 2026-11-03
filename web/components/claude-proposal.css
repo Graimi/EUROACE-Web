@@ -523,6 +523,7 @@
   color: var(--cl-dark);
 }
 .cl .cl-band-text {
+  max-width: 390px;
   margin: 0;
   padding-left: var(--cl-space-3);
   border-left: 3px solid var(--cl-dark);
@@ -589,24 +590,26 @@
 .cl .cl-band-rings {
   position: absolute;
   z-index: -1;
-  right: -170px;
+  right: -120px;
   top: 50%;
-  width: min(520px, 46%);
+  width: min(300px, 28%);
   transform: translateY(-50%);
   pointer-events: none;
-  opacity: 0.85;
 }
 .cl .cl-band-rings circle {
-  stroke-width: 22;
-  stroke-opacity: 0.4;
+  stroke-width: 24;
+  stroke-opacity: 0.8;
 }
 .cl .cl-band-rings circle:nth-child(2) {
-  stroke-opacity: 0.28;
+  stroke-opacity: 0.55;
+}
+.cl .cl-band-rings circle:nth-child(3) {
+  stroke-opacity: 0.95;
 }
 @media (max-width: 1000px) {
   .cl .cl-band-rings {
     width: 360px;
     right: -150px;
-    opacity: 0.45;
+    opacity: 0.6;
   }
 }
