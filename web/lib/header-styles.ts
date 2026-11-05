@@ -39,8 +39,19 @@ export const headerStyles = [
     design: 'contacto',
     name: { es: 'Conversación', pt: 'Conversa', en: 'Conversation' },
   },
+  {
+    id: 'mixto',
+    number: 7,
+    design: 'publicaciones',
+    mixed: true,
+    name: {
+      es: 'Editorial + Cartel',
+      pt: 'Editorial + Cartaz',
+      en: 'Editorial + Poster',
+    },
+  },
 ] as const;
 
 export const selectedHeaderStyles = headerStyles.filter((style) =>
-  [3, 5, 6].includes(style.number),
+  [3, 5, 6, 7].includes(style.number),
 );

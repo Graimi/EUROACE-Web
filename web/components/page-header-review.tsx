@@ -134,6 +134,7 @@ export function PageHeaderReview({
           <AtlasHeroArt
             section={section}
             design={activeStyle.design}
+            mixed={'mixed' in activeStyle}
             language={language}
           />
         </div>

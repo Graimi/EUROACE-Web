@@ -51,10 +51,12 @@ export function AtlasHeroArt({
   section,
   language,
   design,
+  mixed = false,
 }: {
   section: Section;
   language: Language;
   design?: Section;
+  mixed?: boolean;
 }) {
   const art = design ?? section;
   const content = headerContent(section, language);
@@ -138,6 +140,18 @@ export function AtlasHeroArt({
             <Icon size={30} strokeWidth={1.2} />
             <strong>{content.answer}</strong>
             <span>EUROACE / {content.title}</span>
+            {mixed && (
+              <div className="ap-cover-meta">
+                {section !== 'observatorio' && (
+                  <ul>
+                    {content.topics.map((topic) => (
+                      <li key={topic}>{topic}</li>
+                    ))}
+                  </ul>
+                )}
+                <p>ALENTEJO · CENTRO · EXTREMADURA</p>
+              </div>
+            )}
             {content.status && <small>{content.status}</small>}
           </div>
           <div className="ap-cover ap-cover-front">
