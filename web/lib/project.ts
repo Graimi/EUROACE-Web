@@ -10,6 +10,9 @@ export const sectionIds = [
   'contacto',
 ] as const;
 export type Section = (typeof sectionIds)[number];
+// Sections kept in the code but not shown in the navigation or page flow.
+// 'nosotros' now lives inside 'observatorio' (Sobre el proyecto).
+export const hiddenSections: readonly Section[] = ['nosotros'];
 export const projectSource =
   'https://www.poctep.eu/proyecto/0461_observatorio_euroace_4_e-observatorio-de-cooperacion-transfronteriza-euroace/';
 export const coordinationContact = {

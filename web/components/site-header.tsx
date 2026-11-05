@@ -16,6 +16,7 @@ import { copy } from '@/lib/content';
 import { homePathForTheme } from '@/lib/home-proposals';
 import {
   projectCopy,
+  hiddenSections,
   sectionIds,
   type Language,
   type Section,
@@ -128,7 +129,7 @@ export function SiteHeader({
   const items = [
     { label: t.home, path: homePathForTheme(theme), section: 'home' },
     ...sectionIds
-      .filter((id) => id !== 'analytics')
+      .filter((id) => id !== 'analytics' && !hiddenSections.includes(id))
       .map((id) => ({
         label:
           id === 'observatorio' ? t.about : project.nav[sectionIds.indexOf(id)],

@@ -130,7 +130,7 @@ export function ContactDetails({ language }: { language: Language }) {
       <div>
         <h3>{t.email}</h3>
         <p>{t.emailEmpty}</p>
-        <a className="text-link" href={`/nosotros?lang=${language}`}>
+        <a className="text-link" href={`/observatorio?lang=${language}#socios`}>
           {t.nav[2]} ↗
         </a>
       </div>

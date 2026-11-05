@@ -1,8 +1,6 @@
-import type { Metadata } from 'next';
-import { AtlasPage } from '@/components/atlas-page';
+import { redirect } from 'next/navigation';
 
-export const metadata: Metadata = { title: 'EUROACE | Nosotros' };
-
+// Partners now live in "Sobre el proyecto"; the old page is kept in code only.
 export default function Page() {
-  return <AtlasPage section="nosotros" />;
+  redirect('/observatorio#socios');
 }

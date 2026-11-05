@@ -23,7 +23,6 @@ import { Button } from '@/components/ui/button';
 import { copy } from '@/lib/content';
 import { LivingRings } from '@/components/living-rings';
 import { ProjectSignature } from '@/components/project-signature';
-import { ProposalSwitcher } from '@/components/proposal-switcher';
 import './manual-palette.css';
 import './original-manual-palette.css';
 import './button-effects.css';
@@ -525,9 +524,6 @@ export default function OriginalHome({ section }: { section?: Section }) {
         <div className="footer-base wrap">
           <span>{t.footer}</span>
           <span>{project.review}</span>
-        </div>
-        <div className="wrap">
-          <ProposalSwitcher language={language} />
         </div>
       </footer>
     </div>

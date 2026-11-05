@@ -4,9 +4,13 @@
 import { ArrowUpRight } from 'lucide-react';
 import { ProjectSignature } from './project-signature';
 import { FooterRings } from './footer-rings';
-import { ProposalSwitcher } from './proposal-switcher';
 import { essentialCopy } from '@/lib/essential-copy';
-import { projectCopy, sectionIds, type Language } from '@/lib/project';
+import {
+  hiddenSections,
+  projectCopy,
+  sectionIds,
+  type Language,
+} from '@/lib/project';
 import './essential-footer-proposals.css';
 
 function FooterCredits({ language }: { language: Language }) {
@@ -39,10 +43,13 @@ export function EssentialFooter({
   const t = essentialCopy[language];
   const project = projectCopy[language];
   const page = (path: string) => `${path}?lang=${language}`;
-  const navigation = sectionIds.map((id, index) => ({
-    href: page(`/${id}`),
-    label: project.nav[index],
-  }));
+  const navigation = sectionIds
+    .map((id, index) => ({
+      id,
+      href: page(`/${id}`),
+      label: project.nav[index],
+    }))
+    .filter(({ id }) => !hiddenSections.includes(id));
   const contact = (
     <a className="he-footer-contact motion-button" href={page('/contacto')}>
       {t.contact}
@@ -85,7 +92,6 @@ export function EssentialFooter({
             </div>
           </div>
           {showCredits && <FooterCredits language={language} />}
-          <ProposalSwitcher language={language} />
         </div>
       </footer>
     </div>

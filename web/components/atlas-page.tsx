@@ -35,6 +35,7 @@ import { essentialCopy } from '@/lib/essential-copy';
 import { essentialNews } from '@/lib/essential-news';
 import { copy } from '@/lib/content';
 import {
+  hiddenSections,
   projectCopy,
   coordinationContact,
   sectionIds,
@@ -63,7 +64,8 @@ const regionNames = {
 };
 
 function url(path: string, language: Language) {
-  return `${path}?lang=${language}`;
+  const [route, hash] = path.split('#');
+  return `${route}?lang=${language}${hash ? `#${hash}` : ''}`;
 }
 function normalize(value: string) {
   return value
@@ -152,6 +154,10 @@ function ProjectPage({ language }: { language: Language }) {
             </span>
           ))}
         </div>
+      </section>
+      <section className="ap-section hp-container" id="socios">
+        <SectionTitle title={t.partnersTitle} />
+        <PartnerCards language={language} />
       </section>
       <section className="ap-section hp-container">
         <ProjectFunding language={language} titleId="ap-project-title" />
@@ -380,10 +386,6 @@ function PublicationsPage({ language }: { language: Language }) {
           </button>
         </div>
       )}
-      <div className="ap-inline-callout">
-        <p>{t.publicationCta}</p>
-        <TextLink href={url('/actualidad', language)}>{t.viewNews}</TextLink>
-      </div>
     </section>
   );
 }
@@ -611,9 +613,6 @@ function EventsPage({ language }: { language: Language }) {
               </div>
             ))}
           </div>
-          <TextLink href={url('/actividades', language)}>
-            {t.viewActivities}
-          </TextLink>
         </div>
       </section>
     </>
@@ -707,7 +706,7 @@ function ContactPage({ language }: { language: Language }) {
   const base = copy[language];
   const [audience, setAudience] = useState(0);
   const destinations = [
-    '/nosotros',
+    '/observatorio#socios',
     '/actividades',
     '/observatorio',
     '/actualidad',
@@ -796,8 +795,9 @@ export function AtlasPage({ section }: { section: Section }) {
   const t = atlasPageCopy[language];
   const project = projectCopy[language];
   const Body = pageBodies[section];
+  const visibleIds = sectionIds.filter((id) => !hiddenSections.includes(id));
   const next =
-    sectionIds[(sectionIds.indexOf(section) + 1) % sectionIds.length];
+    visibleIds[(visibleIds.indexOf(section) + 1) % visibleIds.length];
   return (
     <div
       className={`hp hp-variant-1 he he-theme-3 he-atlas-layout ap ap-${section}`}
