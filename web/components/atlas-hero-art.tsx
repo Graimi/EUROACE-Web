@@ -142,14 +142,15 @@ export function AtlasHeroArt({
             <span>EUROACE / {content.title}</span>
             {mixed && (
               <div className="ap-cover-meta">
-                {section !== 'observatorio' && (
+                {section === 'observatorio' ? (
+                  <p>ALENTEJO · CENTRO · EXTREMADURA</p>
+                ) : (
                   <ul>
                     {content.topics.map((topic) => (
                       <li key={topic}>{topic}</li>
                     ))}
                   </ul>
                 )}
-                <p>ALENTEJO · CENTRO · EXTREMADURA</p>
               </div>
             )}
             {content.status && <small>{content.status}</small>}
@@ -191,25 +192,21 @@ export function AtlasHeroArt({
           <div className="ap-event-orbit" />
           <Icon size={64} strokeWidth={1} />
           <strong>{content.title}</strong>
-          {section === 'eventos' ? (
-            <>
-              <div className="ap-event-dots">
-                {Array.from({ length: 21 }, (_, index) => (
-                  <i key={index} />
-                ))}
-              </div>
-              <p className="ap-poster-note">{content.answer}</p>
-            </>
-          ) : (
-            <div className="ap-poster-topics">
-              {(section === 'publicaciones'
-                ? content.network
-                : content.topics
-              ).map((topic) => (
-                <span key={topic}>{topic}</span>
+          {section === 'eventos' && (
+            <div className="ap-event-dots">
+              {Array.from({ length: 21 }, (_, index) => (
+                <i key={index} />
               ))}
             </div>
           )}
+          <div className="ap-poster-topics">
+            {(section === 'publicaciones'
+              ? content.network
+              : content.topics
+            ).map((topic) => (
+              <span key={topic}>{topic}</span>
+            ))}
+          </div>
           <span>ALENTEJO · CENTRO · EXTREMADURA</span>
         </>
       )}

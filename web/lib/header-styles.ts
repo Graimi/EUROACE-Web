@@ -52,6 +52,19 @@ export const headerStyles = [
   },
 ] as const;
 
-export const selectedHeaderStyles = headerStyles.filter((style) =>
-  [3, 5, 6, 7].includes(style.number),
-);
+// Final choice per page (header proposal number, see headerStyles above).
+const headerStyleBySection: Record<string, number> = {
+  observatorio: 7,
+  actividades: 7,
+  nosotros: 3,
+  publicaciones: 3,
+  actualidad: 6,
+  eventos: 5,
+  contacto: 6,
+  analytics: 3,
+};
+
+export function headerStyleFor(section: string) {
+  const number = headerStyleBySection[section] ?? 3;
+  return headerStyles.find((style) => style.number === number) ?? headerStyles[2];
+}
